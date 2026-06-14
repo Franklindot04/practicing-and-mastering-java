@@ -33,6 +33,8 @@ After the beginner path, continue with the [intermediate learning sequence](LEAR
 
 When intermediate topics feel comfortable, use the [advanced learning sequence](LEARNING_PATH.md#advanced-learning-sequence) for concurrency, JVM memory, performance, design patterns, and clean architecture.
 
+After advanced Java, follow the [professional Java learning sequence](LEARNING_PATH.md#professional-java-learning-sequence) before moving into backend frameworks.
+
 ## Folder Structure
 
 ```text

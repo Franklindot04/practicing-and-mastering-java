@@ -99,3 +99,29 @@ Move toward backend, Spring, databases, and production-style topics when you can
 - [ ] Recognize when a design pattern helps and when it adds clutter.
 - [ ] Apply SOLID principles to keep project logic testable.
 - [ ] Build a CLI project that separates parsing, service logic, and output.
+
+## Professional Java Learning Sequence
+
+Use this sequence before Spring Boot, backend APIs, and production database applications.
+
+- [ ] Review design patterns as tradeoffs: [Design Patterns](docs/13-design-patterns/README.md)
+- [ ] Learn JDBC boundaries and safety rules: [Databases And JDBC](docs/14-databases-jdbc/README.md)
+- [ ] Learn networking failure modes: [Networking](docs/15-networking/README.md)
+- [ ] Revisit reflection and annotations: [Advanced Java Language Features](docs/16-advanced-java/README.md)
+- [ ] Practice clean code and SOLID: [Clean Code, SOLID, And Basic Architecture](docs/17-clean-code-architecture/README.md)
+- [ ] Run professional examples: [Professional Examples](examples/professional/)
+- [ ] Complete professional exercises: [Professional Exercises](exercises/professional/)
+- [ ] Check understanding with professional quizzes: [Professional Quizzes](quizzes/professional/)
+- [ ] Review professional solutions after attempting the work: [Professional Solutions](solutions/professional/)
+
+## Ready For Backend Frameworks Checklist
+
+Move into Spring Boot and backend/API development when you can:
+
+- [ ] Refactor long methods into clear, testable behavior.
+- [ ] Explain SRP, OCP, LSP, ISP, and DIP with small examples.
+- [ ] Choose simple design patterns only when they solve a real design problem.
+- [ ] Explain reflection and annotation tradeoffs.
+- [ ] Handle networking timeouts and failures deliberately.
+- [ ] Use prepared statements and keep database credentials out of source code.
+- [ ] Describe a basic project structure with domain, service, and infrastructure boundaries.
