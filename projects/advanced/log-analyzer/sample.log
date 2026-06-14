@@ -1,0 +1,8 @@
+2026-06-14 09:00:01 [INFO] Application started
+2026-06-14 09:00:04 [DEBUG] Loaded configuration
+2026-06-14 09:01:12 [WARN] Slow response from payment service
+2026-06-14 09:01:30 [ERROR] Payment request failed
+2026-06-14 09:01:45 [ERROR] Payment request failed
+2026-06-14 09:02:10 [INFO] Retry completed
+2026-06-14 09:03:00 [WARN] Slow response from payment service
+Malformed line that should be skipped
