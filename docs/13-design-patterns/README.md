@@ -30,3 +30,4 @@ Before moving on, you should know the problem each pattern solves and when it wo
 - [ ] Identify one pattern already hinted at in an existing project.
 - [ ] Refactor only when the design problem is clear.
 - [ ] Check understanding with [Advanced Quizzes](../../quizzes/advanced/README.md).
+- [ ] Practice professional pattern examples in [Professional Examples](../../examples/professional/).

@@ -74,6 +74,19 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete advanced quizzes
 - [ ] Review advanced solutions after attempting the work
 
+## Professional Path Checklist
+
+- [ ] Review [Design Patterns](docs/13-design-patterns/README.md)
+- [ ] Study [Databases And JDBC](docs/14-databases-jdbc/README.md)
+- [ ] Study [Networking](docs/15-networking/README.md)
+- [ ] Study [Advanced Java Language Features](docs/16-advanced-java/README.md)
+- [ ] Study [Clean Code, SOLID, And Basic Architecture](docs/17-clean-code-architecture/README.md)
+- [ ] Run professional examples
+- [ ] Complete professional exercises
+- [ ] Complete professional quizzes
+- [ ] Review professional solutions after attempting the work
+- [ ] Explain what you need before starting Spring Boot
+
 ## Reflection Log
 
 | Date | Topic | What I learned | What confused me | Next action |

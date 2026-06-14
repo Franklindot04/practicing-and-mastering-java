@@ -33,3 +33,5 @@ Before moving on, you should be able to explain why maintainable code is a featu
 - [ ] Split parsing, service logic, and output in an [Advanced Project](../../projects/advanced/README.md).
 - [ ] Add tests around behavior before refactoring.
 - [ ] Explain which SOLID principle helps most in your latest project.
+- [ ] Practice clean code and SOLID examples in [Professional Examples](../../examples/professional/).
+- [ ] Complete clean architecture prompts in [Professional Exercises](../../exercises/professional/).

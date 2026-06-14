@@ -24,3 +24,12 @@ Practice prompts:
 - Add timeout handling.
 
 Before moving on, you should understand that networks are unreliable and code must handle failure.
+
+## Professional Practice
+
+- [ ] Set timeouts on HTTP or socket calls.
+- [ ] Keep networking code separate from business logic.
+- [ ] Practice networking basics in [Professional Examples](../../examples/professional/).
+- [ ] Complete networking prompts in [Professional Exercises](../../exercises/professional/).
+
+Before backend APIs, you should be comfortable handling timeout, unavailable service, and invalid remote input cases.

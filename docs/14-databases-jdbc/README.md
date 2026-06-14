@@ -26,3 +26,12 @@ Practice prompts:
 - Wrap multiple changes in a transaction.
 
 Before moving on, you should understand why placeholders in prepared statements are safer than string-built SQL.
+
+## Professional Practice
+
+- [ ] Explain what JDBC drivers, connections, prepared statements, and result sets do.
+- [ ] Keep credentials out of source code and load them from environment or deployment configuration.
+- [ ] Practice JDBC shapes in [Professional Examples](../../examples/professional/).
+- [ ] Complete database prompts in [Professional Exercises](../../exercises/professional/).
+
+Before full database applications, you should be able to describe safe SQL parameter binding and resource cleanup.
