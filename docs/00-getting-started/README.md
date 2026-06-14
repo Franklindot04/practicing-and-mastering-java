@@ -65,3 +65,7 @@ You should understand:
 - [ ] How to compile a single Java file.
 - [ ] How to run a compiled class.
 - [ ] Why file names and public class names must match.
+
+## Next Step
+
+Continue to [Java Basics](../01-java-basics/README.md), then practice with [beginner examples](../../examples/beginner/README.md) and [beginner exercises](../../exercises/beginner/README.md).

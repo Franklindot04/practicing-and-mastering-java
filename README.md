@@ -27,6 +27,8 @@ The primary target is Java 21 LTS. Java 17 is also acceptable for many examples 
 7. Build projects from `projects/`.
 8. Track progress in `PROGRESS.md`.
 
+New learners should start with the [beginner learning sequence](LEARNING_PATH.md#beginner-learning-sequence), which connects setup, notes, examples, exercises, projects, quizzes, and solutions in order.
+
 ## Folder Structure
 
 ```text
