@@ -52,4 +52,4 @@ Task added.
 - Add due dates.
 - Add priorities.
 - Add search and filtering.
-- Add automated tests after moving the code into a Maven source package.
+- Add more automated tests for the menu behavior.

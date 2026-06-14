@@ -51,5 +51,5 @@ Result: 15.0
 
 - Add more operations.
 - Keep a history of calculations.
-- Add automated tests after moving the code into a Maven source package.
+- Add more automated tests for the menu behavior.
 - Improve input validation for non-numeric values.
