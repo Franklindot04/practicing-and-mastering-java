@@ -46,6 +46,21 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Clean code and architecture
 - [ ] Interview preparation
 
+## Intermediate Path Checklist
+
+- [ ] Review [Collections Framework](docs/03-collections-framework/README.md)
+- [ ] Study [Generics](docs/04-generics/README.md)
+- [ ] Study [Exception Handling](docs/05-exception-handling/README.md)
+- [ ] Study [Files, IO, And NIO](docs/06-files-io-nio/README.md)
+- [ ] Study [Lambdas, Streams, And Optional](docs/07-lambdas-streams/README.md)
+- [ ] Study [Date And Time API](docs/08-date-time-api/README.md)
+- [ ] Study [Testing And Debugging](docs/09-testing-debugging/README.md)
+- [ ] Study [Maven First](docs/10-maven-gradle/README.md)
+- [ ] Complete intermediate exercises
+- [ ] Build one intermediate project
+- [ ] Complete intermediate quizzes
+- [ ] Review intermediate solutions after attempting the work
+
 ## Reflection Log
 
 | Date | Topic | What I learned | What confused me | Next action |

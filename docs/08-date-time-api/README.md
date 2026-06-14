@@ -28,3 +28,9 @@ Practice prompts:
 - Calculate a date seven days from today.
 - Format a date for display.
 - Measure the duration between two times.
+
+## Next Practice
+
+- [ ] Run the date/time example from [Intermediate Java Examples](../../examples/intermediate/java/README.md).
+- [ ] Complete date and time exercises in [Intermediate Exercises](../../exercises/intermediate/).
+- [ ] Use `LocalDate` in an [Intermediate Project](../../projects/intermediate/README.md).

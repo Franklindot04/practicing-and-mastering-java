@@ -27,3 +27,9 @@ Practice prompts:
 - Find where compiled classes are generated.
 
 Gradle can be added later as a separate learning topic. Maven comes first here because it is common and beginner-friendly.
+
+## Next Practice
+
+- [ ] Run `mvn test`.
+- [ ] Inspect generated output under `target/`, then avoid committing it.
+- [ ] Use Maven while completing [Intermediate Exercises](../../exercises/intermediate/) and [Intermediate Projects](../../projects/intermediate/README.md).

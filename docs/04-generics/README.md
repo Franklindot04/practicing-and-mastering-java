@@ -22,3 +22,9 @@ Practice prompts:
 - Compare `List<?>` and `List<Object>`.
 
 Before moving on, you should understand type parameters, generic classes, generic methods, and wildcards at a basic level.
+
+## Next Practice
+
+- [ ] Run a generics example from [Intermediate Java Examples](../../examples/intermediate/java/README.md).
+- [ ] Complete intermediate generics exercises in [Intermediate Exercises](../../exercises/intermediate/).
+- [ ] Check understanding with [Intermediate Quizzes](../../quizzes/intermediate/README.md).

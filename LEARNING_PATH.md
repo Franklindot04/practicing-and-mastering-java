@@ -41,3 +41,34 @@ Move to object-oriented programming when you can:
 - [ ] Use arrays and strings in simple programs.
 - [ ] Read beginner compiler errors and make a reasonable fix.
 - [ ] Build a small CLI project with input, decisions, and repeated actions.
+
+## Intermediate Learning Sequence
+
+Use this sequence after the beginner path and core OOP topics.
+
+- [ ] Review collections: [Collections Framework](docs/03-collections-framework/README.md)
+- [ ] Study generics: [Generics](docs/04-generics/README.md)
+- [ ] Practice error handling: [Exception Handling](docs/05-exception-handling/README.md)
+- [ ] Read and write files: [Files, IO, And NIO](docs/06-files-io-nio/README.md)
+- [ ] Learn functional Java: [Lambdas, Streams, And Optional](docs/07-lambdas-streams/README.md)
+- [ ] Work with modern dates and times: [Date And Time API](docs/08-date-time-api/README.md)
+- [ ] Add test coverage: [Testing And Debugging](docs/09-testing-debugging/README.md)
+- [ ] Run builds with Maven: [Maven First](docs/10-maven-gradle/README.md)
+- [ ] Run and modify intermediate examples: [Intermediate Examples](examples/intermediate/java/README.md)
+- [ ] Complete intermediate exercises: [Intermediate Exercises](exercises/intermediate/)
+- [ ] Build intermediate projects: [Intermediate Projects](projects/intermediate/README.md)
+- [ ] Check understanding with intermediate quizzes: [Intermediate Quizzes](quizzes/intermediate/README.md)
+- [ ] Review intermediate solutions after attempting the work: [Intermediate Solutions](solutions/intermediate/)
+
+## Ready For Advanced Java Checklist
+
+Move to advanced Java when you can:
+
+- [ ] Use generics in classes and methods without raw types.
+- [ ] Explain checked and unchecked exceptions.
+- [ ] Read from and write to files with `Path` and `Files`.
+- [ ] Use `LocalDate`, `LocalDateTime`, and `DateTimeFormatter` for common tasks.
+- [ ] Write JUnit tests for service logic and edge cases.
+- [ ] Use streams for clear collection transformations.
+- [ ] Use `Optional` to represent missing results without returning `null`.
+- [ ] Build an intermediate CLI project with separated model and service logic.
