@@ -28,3 +28,9 @@ Practice prompts:
 - Compare `HashMap` and `ConcurrentHashMap`.
 
 Before moving on, you should understand why concurrent code can fail even when each line looks correct by itself.
+
+## Next Practice
+
+- [ ] Run an advanced concurrency example from [Advanced Examples](../../examples/advanced/).
+- [ ] Complete concurrency exercises in [Advanced Exercises](../../exercises/advanced/).
+- [ ] Use concurrency only when the problem benefits from overlapping work.

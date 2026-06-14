@@ -72,3 +72,30 @@ Move to advanced Java when you can:
 - [ ] Use streams for clear collection transformations.
 - [ ] Use `Optional` to represent missing results without returning `null`.
 - [ ] Build an intermediate CLI project with separated model and service logic.
+
+## Advanced Learning Sequence
+
+Use this sequence after the intermediate path and before backend frameworks.
+
+- [ ] Study concurrency fundamentals: [Concurrency And Multithreading](docs/11-concurrency-multithreading/README.md)
+- [ ] Study JVM memory and performance basics: [JVM, Memory, Garbage Collection, And Performance](docs/12-jvm-memory-performance/README.md)
+- [ ] Learn design pattern tradeoffs: [Design Patterns](docs/13-design-patterns/README.md)
+- [ ] Explore advanced language features: [Advanced Java Language Features](docs/16-advanced-java/README.md)
+- [ ] Practice maintainable design: [Clean Code, SOLID, And Basic Architecture](docs/17-clean-code-architecture/README.md)
+- [ ] Run and modify advanced examples: [Advanced Examples](examples/advanced/)
+- [ ] Complete advanced exercises: [Advanced Exercises](exercises/advanced/)
+- [ ] Build an advanced project: [Advanced Projects](projects/advanced/README.md)
+- [ ] Check understanding with advanced quizzes: [Advanced Quizzes](quizzes/advanced/README.md)
+- [ ] Review advanced solutions after attempting the work: [Advanced Solutions](solutions/advanced/)
+
+## Ready For Professional Java Checklist
+
+Move toward backend, Spring, databases, and production-style topics when you can:
+
+- [ ] Explain race conditions and protect shared state.
+- [ ] Use executors and futures without leaking threads.
+- [ ] Describe stack, heap, reachability, and garbage collection basics.
+- [ ] Measure before making performance changes.
+- [ ] Recognize when a design pattern helps and when it adds clutter.
+- [ ] Apply SOLID principles to keep project logic testable.
+- [ ] Build a CLI project that separates parsing, service logic, and output.

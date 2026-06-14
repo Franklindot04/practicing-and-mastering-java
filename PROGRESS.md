@@ -61,6 +61,19 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete intermediate quizzes
 - [ ] Review intermediate solutions after attempting the work
 
+## Advanced Path Checklist
+
+- [ ] Study [Concurrency And Multithreading](docs/11-concurrency-multithreading/README.md)
+- [ ] Study [JVM, Memory, Garbage Collection, And Performance](docs/12-jvm-memory-performance/README.md)
+- [ ] Study [Design Patterns](docs/13-design-patterns/README.md)
+- [ ] Study [Advanced Java Language Features](docs/16-advanced-java/README.md)
+- [ ] Study [Clean Code, SOLID, And Basic Architecture](docs/17-clean-code-architecture/README.md)
+- [ ] Run and modify advanced examples
+- [ ] Complete advanced exercises
+- [ ] Build one advanced project
+- [ ] Complete advanced quizzes
+- [ ] Review advanced solutions after attempting the work
+
 ## Reflection Log
 
 | Date | Topic | What I learned | What confused me | Next action |

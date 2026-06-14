@@ -24,3 +24,9 @@ Practice prompts:
 - Serialize and deserialize a simple object for learning only.
 
 Before moving on, you should understand the tradeoff between flexibility and complexity.
+
+## Next Practice
+
+- [ ] Create a tiny annotation and explain whether it needs runtime retention.
+- [ ] Use reflection to inspect methods, then explain why normal method calls are usually clearer.
+- [ ] Review [Clean Code And Architecture](../17-clean-code-architecture/README.md) before using advanced features in larger projects.

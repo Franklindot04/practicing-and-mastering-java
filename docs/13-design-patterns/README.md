@@ -24,3 +24,9 @@ Practice prompts:
 - Use Adapter to wrap an incompatible API.
 
 Before moving on, you should know the problem each pattern solves and when it would be too much.
+
+## Next Practice
+
+- [ ] Identify one pattern already hinted at in an existing project.
+- [ ] Refactor only when the design problem is clear.
+- [ ] Check understanding with [Advanced Quizzes](../../quizzes/advanced/README.md).
