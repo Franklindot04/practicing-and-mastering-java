@@ -27,3 +27,9 @@ Practice prompts:
 - Use `try-with-resources` for file reading.
 
 Before moving on, you should understand checked exceptions, unchecked exceptions, `try`, `catch`, `finally`, and `throw`.
+
+## Next Practice
+
+- [ ] Run the exceptions/files example from [Intermediate Java Examples](../../examples/intermediate/java/README.md).
+- [ ] Complete exception and file exercises in [Intermediate Exercises](../../exercises/intermediate/).
+- [ ] Apply validation and helpful errors in an [Intermediate Project](../../projects/intermediate/README.md).

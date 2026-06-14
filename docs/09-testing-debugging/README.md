@@ -28,3 +28,9 @@ Common mistakes:
 - Changing many things at once while debugging.
 
 Before moving on, you should be able to write a small unit test and explain a failure message.
+
+## Next Practice
+
+- [ ] Run `mvn test` from the repository root.
+- [ ] Add tests for non-interactive logic in an [Intermediate Project](../../projects/intermediate/README.md).
+- [ ] Track edge cases before changing implementation code.

@@ -25,3 +25,9 @@ Practice prompts:
 - Copy a file with `Files.copy`.
 
 Before moving on, you should understand `Path`, `Files`, reading strings, writing strings, and line-based processing.
+
+## Next Practice
+
+- [ ] Read and write a small local text file.
+- [ ] Complete file handling exercises in [Intermediate Exercises](../../exercises/intermediate/).
+- [ ] Build toward projects that can later save and load data from files.

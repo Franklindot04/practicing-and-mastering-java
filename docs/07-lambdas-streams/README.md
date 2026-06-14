@@ -40,3 +40,9 @@ Common mistakes:
 - Making lambdas so long they become hard to read.
 
 Before moving on, you should understand `filter`, `map`, `toList`, method references, and safe `Optional` handling.
+
+## Next Practice
+
+- [ ] Run the lambdas, streams, and Optional example from [Intermediate Java Examples](../../examples/intermediate/java/README.md).
+- [ ] Complete functional Java exercises in [Intermediate Exercises](../../exercises/intermediate/).
+- [ ] Refactor one loop into a stream only when the stream remains readable.

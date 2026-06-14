@@ -29,6 +29,8 @@ The primary target is Java 21 LTS. Java 17 is also acceptable for many examples 
 
 New learners should start with the [beginner learning sequence](LEARNING_PATH.md#beginner-learning-sequence), which connects setup, notes, examples, exercises, projects, quizzes, and solutions in order.
 
+After the beginner path, continue with the [intermediate learning sequence](LEARNING_PATH.md#intermediate-learning-sequence) for generics, exceptions, files, dates, Maven, testing, lambdas, streams, and Optional.
+
 ## Folder Structure
 
 ```text
