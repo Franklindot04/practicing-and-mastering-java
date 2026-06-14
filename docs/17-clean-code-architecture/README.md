@@ -27,3 +27,9 @@ Practice prompts:
 - Add tests before refactoring.
 
 Before moving on, you should be able to explain why maintainable code is a feature.
+
+## Next Practice
+
+- [ ] Split parsing, service logic, and output in an [Advanced Project](../../projects/advanced/README.md).
+- [ ] Add tests around behavior before refactoring.
+- [ ] Explain which SOLID principle helps most in your latest project.

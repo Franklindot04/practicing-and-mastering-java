@@ -31,6 +31,8 @@ New learners should start with the [beginner learning sequence](LEARNING_PATH.md
 
 After the beginner path, continue with the [intermediate learning sequence](LEARNING_PATH.md#intermediate-learning-sequence) for generics, exceptions, files, dates, Maven, testing, lambdas, streams, and Optional.
 
+When intermediate topics feel comfortable, use the [advanced learning sequence](LEARNING_PATH.md#advanced-learning-sequence) for concurrency, JVM memory, performance, design patterns, and clean architecture.
+
 ## Folder Structure
 
 ```text

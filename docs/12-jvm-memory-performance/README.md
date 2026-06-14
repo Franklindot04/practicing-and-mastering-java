@@ -26,3 +26,9 @@ Practice prompts:
 - Use a profiler on a small slow program.
 
 Before moving on, you should be able to explain stack, heap, references, and why profiling matters.
+
+## Next Practice
+
+- [ ] Complete JVM memory and performance exercises in [Advanced Exercises](../../exercises/advanced/).
+- [ ] Explain how a file-processing project can avoid loading unnecessary data into memory.
+- [ ] Measure a small program before trying to optimize it.
