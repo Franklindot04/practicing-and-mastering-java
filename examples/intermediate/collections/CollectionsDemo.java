@@ -121,10 +121,10 @@ public class CollectionsDemo {
         students.sort(Comparator.comparingInt(Student::score).reversed());
         System.out.println("Comparator sorted students by score: " + students);
 
-        List<Course> courses = new ArrayList<>();
-        courses.add(new Course("Streams", 7));
-        courses.add(new Course("Basics", 1));
-        courses.add(new Course("Collections", 3));
+        List<CollectionCourse> courses = new ArrayList<>();
+        courses.add(new CollectionCourse("Streams", 7));
+        courses.add(new CollectionCourse("Basics", 1));
+        courses.add(new CollectionCourse("Collections", 3));
         Collections.sort(courses);
         System.out.println("Comparable sorted courses by order: " + courses);
     }
@@ -142,9 +142,9 @@ public class CollectionsDemo {
 record Student(String name, int score) {
 }
 
-record Course(String title, int order) implements Comparable<Course> {
+record CollectionCourse(String title, int order) implements Comparable<CollectionCourse> {
     @Override
-    public int compareTo(Course other) {
+    public int compareTo(CollectionCourse other) {
         return Integer.compare(this.order, other.order);
     }
 }
