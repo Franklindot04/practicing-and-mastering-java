@@ -19,6 +19,7 @@ Follow this path in order unless you already know a topic well.
 15. Helm and Kubernetes packaging foundations: Helm basics, charts, templates, values, releases, upgrades, rollbacks, Java backend values, and render-only chart review.
 16. Infrastructure as Code foundations: IaC concepts, Terraform/OpenTofu basics, providers, resources, variables, outputs, state, plans, secrets safety, modules, environments, local-only examples, and plan-review operations.
 17. Advanced cloud architecture foundations: availability, scalability, reliability, traffic flow, load balancing, caching, queues, managed databases, object storage, cost-aware review, and operations planning.
+18. Service mesh foundations: service mesh concepts, sidecar communication, service-to-service traffic, mTLS identity, traffic splitting, retries, timeouts, observability, security limits, operations, and readiness planning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -405,3 +406,35 @@ Move into service mesh, distributed systems, event-driven architecture implement
 - [ ] Review a design for reliability, security, operations, and cost.
 - [ ] Describe basic SLO, SLA, error budget, capacity, retry, timeout, backpressure, and incident runbook concepts.
 - [ ] Explain what remains out of scope: service mesh, distributed systems implementation, event-driven architecture implementation, provider-specific automation, and production infrastructure controls.
+
+## Service Mesh Learning Sequence
+
+Use this sequence after cloud architecture foundations and before distributed systems implementation, event-driven architecture implementation, production Kubernetes, or real mesh operations.
+
+- [ ] Study service mesh foundations: [Service Mesh Foundations](docs/56-service-mesh-foundations/README.md)
+- [ ] Compare mesh responsibilities with gateways and application code: [Service Mesh Vs API Gateway](docs/56-service-mesh-foundations/service-mesh-vs-api-gateway.md)
+- [ ] Study sidecar service communication: [Sidecar Service Communication](docs/57-sidecar-service-communication/README.md)
+- [ ] Review mTLS and service identity: [mTLS And Service Identity](docs/57-sidecar-service-communication/mtls-and-service-identity.md)
+- [ ] Study traffic and reliability policy: [Service Mesh Traffic And Reliability](docs/58-service-mesh-traffic-reliability/README.md)
+- [ ] Study observability and security boundaries: [Service Mesh Observability And Security](docs/59-service-mesh-observability-security/README.md)
+- [ ] Inspect service mesh design examples: [Service Mesh Design Examples](examples/backend/service-mesh-designs/README.md)
+- [ ] Review service mesh readiness notes for the backend API: [Service Mesh-Ready Task API Notes](projects/backend/service-mesh-ready-task-api/README.md)
+- [ ] Study operations basics: [Service Mesh Operations Basics](docs/60-service-mesh-operations-basics/README.md)
+- [ ] Complete service mesh exercises: [Service Mesh Exercises](exercises/backend/service-mesh/service-mesh-basics-exercises.md)
+- [ ] Check understanding with service mesh quizzes: [Service Mesh Quizzes](quizzes/backend/service-mesh/service-mesh-basics-quiz.md)
+- [ ] Review service mesh solutions after attempting the work: [Service Mesh Solutions](solutions/backend/service-mesh/service-mesh-basics-solutions.md)
+
+## Ready For Later Distributed Systems Topics Checklist
+
+Move into distributed systems, event-driven architecture implementation, production Kubernetes, or real provider-specific mesh operations later when you can:
+
+- [ ] Explain service mesh as infrastructure for internal service-to-service communication.
+- [ ] Separate service mesh, API gateway, Kubernetes, and application responsibilities.
+- [ ] Trace a request through sidecars or equivalent data-plane components.
+- [ ] Explain control plane and data plane responsibilities.
+- [ ] Describe mTLS and workload identity without confusing them with user authentication.
+- [ ] Design safe timeout, retry, and circuit-breaker policies for idempotent and non-idempotent operations.
+- [ ] Plan a canary with metrics, logs, traces, business checks, and rollback criteria.
+- [ ] Explain observability signals from traces, metrics, and access logs.
+- [ ] Identify when a service mesh is premature.
+- [ ] Explain what remains out of scope: real mesh installation, cluster operations, production certificates, provider-specific automation, and distributed systems implementation.

@@ -78,6 +78,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Cloud traffic and data patterns
 - [ ] Cost-aware cloud architecture review
 - [ ] Cloud architecture operations basics
+- [ ] Service mesh foundations
+- [ ] Sidecar service communication
+- [ ] Service mesh traffic and reliability
+- [ ] Service mesh observability and security
+- [ ] Service mesh operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -239,6 +244,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [cloud architecture quizzes](quizzes/backend/cloud-architecture/cloud-architecture-basics-quiz.md)
 - [ ] Review [cloud architecture solutions](solutions/backend/cloud-architecture/architecture-basics-solutions.md)
 - [ ] Explain what you need before service mesh, distributed systems, event-driven architecture implementation, or advanced production infrastructure
+
+## Service Mesh Path Checklist
+
+- [ ] Study [Service Mesh Foundations](docs/56-service-mesh-foundations/README.md)
+- [ ] Study [Sidecar Service Communication](docs/57-sidecar-service-communication/README.md)
+- [ ] Study [Service Mesh Traffic And Reliability](docs/58-service-mesh-traffic-reliability/README.md)
+- [ ] Study [Service Mesh Observability And Security](docs/59-service-mesh-observability-security/README.md)
+- [ ] Inspect [service mesh design examples](examples/backend/service-mesh-designs/README.md)
+- [ ] Review [service mesh-ready backend API notes](projects/backend/service-mesh-ready-task-api/README.md)
+- [ ] Study [Service Mesh Operations Basics](docs/60-service-mesh-operations-basics/README.md)
+- [ ] Complete [service mesh exercises](exercises/backend/service-mesh/service-mesh-basics-exercises.md)
+- [ ] Complete [service mesh quizzes](quizzes/backend/service-mesh/service-mesh-basics-quiz.md)
+- [ ] Review [service mesh solutions](solutions/backend/service-mesh/service-mesh-basics-solutions.md)
+- [ ] Explain what you need before distributed systems, event-driven architecture implementation, production Kubernetes, or real mesh operations
 
 ## Reflection Log
 
