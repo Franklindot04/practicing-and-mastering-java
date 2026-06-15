@@ -61,5 +61,6 @@ Use this section before building a full Spring Boot project:
 - [ ] Learn Spring Boot concepts: [Spring Boot Introduction](../21-spring-boot-introduction/README.md)
 - [ ] Run backend design examples: [Backend API Design Basics](../../examples/backend/api-design-basics/README.md)
 - [ ] Build the simple REST API skeleton: [Simple REST API Project](../../projects/backend/simple-rest-api/README.md)
+- [ ] Add persistence after the first API works: [Database And SQL Foundations](../22-database-sql-foundations/README.md)
 
 Before moving on, you should be able to describe what happens between an HTTP request and an HTTP response.

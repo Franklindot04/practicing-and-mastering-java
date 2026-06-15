@@ -7,6 +7,9 @@ Use these exercises after reading the backend notes and before building the simp
 - [HTTP And REST Exercises](http-rest-exercises.md)
 - [DTO, Service, And Validation Exercises](dto-service-validation-exercises.md)
 - [Spring Boot Basics Exercises](spring-boot-basics-exercises.md)
+- [SQL Basics Exercises](persistence/sql-basics-exercises.md)
+- [Entity And Repository Exercises](persistence/entity-repository-exercises.md)
+- [JPA And Spring Data Exercises](persistence/jpa-spring-data-exercises.md)
 
 ## Study Routine
 

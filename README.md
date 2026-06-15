@@ -37,6 +37,8 @@ After advanced Java, follow the [professional Java learning sequence](LEARNING_P
 
 After professional Java, use the [backend Java learning sequence](LEARNING_PATH.md#backend-java-learning-sequence) for HTTP, REST, Spring Boot basics, and a simple API skeleton.
 
+After the first backend API, follow the [backend persistence learning sequence](LEARNING_PATH.md#backend-persistence-learning-sequence) for SQL, JPA, Spring Data, and database-backed APIs.
+
 ## Folder Structure
 
 ```text
@@ -88,6 +90,7 @@ The repository grows in focused branches:
 - Concurrency, JVM, performance, and advanced Java.
 - Interview preparation and portfolio projects.
 - Backend Java, HTTP APIs, and Spring Boot foundations.
+- Persistence, SQL, JPA, and database-backed backend projects.
 
 ## Disclaimer
 

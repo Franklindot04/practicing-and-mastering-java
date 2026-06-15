@@ -11,6 +11,7 @@ Follow this path in order unless you already know a topic well.
 7. Advanced Java: concurrency, executors, futures, locks, concurrent collections, JVM, garbage collection, performance.
 8. Professional practices: clean code, SOLID, design patterns, architecture, interview preparation.
 9. Backend Java: HTTP, REST APIs, Spring Boot fundamentals, layering, validation, and simple API projects.
+10. Backend persistence: SQL, repositories, JPA, Hibernate, Spring Data JPA, H2, and database-backed APIs.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -146,7 +147,7 @@ Use this sequence after professional Java and before full database, security, an
 
 ## Ready For Full Backend Projects Checklist
 
-Move into database, security, and deployment topics when you can:
+Move into persistence and database-backed backend topics when you can:
 
 - [ ] Explain the request-response lifecycle for a simple API.
 - [ ] Choose suitable HTTP methods and status codes.
@@ -156,3 +157,33 @@ Move into database, security, and deployment topics when you can:
 - [ ] Use constructor injection in Spring Boot classes.
 - [ ] Test service logic without starting a full web server.
 - [ ] Build and run a small in-memory REST API.
+
+## Backend Persistence Learning Sequence
+
+Use this sequence after the first Spring Boot REST API and before security, authentication, Docker, deployment, or production database topics.
+
+- [ ] Study SQL and relational database foundations: [Database And SQL Foundations](docs/22-database-sql-foundations/README.md)
+- [ ] Practice basic SQL statements: [SQL Basics](docs/22-database-sql-foundations/sql-basics.md)
+- [ ] Understand keys, relationships, and transactions: [Keys, Relationships, And Transactions](docs/22-database-sql-foundations/keys-relationships-transactions.md)
+- [ ] Learn backend persistence boundaries: [Backend Persistence Foundations](docs/23-backend-persistence-foundations/README.md)
+- [ ] Review entity, DTO, and repository design: [Entity, DTO, And Repository](docs/23-backend-persistence-foundations/entity-dto-repository.md)
+- [ ] Connect JDBC, ORM, JPA, Hibernate, and Spring Data: [JDBC, ORM, And JPA Overview](docs/23-backend-persistence-foundations/jdbc-orm-jpa-overview.md)
+- [ ] Study JPA, Hibernate, and Spring Data JPA: [JPA, Hibernate, And Spring Data JPA](docs/24-jpa-hibernate-spring-data/README.md)
+- [ ] Run framework-light persistence examples: [Persistence Design Basics](examples/backend/persistence-design-basics/README.md)
+- [ ] Complete persistence exercises: [Backend Persistence Exercises](exercises/backend/persistence/sql-basics-exercises.md)
+- [ ] Check understanding with persistence quizzes: [Backend Persistence Quizzes](quizzes/backend/persistence/sql-database-quiz.md)
+- [ ] Review persistence solutions after attempting the work: [Backend Persistence Solutions](solutions/backend/persistence/sql-basics-solutions.md)
+- [ ] Build the database-backed API: [Persistent Spring Boot Task API](projects/backend/persistent-task-api/README.md)
+
+## Ready For Security And Deployment Checklist
+
+Move beyond persistence when you can:
+
+- [ ] Write simple `SELECT`, `INSERT`, `UPDATE`, and `DELETE` statements safely.
+- [ ] Explain primary keys, foreign keys, and basic relationships.
+- [ ] Describe why transactions matter.
+- [ ] Separate entity classes from request and response DTOs.
+- [ ] Use a Spring Data JPA repository from a service.
+- [ ] Validate input before persistence.
+- [ ] Return clear not-found and validation errors.
+- [ ] Run a Spring Boot API against H2 without committing real credentials.
