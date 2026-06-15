@@ -62,5 +62,6 @@ Use this section before building a full Spring Boot project:
 - [ ] Run backend design examples: [Backend API Design Basics](../../examples/backend/api-design-basics/README.md)
 - [ ] Build the simple REST API skeleton: [Simple REST API Project](../../projects/backend/simple-rest-api/README.md)
 - [ ] Add persistence after the first API works: [Database And SQL Foundations](../22-database-sql-foundations/README.md)
+- [ ] Add security after persistence is clear: [Backend Security Foundations](../25-backend-security-foundations/README.md)
 
-Before moving on, you should be able to describe what happens between an HTTP request and an HTTP response.
+Before moving on, you should be able to describe what happens between an HTTP request and an HTTP response. Before adding authentication, make sure persistence, validation, DTO mapping, and error handling are already understandable.

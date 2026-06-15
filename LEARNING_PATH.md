@@ -12,6 +12,7 @@ Follow this path in order unless you already know a topic well.
 8. Professional practices: clean code, SOLID, design patterns, architecture, interview preparation.
 9. Backend Java: HTTP, REST APIs, Spring Boot fundamentals, layering, validation, and simple API projects.
 10. Backend persistence: SQL, repositories, JPA, Hibernate, Spring Data JPA, H2, and database-backed APIs.
+11. Backend security and authentication: API risks, validation, secure errors, authentication, authorization, password hashing, tokens, JWT basics, and Spring Security.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -187,3 +188,35 @@ Move beyond persistence when you can:
 - [ ] Validate input before persistence.
 - [ ] Return clear not-found and validation errors.
 - [ ] Run a Spring Boot API against H2 without committing real credentials.
+
+## Backend Security And Authentication Learning Sequence
+
+Use this sequence after persistence and before Docker, deployment, production database configuration, CI/CD, observability, or cloud topics.
+
+- [ ] Study common API security risks: [Backend Security Foundations](docs/25-backend-security-foundations/README.md)
+- [ ] Review validation and safe error responses: [Secure Validation And Error Handling](docs/25-backend-security-foundations/secure-validation-error-handling.md)
+- [ ] Separate identity from permissions: [Authentication And Authorization](docs/26-authentication-authorization/README.md)
+- [ ] Learn credential and token concepts: [Password Hashing, Sessions, And Tokens](docs/26-authentication-authorization/password-hashing-sessions-tokens.md)
+- [ ] Understand JWT tradeoffs before using them: [JWT Basics](docs/26-authentication-authorization/jwt-basics.md)
+- [ ] Study Spring Security's core model: [Spring Security Introduction](docs/27-spring-security-introduction/README.md)
+- [ ] Review roles, permissions, password encoding, and common mistakes: [Spring Security Common Mistakes](docs/27-spring-security-introduction/common-security-mistakes.md)
+- [ ] Run framework-light security examples: [Security Auth Design Basics](examples/backend/security-auth-design-basics/README.md)
+- [ ] Complete security exercises: [Backend Security Exercises](exercises/backend/security/auth-basics-exercises.md)
+- [ ] Check understanding with security quizzes: [Backend Security Quizzes](quizzes/backend/security/auth-security-basics-quiz.md)
+- [ ] Review security solutions after attempting the work: [Backend Security Solutions](solutions/backend/security/auth-basics-solutions.md)
+- [ ] Build the protected API skeleton: [Secured Spring Boot Task API](projects/backend/secured-task-api/README.md)
+
+## Ready For Production Backend Topics Checklist
+
+Move into Docker, deployment, CI/CD, observability, cloud, or production-grade database configuration when you can:
+
+- [ ] Explain common API security risks without relying only on framework defaults.
+- [ ] Validate untrusted input before authentication, authorization, persistence, or business decisions.
+- [ ] Return useful errors without leaking stack traces, secrets, password hashes, or token contents.
+- [ ] Explain authentication separately from authorization.
+- [ ] Store passwords with a dedicated adaptive password encoder instead of reversible encryption or plain text.
+- [ ] Describe the tradeoffs between sessions, opaque tokens, and JWTs.
+- [ ] Configure public and protected routes with Spring Security.
+- [ ] Use roles or permissions deliberately instead of hard-coding one-off access checks.
+- [ ] Keep demo credentials, signing keys, and real secrets out of committed source code.
+- [ ] Build a small secured API and explain how a request moves through authentication, authorization, controller, service, and repository layers.
