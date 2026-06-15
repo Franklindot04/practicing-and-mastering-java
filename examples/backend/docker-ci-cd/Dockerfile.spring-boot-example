@@ -1,0 +1,12 @@
+# Educational Dockerfile for a built Spring Boot jar.
+# Adapt the COPY path before using it in a specific project.
+
+FROM eclipse-temurin:17-jre
+
+WORKDIR /app
+
+COPY target/app.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
