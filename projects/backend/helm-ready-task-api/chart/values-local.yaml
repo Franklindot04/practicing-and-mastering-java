@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: example/deployment-ready-task-api
+  tag: local
+
+config:
+  springProfile: kubernetes-local
+  releaseVersion: local-render-only
+  commitSha: local
