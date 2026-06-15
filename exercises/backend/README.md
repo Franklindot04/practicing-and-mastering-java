@@ -31,6 +31,10 @@ Use these exercises after reading the backend notes and before building the simp
 - [Terraform/OpenTofu Concepts Exercises](iac/terraform-opentofu-concepts-exercises.md)
 - [IaC State, Secrets, And Modules Exercises](iac/state-secrets-modules-exercises.md)
 - [IaC Plan Review And Operations Exercises](iac/plan-review-operations-exercises.md)
+- [Cloud Architecture Basics Exercises](cloud-architecture/architecture-basics-exercises.md)
+- [Cloud Traffic And Data Patterns Exercises](cloud-architecture/traffic-data-patterns-exercises.md)
+- [Cloud Reliability, Failure, And Cost Exercises](cloud-architecture/reliability-failure-cost-exercises.md)
+- [Cloud Architecture Review Exercises](cloud-architecture/architecture-review-exercises.md)
 
 ## Study Routine
 
@@ -44,5 +48,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat Kubernetes prompts as local-only reasoning practice; do not create real clusters, commit kubeconfig files, or use real secrets.
 - Treat Helm prompts as render-only packaging practice; do not run install/upgrade against real clusters or commit real values.
 - Treat IaC prompts as planning and review practice; do not run apply/destroy, commit state or plan files, or add provider credentials.
+- Treat cloud architecture prompts as vendor-neutral planning practice; do not add provider-specific automation, real domains, account IDs, or secrets.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.

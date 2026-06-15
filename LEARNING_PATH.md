@@ -18,6 +18,7 @@ Follow this path in order unless you already know a topic well.
 14. Kubernetes and container orchestration foundations: orchestration basics, Kubernetes core concepts, workloads, networking, configuration, probes, resources, local-only manifests, and beginner operations.
 15. Helm and Kubernetes packaging foundations: Helm basics, charts, templates, values, releases, upgrades, rollbacks, Java backend values, and render-only chart review.
 16. Infrastructure as Code foundations: IaC concepts, Terraform/OpenTofu basics, providers, resources, variables, outputs, state, plans, secrets safety, modules, environments, local-only examples, and plan-review operations.
+17. Advanced cloud architecture foundations: availability, scalability, reliability, traffic flow, load balancing, caching, queues, managed databases, object storage, cost-aware review, and operations planning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -361,7 +362,7 @@ Use this sequence after Helm packaging and before service mesh, distributed syst
 
 ## Ready For Later Infrastructure Topics Checklist
 
-Move into service mesh, distributed systems, advanced cloud, production Kubernetes, or real provider automation later when you can:
+Move into advanced cloud architecture first, then service mesh, distributed systems, event-driven architecture implementation, production Kubernetes, or real provider automation later when you can:
 
 - [ ] Explain Infrastructure as Code and why reviewable infrastructure changes matter.
 - [ ] Compare manual changes with declarative desired state.
@@ -372,3 +373,35 @@ Move into service mesh, distributed systems, advanced cloud, production Kubernet
 - [ ] Design a simple Java backend runtime module with safe inputs and non-secret outputs.
 - [ ] Describe environment folders for dev, test, staging, and prod without copying real secrets.
 - [ ] Explain why real production IaC requires least privilege, remote state controls, approvals, backup/recovery thinking, and deeper provider-specific review.
+
+## Cloud Architecture Learning Sequence
+
+Use this sequence after IaC foundations and before service mesh, distributed systems, event-driven architecture implementation, or advanced production infrastructure.
+
+- [ ] Study cloud architecture foundations: [Cloud Architecture Foundations](docs/51-cloud-architecture-foundations/README.md)
+- [ ] Compare application and infrastructure architecture: [Application Vs Infrastructure Architecture](docs/51-cloud-architecture-foundations/application-vs-infrastructure-architecture.md)
+- [ ] Study availability, scalability, and reliability: [Availability, Scalability, And Reliability](docs/52-availability-scalability-reliability/README.md)
+- [ ] Review stateless/stateful services, fault tolerance, and graceful degradation: [Stateless And Stateful Services](docs/52-availability-scalability-reliability/stateless-stateful-services.md)
+- [ ] Study traffic and data patterns: [Cloud Traffic And Data Patterns](docs/53-cloud-traffic-data-patterns/README.md)
+- [ ] Review load balancing, caching, queues, managed databases, object storage, and complexity tradeoffs: [Complexity Tradeoffs](docs/53-cloud-traffic-data-patterns/complexity-tradeoffs.md)
+- [ ] Study cost-aware review: [Cloud Cost And Architecture Review](docs/54-cloud-cost-architecture-review/README.md)
+- [ ] Inspect vendor-neutral design examples: [Cloud Architecture Design Examples](examples/backend/cloud-architecture-designs/README.md)
+- [ ] Review cloud architecture readiness notes for the backend API: [Cloud Architecture-Ready Task API Notes](projects/backend/cloud-architecture-ready-task-api/README.md)
+- [ ] Study operational architecture basics: [Cloud Architecture Operations Basics](docs/55-cloud-architecture-operations-basics/README.md)
+- [ ] Complete cloud architecture exercises: [Cloud Architecture Exercises](exercises/backend/cloud-architecture/architecture-basics-exercises.md)
+- [ ] Check understanding with cloud architecture quizzes: [Cloud Architecture Quizzes](quizzes/backend/cloud-architecture/cloud-architecture-basics-quiz.md)
+- [ ] Review cloud architecture solutions after attempting the work: [Cloud Architecture Solutions](solutions/backend/cloud-architecture/architecture-basics-solutions.md)
+
+## Ready For Later Architecture Topics Checklist
+
+Move into service mesh, distributed systems, event-driven architecture implementation, or advanced production infrastructure later when you can:
+
+- [ ] Explain cloud architecture as application, infrastructure, data, operations, reliability, and cost working together.
+- [ ] Identify single points of failure in a simple backend design.
+- [ ] Compare horizontal and vertical scaling.
+- [ ] Explain why stateless backend services scale more easily.
+- [ ] Trace traffic through DNS, load balancer, backend service, and managed database.
+- [ ] Explain when caches, queues, object storage, and CDNs help and when they add premature complexity.
+- [ ] Review a design for reliability, security, operations, and cost.
+- [ ] Describe basic SLO, SLA, error budget, capacity, retry, timeout, backpressure, and incident runbook concepts.
+- [ ] Explain what remains out of scope: service mesh, distributed systems implementation, event-driven architecture implementation, provider-specific automation, and production infrastructure controls.

@@ -51,6 +51,8 @@ After Kubernetes foundations, follow the [Helm and Kubernetes packaging learning
 
 After Helm packaging, use the [Infrastructure as Code learning sequence](LEARNING_PATH.md#infrastructure-as-code-learning-sequence) for IaC concepts, Terraform/OpenTofu basics, state and secrets safety, modules, local-only examples, and plan-review habits.
 
+After IaC foundations, follow the [cloud architecture learning sequence](LEARNING_PATH.md#cloud-architecture-learning-sequence) for availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
+
 ## Folder Structure
 
 ```text
@@ -109,6 +111,7 @@ The repository grows in focused branches:
 - Kubernetes, container orchestration, local-only manifests, and beginner operations foundations.
 - Helm packaging, chart values, render-only chart examples, and Kubernetes packaging foundations.
 - Infrastructure as Code, Terraform/OpenTofu concepts, state and secrets safety, local-only examples, modules, environments, and operations foundations.
+- Advanced cloud architecture foundations, availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
 
 ## Disclaimer
 
