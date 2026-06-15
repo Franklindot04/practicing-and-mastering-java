@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: example/java-backend
+  tag: local
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+container:
+  port: 8080
+
+config:
+  springProfile: kubernetes-local
+  logLevel: INFO
+  releaseVersion: local-learning
+
+secretExample:
+  databasePassword: example-only
+  apiToken: demo-token-placeholder
+
+probes:
+  startupPath: /actuator/health
+  readinessPath: /actuator/health/readiness
+  livenessPath: /actuator/health/liveness
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi

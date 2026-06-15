@@ -1,0 +1,7 @@
+Rendered {{ include "java-backend-basics.fullname" . }} for local learning.
+
+Inspect the rendered manifests before using them anywhere:
+
+  helm template {{ .Release.Name }} {{ .Chart.Name }} --values values-local.yaml
+
+This chart uses placeholder values only and is not production-ready.

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: java-backend-basics
+description: Local-only educational Helm chart for a Java backend
+type: application
+version: 0.1.0
+appVersion: "local"
