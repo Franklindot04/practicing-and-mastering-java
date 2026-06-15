@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: learnjava-task-api
+  labels:
+    app.kubernetes.io/name: deployment-ready-task-api
+    learning.stage: kubernetes-readiness
