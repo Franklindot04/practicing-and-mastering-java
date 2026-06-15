@@ -23,6 +23,10 @@ Use these exercises after reading the backend notes and before building the simp
 - [Kubernetes Objects Exercises](kubernetes/kubernetes-objects-exercises.md)
 - [Kubernetes Config, Probes, And Resources Exercises](kubernetes/config-probes-resources-exercises.md)
 - [Kubernetes Troubleshooting Exercises](kubernetes/troubleshooting-exercises.md)
+- [Helm Basics Exercises](helm/helm-basics-exercises.md)
+- [Helm Chart Values Exercises](helm/chart-values-exercises.md)
+- [Helm Backend Chart Design Exercises](helm/backend-chart-design-exercises.md)
+- [Helm Operations Exercises](helm/helm-operations-exercises.md)
 
 ## Study Routine
 
@@ -34,5 +38,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat production-readiness prompts as local learning practice; do not introduce real deployment credentials.
 - Treat deployment/cloud prompts as planning practice; do not create real cloud resources or provider credentials.
 - Treat Kubernetes prompts as local-only reasoning practice; do not create real clusters, commit kubeconfig files, or use real secrets.
+- Treat Helm prompts as render-only packaging practice; do not run install/upgrade against real clusters or commit real values.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.

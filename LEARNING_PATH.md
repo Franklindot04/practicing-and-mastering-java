@@ -16,6 +16,7 @@ Follow this path in order unless you already know a topic well.
 12. Production readiness foundations: configuration, profiles, logging, observability, health checks, Docker basics, CI/CD, and deployment-readiness habits.
 13. Deployment and cloud readiness: deployment lifecycle, artifacts, runtime configuration, smoke tests, release/rollback, runbooks, platform concepts, and cloud readiness.
 14. Kubernetes and container orchestration foundations: orchestration basics, Kubernetes core concepts, workloads, networking, configuration, probes, resources, local-only manifests, and beginner operations.
+15. Helm and Kubernetes packaging foundations: Helm basics, charts, templates, values, releases, upgrades, rollbacks, Java backend values, and render-only chart review.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -296,7 +297,7 @@ Use this sequence after deployment/cloud readiness and before Helm, infrastructu
 
 ## Ready For Advanced Cloud Topics Checklist
 
-Move into Helm, infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics later when you can:
+Move into Helm and Kubernetes packaging when you can:
 
 - [ ] Explain the difference between local, test, staging, and production deployment environments.
 - [ ] Describe JARs, container images, and release packages.
@@ -308,4 +309,33 @@ Move into Helm, infrastructure as code, service mesh, distributed systems, advan
 - [ ] Describe cloud cost and quota risks.
 - [ ] Explain Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, labels, selectors, probes, resources, rollouts, and common failure states.
 - [ ] Read local-only Kubernetes manifests without treating them as production templates.
+- [ ] Render and inspect local Kubernetes manifests without applying them to a real cluster.
+
+## Helm And Kubernetes Packaging Learning Sequence
+
+Use this sequence after Kubernetes foundations and before infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics.
+
+- [ ] Study Helm packaging basics: [Helm Packaging Foundations](docs/42-helm-packaging-foundations/README.md)
+- [ ] Compare raw YAML and charts: [Kubernetes YAML Vs Helm](docs/42-helm-packaging-foundations/kubernetes-yaml-vs-helm.md)
+- [ ] Learn chart structure: [Helm Chart Basics](docs/43-helm-chart-basics/README.md)
+- [ ] Review templates and values: [Templates And Values](docs/43-helm-chart-basics/templates-and-values.md)
+- [ ] Study Java backend values: [Helm Values For Java Backends](docs/44-helm-values-java-backend/README.md)
+- [ ] Review config, Secret placeholders, probes, resources, ports, and overrides: [Environment Overrides](docs/44-helm-values-java-backend/environment-overrides.md)
+- [ ] Render the local-only chart example: [Helm Chart Basics Example](examples/backend/helm-chart-basics/README.md)
+- [ ] Review Helm-ready backend API notes: [Helm-Ready Task API Notes](projects/backend/helm-ready-task-api/README.md)
+- [ ] Study Helm operations basics: [Helm Operations Basics](docs/45-helm-operations-basics/README.md)
+- [ ] Complete Helm exercises: [Helm Foundation Exercises](exercises/backend/helm/helm-basics-exercises.md)
+- [ ] Check understanding with Helm quizzes: [Helm Foundation Quizzes](quizzes/backend/helm/helm-packaging-basics-quiz.md)
+- [ ] Review Helm solutions after attempting the work: [Helm Foundation Solutions](solutions/backend/helm/helm-basics-solutions.md)
+
+## Ready For Advanced Cloud Topics Checklist
+
+Move into infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics later when you can:
+
+- [ ] Explain what Helm adds on top of raw Kubernetes YAML.
+- [ ] Identify `Chart.yaml`, `values.yaml`, `templates/`, helper templates, and rendered manifests.
+- [ ] Use safe placeholder values for local-only charts.
+- [ ] Explain image repository/tag, service ports, container ports, environment values, probes, and resources in a Java backend chart.
+- [ ] Run `helm lint` and `helm template` without installing into a cluster.
+- [ ] Explain Helm releases, upgrades, rollbacks, history, and uninstall concepts.
 - [ ] Explain what still requires real production ownership: secret management, TLS, monitoring, backups, incident response, and provider-specific operations.

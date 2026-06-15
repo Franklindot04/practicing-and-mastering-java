@@ -64,6 +64,10 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Kubernetes foundations
 - [ ] Kubernetes workloads, networking, and configuration
 - [ ] Kubernetes operations basics
+- [ ] Helm packaging foundations
+- [ ] Helm chart basics
+- [ ] Helm values for Java backends
+- [ ] Helm operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -183,7 +187,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [Kubernetes exercises](exercises/backend/kubernetes/orchestration-basics-exercises.md)
 - [ ] Complete [Kubernetes quizzes](quizzes/backend/kubernetes/orchestration-kubernetes-basics-quiz.md)
 - [ ] Review [Kubernetes solutions](solutions/backend/kubernetes/orchestration-basics-solutions.md)
-- [ ] Explain what you need before Helm, infrastructure as code, service mesh, distributed systems, or production Kubernetes topics
+- [ ] Explain what you need before Helm and Kubernetes packaging
+
+## Helm And Kubernetes Packaging Path Checklist
+
+- [ ] Study [Helm Packaging Foundations](docs/42-helm-packaging-foundations/README.md)
+- [ ] Study [Helm Chart Basics](docs/43-helm-chart-basics/README.md)
+- [ ] Study [Helm Values For Java Backends](docs/44-helm-values-java-backend/README.md)
+- [ ] Render and inspect the [Helm chart basics example](examples/backend/helm-chart-basics/README.md)
+- [ ] Review [Helm-ready backend API notes](projects/backend/helm-ready-task-api/README.md)
+- [ ] Study [Helm Operations Basics](docs/45-helm-operations-basics/README.md)
+- [ ] Complete [Helm exercises](exercises/backend/helm/helm-basics-exercises.md)
+- [ ] Complete [Helm quizzes](quizzes/backend/helm/helm-packaging-basics-quiz.md)
+- [ ] Review [Helm solutions](solutions/backend/helm/helm-basics-solutions.md)
+- [ ] Explain what you need before infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics
 
 ## Reflection Log
 

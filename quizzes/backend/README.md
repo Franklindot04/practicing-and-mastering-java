@@ -22,13 +22,17 @@ Use these quizzes to check whether backend Java and Spring Boot foundation conce
 - [Orchestration And Kubernetes Basics Quiz](kubernetes/orchestration-kubernetes-basics-quiz.md)
 - [Kubernetes Workloads, Networking, And Configuration Quiz](kubernetes/workloads-networking-config-quiz.md)
 - [Kubernetes Operations And Troubleshooting Quiz](kubernetes/operations-troubleshooting-quiz.md)
+- [Helm Packaging Basics Quiz](helm/helm-packaging-basics-quiz.md)
+- [Helm Charts, Values, And Templates Quiz](helm/charts-values-templates-quiz.md)
+- [Helm Operations, Upgrades, And Rollbacks Quiz](helm/operations-upgrades-rollbacks-quiz.md)
 - [Answer Key](answer-key.md)
 - [Persistence Answer Key](persistence/answer-key.md)
 - [Security Answer Key](security/answer-key.md)
 - [Production Readiness Answer Key](production-readiness/answer-key.md)
 - [Deployment Readiness Answer Key](deployment-readiness/answer-key.md)
 - [Kubernetes Answer Key](kubernetes/answer-key.md)
+- [Helm Answer Key](helm/answer-key.md)
 
 ## Before Moving On
 
-You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, and common local troubleshooting states.
+You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, common local troubleshooting states, Helm charts, values, templates, releases, upgrades, rollbacks, and rendered manifest review.
