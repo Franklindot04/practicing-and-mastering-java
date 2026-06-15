@@ -19,6 +19,10 @@ Use these exercises after reading the backend notes and before building the simp
 - [Deployment Basics Exercises](deployment-readiness/deployment-basics-exercises.md)
 - [Cloud Readiness Exercises](deployment-readiness/cloud-readiness-exercises.md)
 - [Runbook And Rollback Exercises](deployment-readiness/runbook-rollback-exercises.md)
+- [Kubernetes Orchestration Basics Exercises](kubernetes/orchestration-basics-exercises.md)
+- [Kubernetes Objects Exercises](kubernetes/kubernetes-objects-exercises.md)
+- [Kubernetes Config, Probes, And Resources Exercises](kubernetes/config-probes-resources-exercises.md)
+- [Kubernetes Troubleshooting Exercises](kubernetes/troubleshooting-exercises.md)
 
 ## Study Routine
 
@@ -29,5 +33,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat all security prompts as design practice; do not invent real secrets or production signing keys.
 - Treat production-readiness prompts as local learning practice; do not introduce real deployment credentials.
 - Treat deployment/cloud prompts as planning practice; do not create real cloud resources or provider credentials.
+- Treat Kubernetes prompts as local-only reasoning practice; do not create real clusters, commit kubeconfig files, or use real secrets.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.

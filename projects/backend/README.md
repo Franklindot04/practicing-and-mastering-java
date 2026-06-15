@@ -9,6 +9,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Secured Spring Boot Task API](secured-task-api/README.md): an educational protected task API skeleton with Spring Security, demo users, roles, validation, and layered service logic.
 - [Production-Ready Task API Skeleton](production-ready-task-api/README.md): an educational production-readiness skeleton with profiles, logging, Actuator health, safe errors, security, and persistence.
 - [Deployment-Ready Task API Skeleton](deployment-ready-task-api/README.md): an educational deployment-readiness skeleton with runtime metadata, deployment-demo profile, smoke-test endpoint, health, security, and persistence.
+- [Kubernetes-Ready Task API Notes](kubernetes-ready-task-api/README.md): educational Kubernetes readiness notes and local-only manifests for the deployment-ready API concept.
 
 ## Suggested Order
 
@@ -25,5 +26,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 11. Build the production-readiness skeleton and explain what is still simplified for learning.
 12. Study deployment lifecycle, release/rollback basics, runbooks, platform concepts, and cloud readiness.
 13. Build the deployment-ready skeleton and explain how health, version, runtime config, and smoke-test endpoints support deployment checks.
+14. Study Kubernetes and container orchestration foundations.
+15. Review the Kubernetes-ready notes and explain how manifests, Services, probes, resources, and rollback notes relate to the deployment-ready API.
 
-Do not add Kubernetes, real cloud resources, production database configuration, or real secrets until the deployment/cloud-readiness flow is clear. Demo credentials in learning projects are not production credentials.
+Do not add real cloud resources, production database configuration, production Kubernetes automation, Helm, Terraform, kubeconfig files, or real secrets in these learning projects. Demo credentials and placeholder manifests are not production credentials.

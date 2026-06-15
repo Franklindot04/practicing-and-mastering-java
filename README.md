@@ -45,6 +45,8 @@ After security foundations, use the [production readiness learning sequence](LEA
 
 After production readiness, follow the [deployment and cloud readiness learning sequence](LEARNING_PATH.md#deployment-and-cloud-readiness-learning-sequence) for deployment basics, release/rollback planning, runbooks, platform concepts, and cloud-readiness foundations.
 
+After deployment/cloud readiness, use the [Kubernetes and container orchestration learning sequence](LEARNING_PATH.md#kubernetes-and-container-orchestration-learning-sequence) for orchestration basics, Kubernetes objects, local-only manifests, probes, resources, and beginner operations.
+
 ## Folder Structure
 
 ```text
@@ -100,6 +102,7 @@ The repository grows in focused branches:
 - Security, authentication, authorization, and protected backend APIs.
 - Production readiness, configuration, observability, Docker basics, and CI/CD foundations.
 - Deployment, release/rollback, platform, and cloud-readiness foundations.
+- Kubernetes, container orchestration, local-only manifests, and beginner operations foundations.
 
 ## Disclaimer
 

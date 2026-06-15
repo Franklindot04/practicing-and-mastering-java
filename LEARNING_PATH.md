@@ -15,6 +15,7 @@ Follow this path in order unless you already know a topic well.
 11. Backend security and authentication: API risks, validation, secure errors, authentication, authorization, password hashing, tokens, JWT basics, and Spring Security.
 12. Production readiness foundations: configuration, profiles, logging, observability, health checks, Docker basics, CI/CD, and deployment-readiness habits.
 13. Deployment and cloud readiness: deployment lifecycle, artifacts, runtime configuration, smoke tests, release/rollback, runbooks, platform concepts, and cloud readiness.
+14. Kubernetes and container orchestration foundations: orchestration basics, Kubernetes core concepts, workloads, networking, configuration, probes, resources, local-only manifests, and beginner operations.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -274,9 +275,28 @@ Use this sequence after production readiness and before Kubernetes, distributed 
 - [ ] Check understanding with deployment/cloud quizzes: [Deployment Readiness Quizzes](quizzes/backend/deployment-readiness/deployment-basics-quiz.md)
 - [ ] Review deployment/cloud solutions after attempting the work: [Deployment Readiness Solutions](solutions/backend/deployment-readiness/deployment-basics-solutions.md)
 
+## Kubernetes And Container Orchestration Learning Sequence
+
+Use this sequence after deployment/cloud readiness and before Helm, infrastructure as code, service mesh, distributed systems, or production Kubernetes topics.
+
+- [ ] Study orchestration basics: [Container Orchestration Foundations](docs/38-container-orchestration-foundations/README.md)
+- [ ] Learn desired state, scaling, and self-healing: [Desired State, Scaling, And Self-Healing](docs/38-container-orchestration-foundations/desired-state-scaling-self-healing.md)
+- [ ] Study Kubernetes cluster basics: [Kubernetes Foundations](docs/39-kubernetes-foundations/README.md)
+- [ ] Review manifests and kubectl concepts: [kubectl And Manifests](docs/39-kubernetes-foundations/kubectl-and-manifests.md)
+- [ ] Learn local-only cluster options conceptually: [Local Learning Clusters](docs/39-kubernetes-foundations/local-learning-clusters.md)
+- [ ] Study workloads, networking, and configuration: [Kubernetes Workloads, Networking, And Configuration](docs/40-kubernetes-workloads-networking-config/README.md)
+- [ ] Review Pods, Deployments, and Services: [Pods, Deployments, And Services](docs/40-kubernetes-workloads-networking-config/pods-deployments-services.md)
+- [ ] Review ConfigMaps, Secrets, labels, selectors, probes, resources, and rolling updates: [Health Probes And Resources](docs/40-kubernetes-workloads-networking-config/health-probes-resources.md)
+- [ ] Inspect local-only manifest examples: [Kubernetes Manifest Basics](examples/backend/kubernetes-manifests/README.md)
+- [ ] Review Kubernetes-readiness notes for the backend API: [Kubernetes-Ready Task API Notes](projects/backend/kubernetes-ready-task-api/README.md)
+- [ ] Study beginner operations: [Kubernetes Operations Basics](docs/41-kubernetes-operations-basics/README.md)
+- [ ] Complete Kubernetes exercises: [Kubernetes Foundation Exercises](exercises/backend/kubernetes/orchestration-basics-exercises.md)
+- [ ] Check understanding with Kubernetes quizzes: [Kubernetes Foundation Quizzes](quizzes/backend/kubernetes/orchestration-kubernetes-basics-quiz.md)
+- [ ] Review Kubernetes solutions after attempting the work: [Kubernetes Foundation Solutions](solutions/backend/kubernetes/orchestration-basics-solutions.md)
+
 ## Ready For Advanced Cloud Topics Checklist
 
-Move into Kubernetes, distributed systems, infrastructure as code, or advanced cloud topics later when you can:
+Move into Helm, infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics later when you can:
 
 - [ ] Explain the difference between local, test, staging, and production deployment environments.
 - [ ] Describe JARs, container images, and release packages.
@@ -286,4 +306,6 @@ Move into Kubernetes, distributed systems, infrastructure as code, or advanced c
 - [ ] Write a simple deployment runbook and release note.
 - [ ] Explain managed database, object storage, DNS, domains, HTTPS, and firewall/security group concepts.
 - [ ] Describe cloud cost and quota risks.
+- [ ] Explain Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, labels, selectors, probes, resources, rollouts, and common failure states.
+- [ ] Read local-only Kubernetes manifests without treating them as production templates.
 - [ ] Explain what still requires real production ownership: secret management, TLS, monitoring, backups, incident response, and provider-specific operations.
