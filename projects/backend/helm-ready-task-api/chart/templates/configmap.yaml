@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "helm-ready-task-api.fullname" . }}-config
+  labels:
+    {{- include "helm-ready-task-api.labels" . | nindent 4 }}
+data:
+  SPRING_PROFILES_ACTIVE: {{ .Values.config.springProfile | quote }}
+  APP_RELEASE_VERSION: {{ .Values.config.releaseVersion | quote }}
+  APP_COMMIT_SHA: {{ .Values.config.commitSha | quote }}
