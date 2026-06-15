@@ -53,6 +53,10 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Backend security foundations
 - [ ] Authentication and authorization
 - [ ] Spring Security fundamentals
+- [ ] Production readiness foundations
+- [ ] Configuration and profiles
+- [ ] Logging and observability
+- [ ] Docker and CI/CD basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -131,6 +135,21 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Review [security solutions](solutions/backend/security/auth-basics-solutions.md)
 - [ ] Build and explain the [Secured Spring Boot Task API](projects/backend/secured-task-api/README.md)
 - [ ] Explain what you need before Docker, deployment, CI/CD, observability, cloud, or production configuration
+
+## Production Readiness Path Checklist
+
+- [ ] Study [Production Readiness Foundations](docs/28-production-readiness-foundations/README.md)
+- [ ] Study [Configuration And Profiles](docs/29-configuration-profiles/README.md)
+- [ ] Study [Logging And Observability](docs/30-logging-observability/README.md)
+- [ ] Study [Docker For Java Basics](docs/31-docker-java-basics/README.md)
+- [ ] Study [CI/CD Foundations](docs/32-ci-cd-foundations/README.md)
+- [ ] Run and modify [production readiness examples](examples/backend/production-readiness/README.md)
+- [ ] Review [Docker and CI/CD learning assets](examples/backend/docker-ci-cd/README.md)
+- [ ] Complete [production readiness exercises](exercises/backend/production-readiness/config-profiles-exercises.md)
+- [ ] Complete [production readiness quizzes](quizzes/backend/production-readiness/config-profiles-quiz.md)
+- [ ] Review [production readiness solutions](solutions/backend/production-readiness/config-profiles-solutions.md)
+- [ ] Build and explain the [Production-Ready Task API Skeleton](projects/backend/production-ready-task-api/README.md)
+- [ ] Explain what you need before cloud, Kubernetes, distributed systems, or real deployment work
 
 ## Reflection Log
 

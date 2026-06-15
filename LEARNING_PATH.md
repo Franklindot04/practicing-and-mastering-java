@@ -13,6 +13,7 @@ Follow this path in order unless you already know a topic well.
 9. Backend Java: HTTP, REST APIs, Spring Boot fundamentals, layering, validation, and simple API projects.
 10. Backend persistence: SQL, repositories, JPA, Hibernate, Spring Data JPA, H2, and database-backed APIs.
 11. Backend security and authentication: API risks, validation, secure errors, authentication, authorization, password hashing, tokens, JWT basics, and Spring Security.
+12. Production readiness foundations: configuration, profiles, logging, observability, health checks, Docker basics, CI/CD, and deployment-readiness habits.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -208,7 +209,7 @@ Use this sequence after persistence and before Docker, deployment, production da
 
 ## Ready For Production Backend Topics Checklist
 
-Move into Docker, deployment, CI/CD, observability, cloud, or production-grade database configuration when you can:
+Move into production-readiness topics when you can:
 
 - [ ] Explain common API security risks without relying only on framework defaults.
 - [ ] Validate untrusted input before authentication, authorization, persistence, or business decisions.
@@ -220,3 +221,37 @@ Move into Docker, deployment, CI/CD, observability, cloud, or production-grade d
 - [ ] Use roles or permissions deliberately instead of hard-coding one-off access checks.
 - [ ] Keep demo credentials, signing keys, and real secrets out of committed source code.
 - [ ] Build a small secured API and explain how a request moves through authentication, authorization, controller, service, and repository layers.
+
+## Production Readiness Learning Sequence
+
+Use this sequence after backend security foundations and before cloud, Kubernetes, distributed systems, or real deployment topics.
+
+- [ ] Study production readiness basics: [Production Readiness Foundations](docs/28-production-readiness-foundations/README.md)
+- [ ] Review the readiness checklist: [Production Readiness Checklist](docs/28-production-readiness-foundations/production-readiness-checklist.md)
+- [ ] Harden validation and error responses: [Error Handling And Validation Hardening](docs/28-production-readiness-foundations/error-handling-validation-hardening.md)
+- [ ] Learn external configuration and profiles: [Configuration And Profiles](docs/29-configuration-profiles/README.md)
+- [ ] Review safe secret handling: [Secrets And Environment Variables](docs/29-configuration-profiles/secrets-and-environment-variables.md)
+- [ ] Study logging and observability basics: [Logging And Observability](docs/30-logging-observability/README.md)
+- [ ] Learn metrics and health checks: [Metrics And Health Checks](docs/30-logging-observability/metrics-health-checks.md)
+- [ ] Study local Docker concepts: [Docker For Java Basics](docs/31-docker-java-basics/README.md)
+- [ ] Learn CI/CD foundations: [CI/CD Foundations](docs/32-ci-cd-foundations/README.md)
+- [ ] Run production-readiness examples: [Production Readiness Examples](examples/backend/production-readiness/README.md)
+- [ ] Review Docker and CI/CD learning assets: [Docker And CI/CD Learning Assets](examples/backend/docker-ci-cd/README.md)
+- [ ] Complete production-readiness exercises: [Production Readiness Exercises](exercises/backend/production-readiness/config-profiles-exercises.md)
+- [ ] Check understanding with production-readiness quizzes: [Production Readiness Quizzes](quizzes/backend/production-readiness/config-profiles-quiz.md)
+- [ ] Review production-readiness solutions after attempting the work: [Production Readiness Solutions](solutions/backend/production-readiness/config-profiles-solutions.md)
+- [ ] Build the production-readiness skeleton: [Production-Ready Task API Skeleton](projects/backend/production-ready-task-api/README.md)
+
+## Ready For Later Deployment Topics Checklist
+
+Move into cloud, Kubernetes, distributed systems, or real deployment topics later when you can:
+
+- [ ] Explain which configuration values are safe to commit and which must stay external.
+- [ ] Use local and test Spring profiles without committing real credentials.
+- [ ] Return safe validation and error responses.
+- [ ] Choose log levels and avoid logging secrets or sensitive personal data.
+- [ ] Explain health checks, readiness, liveness, metrics, and basic tracing concepts.
+- [ ] Describe what a Docker image contains and why secrets should not be baked into it.
+- [ ] Explain a basic CI workflow that runs Maven tests on pull requests.
+- [ ] Build and test a Spring Boot API with safe local/test configuration.
+- [ ] Describe what is still missing for real production: secret management, TLS, managed database credentials, monitoring, backups, rollout, rollback, and incident response.
