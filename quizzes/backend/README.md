@@ -25,6 +25,9 @@ Use these quizzes to check whether backend Java and Spring Boot foundation conce
 - [Helm Packaging Basics Quiz](helm/helm-packaging-basics-quiz.md)
 - [Helm Charts, Values, And Templates Quiz](helm/charts-values-templates-quiz.md)
 - [Helm Operations, Upgrades, And Rollbacks Quiz](helm/operations-upgrades-rollbacks-quiz.md)
+- [IaC Basics Quiz](iac/iac-basics-quiz.md)
+- [Terraform/OpenTofu Concepts Quiz](iac/terraform-opentofu-concepts-quiz.md)
+- [IaC State, Modules, And Operations Quiz](iac/state-modules-operations-quiz.md)
 - [Answer Key](answer-key.md)
 - [Persistence Answer Key](persistence/answer-key.md)
 - [Security Answer Key](security/answer-key.md)
@@ -32,7 +35,8 @@ Use these quizzes to check whether backend Java and Spring Boot foundation conce
 - [Deployment Readiness Answer Key](deployment-readiness/answer-key.md)
 - [Kubernetes Answer Key](kubernetes/answer-key.md)
 - [Helm Answer Key](helm/answer-key.md)
+- [IaC Answer Key](iac/answer-key.md)
 
 ## Before Moving On
 
-You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, common local troubleshooting states, Helm charts, values, templates, releases, upgrades, rollbacks, and rendered manifest review.
+You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, common local troubleshooting states, Helm charts, values, templates, releases, upgrades, rollbacks, rendered manifest review, IaC desired state, Terraform/OpenTofu concepts, state safety, modules, environments, and plan review.

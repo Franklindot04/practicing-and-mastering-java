@@ -27,5 +27,9 @@ These solution notes explain one reasonable approach for each backend exercise. 
 - [Helm Chart Values Solutions](helm/chart-values-solutions.md)
 - [Helm Backend Chart Design Solutions](helm/backend-chart-design-solutions.md)
 - [Helm Operations Solutions](helm/helm-operations-solutions.md)
+- [IaC Basics Solutions](iac/iac-basics-solutions.md)
+- [Terraform/OpenTofu Concepts Solutions](iac/terraform-opentofu-concepts-solutions.md)
+- [IaC State, Secrets, And Modules Solutions](iac/state-secrets-modules-solutions.md)
+- [IaC Plan Review And Operations Solutions](iac/plan-review-operations-solutions.md)
 
-If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm safety, rendered manifest review, and no committed real secrets, it may still be a good solution.
+If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm/IaC safety, rendered manifest review, plan-review reasoning, state/secrets caution, and no committed real secrets, it may still be a good solution.

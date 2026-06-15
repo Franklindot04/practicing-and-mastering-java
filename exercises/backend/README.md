@@ -27,6 +27,10 @@ Use these exercises after reading the backend notes and before building the simp
 - [Helm Chart Values Exercises](helm/chart-values-exercises.md)
 - [Helm Backend Chart Design Exercises](helm/backend-chart-design-exercises.md)
 - [Helm Operations Exercises](helm/helm-operations-exercises.md)
+- [IaC Basics Exercises](iac/iac-basics-exercises.md)
+- [Terraform/OpenTofu Concepts Exercises](iac/terraform-opentofu-concepts-exercises.md)
+- [IaC State, Secrets, And Modules Exercises](iac/state-secrets-modules-exercises.md)
+- [IaC Plan Review And Operations Exercises](iac/plan-review-operations-exercises.md)
 
 ## Study Routine
 
@@ -39,5 +43,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat deployment/cloud prompts as planning practice; do not create real cloud resources or provider credentials.
 - Treat Kubernetes prompts as local-only reasoning practice; do not create real clusters, commit kubeconfig files, or use real secrets.
 - Treat Helm prompts as render-only packaging practice; do not run install/upgrade against real clusters or commit real values.
+- Treat IaC prompts as planning and review practice; do not run apply/destroy, commit state or plan files, or add provider credentials.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.
