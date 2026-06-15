@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-api-resources-example
+  namespace: learnjava-kubernetes
+  labels:
+    app: task-api-resources-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-api-resources-example
+  template:
+    metadata:
+      labels:
+        app: task-api-resources-example
+    spec:
+      containers:
+        - name: task-api
+          image: example/deployment-ready-task-api:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

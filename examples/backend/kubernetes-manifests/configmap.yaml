@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: task-api-config
+  namespace: learnjava-kubernetes
+  labels:
+    app: task-api
+data:
+  SPRING_PROFILES_ACTIVE: kubernetes-local
+  APP_RELEASE_VERSION: local-learning
+  APP_COMMIT_SHA: local
+  LOG_LEVEL: INFO
