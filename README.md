@@ -43,6 +43,8 @@ After persistence, continue with the [backend security and authentication learni
 
 After security foundations, use the [production readiness learning sequence](LEARNING_PATH.md#production-readiness-learning-sequence) for configuration, profiles, logging, observability, Docker basics, CI/CD, and deployment-readiness habits.
 
+After production readiness, follow the [deployment and cloud readiness learning sequence](LEARNING_PATH.md#deployment-and-cloud-readiness-learning-sequence) for deployment basics, release/rollback planning, runbooks, platform concepts, and cloud-readiness foundations.
+
 ## Folder Structure
 
 ```text
@@ -97,6 +99,7 @@ The repository grows in focused branches:
 - Persistence, SQL, JPA, and database-backed backend projects.
 - Security, authentication, authorization, and protected backend APIs.
 - Production readiness, configuration, observability, Docker basics, and CI/CD foundations.
+- Deployment, release/rollback, platform, and cloud-readiness foundations.
 
 ## Disclaimer
 

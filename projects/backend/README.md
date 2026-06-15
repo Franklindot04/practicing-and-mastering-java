@@ -8,6 +8,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Persistent Spring Boot Task API](persistent-task-api/README.md): a task API backed by Spring Data JPA and an H2 in-memory database.
 - [Secured Spring Boot Task API](secured-task-api/README.md): an educational protected task API skeleton with Spring Security, demo users, roles, validation, and layered service logic.
 - [Production-Ready Task API Skeleton](production-ready-task-api/README.md): an educational production-readiness skeleton with profiles, logging, Actuator health, safe errors, security, and persistence.
+- [Deployment-Ready Task API Skeleton](deployment-ready-task-api/README.md): an educational deployment-readiness skeleton with runtime metadata, deployment-demo profile, smoke-test endpoint, health, security, and persistence.
 
 ## Suggested Order
 
@@ -22,5 +23,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 9. Build the secured task API and explain which routes are public, which routes are protected, and which checks belong in configuration or service logic.
 10. Study production readiness, external configuration, profiles, logging, health checks, Docker basics, and CI/CD fundamentals.
 11. Build the production-readiness skeleton and explain what is still simplified for learning.
+12. Study deployment lifecycle, release/rollback basics, runbooks, platform concepts, and cloud readiness.
+13. Build the deployment-ready skeleton and explain how health, version, runtime config, and smoke-test endpoints support deployment checks.
 
-Do not add cloud deployment, Kubernetes, production database configuration, or real secrets until the production-readiness flow is clear. Demo credentials in learning projects are not production credentials.
+Do not add Kubernetes, real cloud resources, production database configuration, or real secrets until the deployment/cloud-readiness flow is clear. Demo credentials in learning projects are not production credentials.

@@ -57,6 +57,9 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Configuration and profiles
 - [ ] Logging and observability
 - [ ] Docker and CI/CD basics
+- [ ] Deployment foundations
+- [ ] Release and rollback basics
+- [ ] Cloud readiness foundations
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -150,6 +153,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Review [production readiness solutions](solutions/backend/production-readiness/config-profiles-solutions.md)
 - [ ] Build and explain the [Production-Ready Task API Skeleton](projects/backend/production-ready-task-api/README.md)
 - [ ] Explain what you need before cloud, Kubernetes, distributed systems, or real deployment work
+
+## Deployment And Cloud Readiness Path Checklist
+
+- [ ] Study [Deployment Foundations](docs/33-deployment-foundations/README.md)
+- [ ] Study [Release And Rollback Basics](docs/34-release-rollback-basics/README.md)
+- [ ] Study [Cloud Readiness Foundations](docs/35-cloud-readiness-foundations/README.md)
+- [ ] Study [Deployment Checklists And Runbooks](docs/36-deployment-checklists-runbooks/README.md)
+- [ ] Study [Platform Deployment Notes](docs/37-platform-deployment-notes/README.md)
+- [ ] Run and modify [deployment readiness examples](examples/backend/deployment-readiness/README.md)
+- [ ] Build and explain the [Deployment-Ready Task API Skeleton](projects/backend/deployment-ready-task-api/README.md)
+- [ ] Complete [deployment readiness exercises](exercises/backend/deployment-readiness/deployment-basics-exercises.md)
+- [ ] Complete [deployment readiness quizzes](quizzes/backend/deployment-readiness/deployment-basics-quiz.md)
+- [ ] Review [deployment readiness solutions](solutions/backend/deployment-readiness/deployment-basics-solutions.md)
+- [ ] Explain what you need before Kubernetes, distributed systems, infrastructure as code, or advanced cloud topics
 
 ## Reflection Log
 

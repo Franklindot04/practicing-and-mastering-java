@@ -16,6 +16,9 @@ Use these exercises after reading the backend notes and before building the simp
 - [Configuration And Profiles Exercises](production-readiness/config-profiles-exercises.md)
 - [Logging And Observability Exercises](production-readiness/logging-observability-exercises.md)
 - [Docker And CI/CD Exercises](production-readiness/docker-ci-cd-exercises.md)
+- [Deployment Basics Exercises](deployment-readiness/deployment-basics-exercises.md)
+- [Cloud Readiness Exercises](deployment-readiness/cloud-readiness-exercises.md)
+- [Runbook And Rollback Exercises](deployment-readiness/runbook-rollback-exercises.md)
 
 ## Study Routine
 
@@ -25,5 +28,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Explain which layer owns each decision.
 - Treat all security prompts as design practice; do not invent real secrets or production signing keys.
 - Treat production-readiness prompts as local learning practice; do not introduce real deployment credentials.
+- Treat deployment/cloud prompts as planning practice; do not create real cloud resources or provider credentials.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.
