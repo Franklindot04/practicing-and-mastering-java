@@ -12,6 +12,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Kubernetes-Ready Task API Notes](kubernetes-ready-task-api/README.md): educational Kubernetes readiness notes and local-only manifests for the deployment-ready API concept.
 - [Helm-Ready Task API Notes](helm-ready-task-api/README.md): educational Helm packaging notes and a local-only chart for the deployment-ready/Kubernetes-ready API concept.
 - [IaC-Ready Task API Notes](iac-ready-task-api/README.md): educational infrastructure planning notes and pseudo-HCL for describing backend runtime, database, network, state, and secrets concerns safely.
+- [Cloud Architecture-Ready Task API Notes](cloud-architecture-ready-task-api/README.md): educational architecture planning notes for task API traffic flow, reliability, scaling, cost, and failure modes.
 
 ## Suggested Order
 
@@ -34,5 +35,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 17. Review the Helm-ready notes and explain how values render Deployments, Services, ConfigMaps, Secret examples, probes, and resources.
 18. Study Infrastructure as Code foundations, Terraform/OpenTofu basics, state and secrets safety, modules, environments, and operations basics.
 19. Review the IaC-ready notes and explain how runtime, database, network, state, and secrets planning relate to the deployment-ready, Kubernetes-ready, and Helm-ready API concepts.
+20. Study cloud architecture foundations, availability, reliability, traffic/data patterns, cost-aware review, and operations basics.
+21. Review the cloud architecture-ready notes and explain task API traffic flow, stateful dependencies, scaling risks, failure modes, and cost tradeoffs.
 
-Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform/OpenTofu apply or destroy workflows, service mesh, kubeconfig files, Helm release state, IaC state files, plan files, provider credentials, or real secrets in these learning projects. Demo credentials, placeholder manifests, local-only charts, and pseudo-HCL are not production credentials or production infrastructure.
+Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform/OpenTofu apply or destroy workflows, service mesh, distributed systems implementation, kubeconfig files, Helm release state, IaC state files, plan files, provider credentials, real domains, account IDs, or real secrets in these learning projects. Demo credentials, placeholder manifests, local-only charts, pseudo-HCL, and vendor-neutral diagrams are not production credentials or production infrastructure.

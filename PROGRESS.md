@@ -73,6 +73,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] IaC state and secrets safety
 - [ ] IaC modules and environments
 - [ ] IaC operations basics
+- [ ] Cloud architecture foundations
+- [ ] Availability, scalability, and reliability
+- [ ] Cloud traffic and data patterns
+- [ ] Cost-aware cloud architecture review
+- [ ] Cloud architecture operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -220,6 +225,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [IaC quizzes](quizzes/backend/iac/iac-basics-quiz.md)
 - [ ] Review [IaC solutions](solutions/backend/iac/iac-basics-solutions.md)
 - [ ] Explain what you need before service mesh, distributed systems, advanced cloud, production Kubernetes, or real provider automation
+
+## Cloud Architecture Path Checklist
+
+- [ ] Study [Cloud Architecture Foundations](docs/51-cloud-architecture-foundations/README.md)
+- [ ] Study [Availability, Scalability, And Reliability](docs/52-availability-scalability-reliability/README.md)
+- [ ] Study [Cloud Traffic And Data Patterns](docs/53-cloud-traffic-data-patterns/README.md)
+- [ ] Study [Cloud Cost And Architecture Review](docs/54-cloud-cost-architecture-review/README.md)
+- [ ] Inspect [cloud architecture design examples](examples/backend/cloud-architecture-designs/README.md)
+- [ ] Review [cloud architecture-ready backend API notes](projects/backend/cloud-architecture-ready-task-api/README.md)
+- [ ] Study [Cloud Architecture Operations Basics](docs/55-cloud-architecture-operations-basics/README.md)
+- [ ] Complete [cloud architecture exercises](exercises/backend/cloud-architecture/architecture-basics-exercises.md)
+- [ ] Complete [cloud architecture quizzes](quizzes/backend/cloud-architecture/cloud-architecture-basics-quiz.md)
+- [ ] Review [cloud architecture solutions](solutions/backend/cloud-architecture/architecture-basics-solutions.md)
+- [ ] Explain what you need before service mesh, distributed systems, event-driven architecture implementation, or advanced production infrastructure
 
 ## Reflection Log
 
