@@ -65,5 +65,6 @@ Use this section before building a full Spring Boot project:
 - [ ] Add security after persistence is clear: [Backend Security Foundations](../25-backend-security-foundations/README.md)
 - [ ] Add production-readiness habits after security is clear: [Production Readiness Foundations](../28-production-readiness-foundations/README.md)
 - [ ] Add deployment/cloud readiness after production-readiness habits are clear: [Deployment Foundations](../33-deployment-foundations/README.md)
+- [ ] Add Kubernetes/container orchestration after deployment/cloud readiness is clear: [Container Orchestration Foundations](../38-container-orchestration-foundations/README.md)
 
-Before moving on, you should be able to describe what happens between an HTTP request and an HTTP response. Before adding authentication, make sure persistence, validation, DTO mapping, and error handling are already understandable. Before real deployment work, make sure configuration, logging, health checks, CI basics, release versioning, and rollback basics are also clear.
+Before moving on, you should be able to describe what happens between an HTTP request and an HTTP response. Before adding authentication, make sure persistence, validation, DTO mapping, and error handling are already understandable. Before real deployment work, make sure configuration, logging, health checks, CI basics, release versioning, and rollback basics are also clear. Before Kubernetes, make sure containers, runtime configuration, health checks, smoke tests, and local-only safety boundaries are clear.

@@ -60,6 +60,10 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Deployment foundations
 - [ ] Release and rollback basics
 - [ ] Cloud readiness foundations
+- [ ] Container orchestration foundations
+- [ ] Kubernetes foundations
+- [ ] Kubernetes workloads, networking, and configuration
+- [ ] Kubernetes operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -167,6 +171,19 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [deployment readiness quizzes](quizzes/backend/deployment-readiness/deployment-basics-quiz.md)
 - [ ] Review [deployment readiness solutions](solutions/backend/deployment-readiness/deployment-basics-solutions.md)
 - [ ] Explain what you need before Kubernetes, distributed systems, infrastructure as code, or advanced cloud topics
+
+## Kubernetes And Container Orchestration Path Checklist
+
+- [ ] Study [Container Orchestration Foundations](docs/38-container-orchestration-foundations/README.md)
+- [ ] Study [Kubernetes Foundations](docs/39-kubernetes-foundations/README.md)
+- [ ] Study [Kubernetes Workloads, Networking, And Configuration](docs/40-kubernetes-workloads-networking-config/README.md)
+- [ ] Inspect [local-only Kubernetes manifests](examples/backend/kubernetes-manifests/README.md)
+- [ ] Review [Kubernetes-ready backend API notes](projects/backend/kubernetes-ready-task-api/README.md)
+- [ ] Study [Kubernetes Operations Basics](docs/41-kubernetes-operations-basics/README.md)
+- [ ] Complete [Kubernetes exercises](exercises/backend/kubernetes/orchestration-basics-exercises.md)
+- [ ] Complete [Kubernetes quizzes](quizzes/backend/kubernetes/orchestration-kubernetes-basics-quiz.md)
+- [ ] Review [Kubernetes solutions](solutions/backend/kubernetes/orchestration-basics-solutions.md)
+- [ ] Explain what you need before Helm, infrastructure as code, service mesh, distributed systems, or production Kubernetes topics
 
 ## Reflection Log
 
