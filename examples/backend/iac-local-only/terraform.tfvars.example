@@ -1,0 +1,7 @@
+environment_name  = "local"
+application_name  = "task-api"
+runtime_port      = 8080
+health_check_path = "/actuator/health"
+java_version      = "17"
+container_image   = "example/task-api:local"
+
