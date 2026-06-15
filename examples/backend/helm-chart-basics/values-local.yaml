@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: example/java-backend
+  tag: local
+
+config:
+  springProfile: kubernetes-local
+  releaseVersion: local-render-only
