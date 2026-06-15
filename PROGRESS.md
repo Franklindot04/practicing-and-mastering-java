@@ -68,6 +68,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Helm chart basics
 - [ ] Helm values for Java backends
 - [ ] Helm operations basics
+- [ ] Infrastructure as Code foundations
+- [ ] Terraform/OpenTofu foundations
+- [ ] IaC state and secrets safety
+- [ ] IaC modules and environments
+- [ ] IaC operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -201,6 +206,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [Helm quizzes](quizzes/backend/helm/helm-packaging-basics-quiz.md)
 - [ ] Review [Helm solutions](solutions/backend/helm/helm-basics-solutions.md)
 - [ ] Explain what you need before infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics
+
+## Infrastructure As Code Path Checklist
+
+- [ ] Study [Infrastructure As Code Foundations](docs/46-infrastructure-as-code-foundations/README.md)
+- [ ] Study [Terraform And OpenTofu Foundations](docs/47-terraform-opentofu-foundations/README.md)
+- [ ] Study [IaC State, Secrets, And Safety](docs/48-iac-state-secrets-safety/README.md)
+- [ ] Inspect [local-only IaC basics examples](examples/backend/iac-local-only/README.md)
+- [ ] Review [IaC-ready backend API notes](projects/backend/iac-ready-task-api/README.md)
+- [ ] Study [IaC Modules And Environments](docs/49-iac-modules-environments/README.md)
+- [ ] Study [IaC Operations Basics](docs/50-iac-operations-basics/README.md)
+- [ ] Complete [IaC exercises](exercises/backend/iac/iac-basics-exercises.md)
+- [ ] Complete [IaC quizzes](quizzes/backend/iac/iac-basics-quiz.md)
+- [ ] Review [IaC solutions](solutions/backend/iac/iac-basics-solutions.md)
+- [ ] Explain what you need before service mesh, distributed systems, advanced cloud, production Kubernetes, or real provider automation
 
 ## Reflection Log
 

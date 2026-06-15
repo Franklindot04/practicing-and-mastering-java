@@ -49,6 +49,8 @@ After deployment/cloud readiness, use the [Kubernetes and container orchestratio
 
 After Kubernetes foundations, follow the [Helm and Kubernetes packaging learning sequence](LEARNING_PATH.md#helm-and-kubernetes-packaging-learning-sequence) for chart basics, values, render-only chart examples, upgrades, rollbacks, and packaging practice.
 
+After Helm packaging, use the [Infrastructure as Code learning sequence](LEARNING_PATH.md#infrastructure-as-code-learning-sequence) for IaC concepts, Terraform/OpenTofu basics, state and secrets safety, modules, local-only examples, and plan-review habits.
+
 ## Folder Structure
 
 ```text
@@ -106,6 +108,7 @@ The repository grows in focused branches:
 - Deployment, release/rollback, platform, and cloud-readiness foundations.
 - Kubernetes, container orchestration, local-only manifests, and beginner operations foundations.
 - Helm packaging, chart values, render-only chart examples, and Kubernetes packaging foundations.
+- Infrastructure as Code, Terraform/OpenTofu concepts, state and secrets safety, local-only examples, modules, environments, and operations foundations.
 
 ## Disclaimer
 

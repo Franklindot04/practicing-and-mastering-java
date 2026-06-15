@@ -17,6 +17,7 @@ Follow this path in order unless you already know a topic well.
 13. Deployment and cloud readiness: deployment lifecycle, artifacts, runtime configuration, smoke tests, release/rollback, runbooks, platform concepts, and cloud readiness.
 14. Kubernetes and container orchestration foundations: orchestration basics, Kubernetes core concepts, workloads, networking, configuration, probes, resources, local-only manifests, and beginner operations.
 15. Helm and Kubernetes packaging foundations: Helm basics, charts, templates, values, releases, upgrades, rollbacks, Java backend values, and render-only chart review.
+16. Infrastructure as Code foundations: IaC concepts, Terraform/OpenTofu basics, providers, resources, variables, outputs, state, plans, secrets safety, modules, environments, local-only examples, and plan-review operations.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -330,7 +331,7 @@ Use this sequence after Kubernetes foundations and before infrastructure as code
 
 ## Ready For Advanced Cloud Topics Checklist
 
-Move into infrastructure as code, service mesh, distributed systems, advanced cloud, or production Kubernetes topics later when you can:
+Move into infrastructure as code first, then service mesh, distributed systems, advanced cloud, or production Kubernetes topics later when you can:
 
 - [ ] Explain what Helm adds on top of raw Kubernetes YAML.
 - [ ] Identify `Chart.yaml`, `values.yaml`, `templates/`, helper templates, and rendered manifests.
@@ -339,3 +340,35 @@ Move into infrastructure as code, service mesh, distributed systems, advanced cl
 - [ ] Run `helm lint` and `helm template` without installing into a cluster.
 - [ ] Explain Helm releases, upgrades, rollbacks, history, and uninstall concepts.
 - [ ] Explain what still requires real production ownership: secret management, TLS, monitoring, backups, incident response, and provider-specific operations.
+
+## Infrastructure As Code Learning Sequence
+
+Use this sequence after Helm packaging and before service mesh, distributed systems, advanced cloud, production Kubernetes, or real provider automation.
+
+- [ ] Study IaC foundations: [Infrastructure As Code Foundations](docs/46-infrastructure-as-code-foundations/README.md)
+- [ ] Compare manual infrastructure, declarative desired state, drift, and reviewable changes: [IaC Overview](docs/46-infrastructure-as-code-foundations/iac-overview.md)
+- [ ] Study Terraform/OpenTofu basics: [Terraform And OpenTofu Foundations](docs/47-terraform-opentofu-foundations/README.md)
+- [ ] Review providers, resources, variables, outputs, state, plans, apply, and destroy concepts: [State, Plan, Apply, And Destroy](docs/47-terraform-opentofu-foundations/state-plan-apply-destroy.md)
+- [ ] Study state and secrets safety: [IaC State, Secrets, And Safety](docs/48-iac-state-secrets-safety/README.md)
+- [ ] Review safe local-only validation habits: [Local-Only Validation](docs/48-iac-state-secrets-safety/local-only-validation.md)
+- [ ] Inspect the safe local-only IaC example: [Local-Only IaC Basics](examples/backend/iac-local-only/README.md)
+- [ ] Review IaC-readiness notes for the backend API: [IaC-Ready Task API Notes](projects/backend/iac-ready-task-api/README.md)
+- [ ] Study modules and environment structure: [IaC Modules And Environments](docs/49-iac-modules-environments/README.md)
+- [ ] Study operations basics: [IaC Operations Basics](docs/50-iac-operations-basics/README.md)
+- [ ] Complete IaC exercises: [IaC Foundation Exercises](exercises/backend/iac/iac-basics-exercises.md)
+- [ ] Check understanding with IaC quizzes: [IaC Foundation Quizzes](quizzes/backend/iac/iac-basics-quiz.md)
+- [ ] Review IaC solutions after attempting the work: [IaC Foundation Solutions](solutions/backend/iac/iac-basics-solutions.md)
+
+## Ready For Later Infrastructure Topics Checklist
+
+Move into service mesh, distributed systems, advanced cloud, production Kubernetes, or real provider automation later when you can:
+
+- [ ] Explain Infrastructure as Code and why reviewable infrastructure changes matter.
+- [ ] Compare manual changes with declarative desired state.
+- [ ] Explain drift and why plans must be reviewed before real applies.
+- [ ] Identify providers, resources, data sources, variables, outputs, state, and modules.
+- [ ] Explain why state files, plan files, provider credentials, real secrets, kubeconfig files, and generated provider directories do not belong in Git.
+- [ ] Inspect local-only Terraform/OpenTofu examples without treating them as production templates.
+- [ ] Design a simple Java backend runtime module with safe inputs and non-secret outputs.
+- [ ] Describe environment folders for dev, test, staging, and prod without copying real secrets.
+- [ ] Explain why real production IaC requires least privilege, remote state controls, approvals, backup/recovery thinking, and deeper provider-specific review.
