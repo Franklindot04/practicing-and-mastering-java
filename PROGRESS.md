@@ -47,6 +47,9 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] HTTP and REST API basics
 - [ ] Spring Boot fundamentals
 - [ ] Backend layering and validation
+- [ ] SQL and relational database basics
+- [ ] Backend persistence foundations
+- [ ] JPA, Hibernate, and Spring Data JPA
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -101,6 +104,18 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Review [backend solutions](solutions/backend/README.md)
 - [ ] Build and explain the [Simple REST API](projects/backend/simple-rest-api/README.md)
 - [ ] Explain what you need before adding databases, security, and deployment
+
+## Backend Persistence Path Checklist
+
+- [ ] Study [Database And SQL Foundations](docs/22-database-sql-foundations/README.md)
+- [ ] Study [Backend Persistence Foundations](docs/23-backend-persistence-foundations/README.md)
+- [ ] Study [JPA, Hibernate, And Spring Data JPA](docs/24-jpa-hibernate-spring-data/README.md)
+- [ ] Run and modify [persistence design examples](examples/backend/persistence-design-basics/README.md)
+- [ ] Complete [persistence exercises](exercises/backend/persistence/sql-basics-exercises.md)
+- [ ] Complete [persistence quizzes](quizzes/backend/persistence/sql-database-quiz.md)
+- [ ] Review [persistence solutions](solutions/backend/persistence/sql-basics-solutions.md)
+- [ ] Build and explain the [Persistent Spring Boot Task API](projects/backend/persistent-task-api/README.md)
+- [ ] Explain what you need before adding security, authentication, Docker, deployment, or production database configuration
 
 ## Reflection Log
 
