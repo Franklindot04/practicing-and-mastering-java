@@ -41,6 +41,8 @@ After the first backend API, follow the [backend persistence learning sequence](
 
 After persistence, continue with the [backend security and authentication learning sequence](LEARNING_PATH.md#backend-security-and-authentication-learning-sequence) for API security risks, authentication, authorization, Spring Security basics, and a secured API skeleton.
 
+After security foundations, use the [production readiness learning sequence](LEARNING_PATH.md#production-readiness-learning-sequence) for configuration, profiles, logging, observability, Docker basics, CI/CD, and deployment-readiness habits.
+
 ## Folder Structure
 
 ```text
@@ -94,6 +96,7 @@ The repository grows in focused branches:
 - Backend Java, HTTP APIs, and Spring Boot foundations.
 - Persistence, SQL, JPA, and database-backed backend projects.
 - Security, authentication, authorization, and protected backend APIs.
+- Production readiness, configuration, observability, Docker basics, and CI/CD foundations.
 
 ## Disclaimer
 

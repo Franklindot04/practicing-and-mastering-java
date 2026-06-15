@@ -7,6 +7,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Simple Spring Boot REST API](simple-rest-api/README.md): an in-memory task API with controller, service, repository, DTOs, validation, and error responses.
 - [Persistent Spring Boot Task API](persistent-task-api/README.md): a task API backed by Spring Data JPA and an H2 in-memory database.
 - [Secured Spring Boot Task API](secured-task-api/README.md): an educational protected task API skeleton with Spring Security, demo users, roles, validation, and layered service logic.
+- [Production-Ready Task API Skeleton](production-ready-task-api/README.md): an educational production-readiness skeleton with profiles, logging, Actuator health, safe errors, security, and persistence.
 
 ## Suggested Order
 
@@ -19,5 +20,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 7. Build the persistent task API and explain entity, repository, service, and DTO boundaries.
 8. Study backend security, authentication, authorization, and Spring Security fundamentals.
 9. Build the secured task API and explain which routes are public, which routes are protected, and which checks belong in configuration or service logic.
+10. Study production readiness, external configuration, profiles, logging, health checks, Docker basics, and CI/CD fundamentals.
+11. Build the production-readiness skeleton and explain what is still simplified for learning.
 
-Do not add Docker, deployment, production database configuration, or real secrets until the security flow is clear. Demo credentials in learning projects are not production credentials.
+Do not add cloud deployment, Kubernetes, production database configuration, or real secrets until the production-readiness flow is clear. Demo credentials in learning projects are not production credentials.
