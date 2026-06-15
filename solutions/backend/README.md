@@ -16,5 +16,8 @@ These solution notes explain one reasonable approach for each backend exercise. 
 - [Configuration And Profiles Solutions](production-readiness/config-profiles-solutions.md)
 - [Logging And Observability Solutions](production-readiness/logging-observability-solutions.md)
 - [Docker And CI/CD Solutions](production-readiness/docker-ci-cd-solutions.md)
+- [Deployment Basics Solutions](deployment-readiness/deployment-basics-solutions.md)
+- [Cloud Readiness Solutions](deployment-readiness/cloud-readiness-solutions.md)
+- [Runbook And Rollback Solutions](deployment-readiness/runbook-rollback-solutions.md)
 
-If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, and no committed real secrets, it may still be a good solution.
+If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, and no committed real secrets, it may still be a good solution.

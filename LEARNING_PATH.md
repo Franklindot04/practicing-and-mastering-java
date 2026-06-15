@@ -14,6 +14,7 @@ Follow this path in order unless you already know a topic well.
 10. Backend persistence: SQL, repositories, JPA, Hibernate, Spring Data JPA, H2, and database-backed APIs.
 11. Backend security and authentication: API risks, validation, secure errors, authentication, authorization, password hashing, tokens, JWT basics, and Spring Security.
 12. Production readiness foundations: configuration, profiles, logging, observability, health checks, Docker basics, CI/CD, and deployment-readiness habits.
+13. Deployment and cloud readiness: deployment lifecycle, artifacts, runtime configuration, smoke tests, release/rollback, runbooks, platform concepts, and cloud readiness.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -244,7 +245,7 @@ Use this sequence after backend security foundations and before cloud, Kubernete
 
 ## Ready For Later Deployment Topics Checklist
 
-Move into cloud, Kubernetes, distributed systems, or real deployment topics later when you can:
+Move into deployment and cloud-readiness topics when you can:
 
 - [ ] Explain which configuration values are safe to commit and which must stay external.
 - [ ] Use local and test Spring profiles without committing real credentials.
@@ -255,3 +256,34 @@ Move into cloud, Kubernetes, distributed systems, or real deployment topics late
 - [ ] Explain a basic CI workflow that runs Maven tests on pull requests.
 - [ ] Build and test a Spring Boot API with safe local/test configuration.
 - [ ] Describe what is still missing for real production: secret management, TLS, managed database credentials, monitoring, backups, rollout, rollback, and incident response.
+
+## Deployment And Cloud Readiness Learning Sequence
+
+Use this sequence after production readiness and before Kubernetes, distributed systems, infrastructure as code, or advanced cloud topics.
+
+- [ ] Study deployment basics: [Deployment Foundations](docs/33-deployment-foundations/README.md)
+- [ ] Review deployment lifecycle and artifacts: [Deployment Lifecycle](docs/33-deployment-foundations/deployment-lifecycle.md)
+- [ ] Learn release and rollback basics: [Release And Rollback Basics](docs/34-release-rollback-basics/README.md)
+- [ ] Study cloud-readiness foundations: [Cloud Readiness Foundations](docs/35-cloud-readiness-foundations/README.md)
+- [ ] Review managed services and deployed database planning: [Managed Services And Databases](docs/35-cloud-readiness-foundations/managed-services-and-databases.md)
+- [ ] Practice deployment runbooks: [Deployment Checklists And Runbooks](docs/36-deployment-checklists-runbooks/README.md)
+- [ ] Study vendor-neutral platform notes: [Platform Deployment Notes](docs/37-platform-deployment-notes/README.md)
+- [ ] Run deployment-readiness examples: [Deployment Readiness Examples](examples/backend/deployment-readiness/README.md)
+- [ ] Build the deployment-ready API skeleton: [Deployment-Ready Task API Skeleton](projects/backend/deployment-ready-task-api/README.md)
+- [ ] Complete deployment/cloud exercises: [Deployment Readiness Exercises](exercises/backend/deployment-readiness/deployment-basics-exercises.md)
+- [ ] Check understanding with deployment/cloud quizzes: [Deployment Readiness Quizzes](quizzes/backend/deployment-readiness/deployment-basics-quiz.md)
+- [ ] Review deployment/cloud solutions after attempting the work: [Deployment Readiness Solutions](solutions/backend/deployment-readiness/deployment-basics-solutions.md)
+
+## Ready For Advanced Cloud Topics Checklist
+
+Move into Kubernetes, distributed systems, infrastructure as code, or advanced cloud topics later when you can:
+
+- [ ] Explain the difference between local, test, staging, and production deployment environments.
+- [ ] Describe JARs, container images, and release packages.
+- [ ] Supply runtime configuration without committing secrets.
+- [ ] Run health checks and smoke tests after deployment.
+- [ ] Explain release versioning and rollback triggers.
+- [ ] Write a simple deployment runbook and release note.
+- [ ] Explain managed database, object storage, DNS, domains, HTTPS, and firewall/security group concepts.
+- [ ] Describe cloud cost and quota risks.
+- [ ] Explain what still requires real production ownership: secret management, TLS, monitoring, backups, incident response, and provider-specific operations.
