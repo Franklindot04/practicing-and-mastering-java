@@ -39,6 +39,8 @@ After professional Java, use the [backend Java learning sequence](LEARNING_PATH.
 
 After the first backend API, follow the [backend persistence learning sequence](LEARNING_PATH.md#backend-persistence-learning-sequence) for SQL, JPA, Spring Data, and database-backed APIs.
 
+After persistence, continue with the [backend security and authentication learning sequence](LEARNING_PATH.md#backend-security-and-authentication-learning-sequence) for API security risks, authentication, authorization, Spring Security basics, and a secured API skeleton.
+
 ## Folder Structure
 
 ```text
@@ -91,6 +93,7 @@ The repository grows in focused branches:
 - Interview preparation and portfolio projects.
 - Backend Java, HTTP APIs, and Spring Boot foundations.
 - Persistence, SQL, JPA, and database-backed backend projects.
+- Security, authentication, authorization, and protected backend APIs.
 
 ## Disclaimer
 

@@ -50,6 +50,9 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] SQL and relational database basics
 - [ ] Backend persistence foundations
 - [ ] JPA, Hibernate, and Spring Data JPA
+- [ ] Backend security foundations
+- [ ] Authentication and authorization
+- [ ] Spring Security fundamentals
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -116,6 +119,18 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Review [persistence solutions](solutions/backend/persistence/sql-basics-solutions.md)
 - [ ] Build and explain the [Persistent Spring Boot Task API](projects/backend/persistent-task-api/README.md)
 - [ ] Explain what you need before adding security, authentication, Docker, deployment, or production database configuration
+
+## Backend Security And Authentication Path Checklist
+
+- [ ] Study [Backend Security Foundations](docs/25-backend-security-foundations/README.md)
+- [ ] Study [Authentication And Authorization](docs/26-authentication-authorization/README.md)
+- [ ] Study [Spring Security Introduction](docs/27-spring-security-introduction/README.md)
+- [ ] Run and modify [security auth design examples](examples/backend/security-auth-design-basics/README.md)
+- [ ] Complete [security exercises](exercises/backend/security/auth-basics-exercises.md)
+- [ ] Complete [security quizzes](quizzes/backend/security/auth-security-basics-quiz.md)
+- [ ] Review [security solutions](solutions/backend/security/auth-basics-solutions.md)
+- [ ] Build and explain the [Secured Spring Boot Task API](projects/backend/secured-task-api/README.md)
+- [ ] Explain what you need before Docker, deployment, CI/CD, observability, cloud, or production configuration
 
 ## Reflection Log
 

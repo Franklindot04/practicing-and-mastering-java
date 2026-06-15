@@ -10,6 +10,9 @@ Use these exercises after reading the backend notes and before building the simp
 - [SQL Basics Exercises](persistence/sql-basics-exercises.md)
 - [Entity And Repository Exercises](persistence/entity-repository-exercises.md)
 - [JPA And Spring Data Exercises](persistence/jpa-spring-data-exercises.md)
+- [Authentication Basics Exercises](security/auth-basics-exercises.md)
+- [Passwords, Tokens, And JWT Exercises](security/password-token-exercises.md)
+- [Spring Security Exercises](security/spring-security-exercises.md)
 
 ## Study Routine
 
@@ -17,5 +20,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Write endpoint designs on paper before coding.
 - Keep controllers thin in every sketch.
 - Explain which layer owns each decision.
+- Treat all security prompts as design practice; do not invent real secrets or production signing keys.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.
