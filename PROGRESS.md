@@ -44,6 +44,9 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] JDBC and databases
 - [ ] Networking
 - [ ] Clean code and architecture
+- [ ] HTTP and REST API basics
+- [ ] Spring Boot fundamentals
+- [ ] Backend layering and validation
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -86,6 +89,18 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete professional quizzes
 - [ ] Review professional solutions after attempting the work
 - [ ] Explain what you need before starting Spring Boot
+
+## Backend Java Path Checklist
+
+- [ ] Study [Backend Java Foundations](docs/19-backend-java-foundations/README.md)
+- [ ] Study [HTTP REST API Basics](docs/20-http-rest-api-basics/README.md)
+- [ ] Study [Spring Boot Introduction](docs/21-spring-boot-introduction/README.md)
+- [ ] Run and modify [backend API design examples](examples/backend/api-design-basics/README.md)
+- [ ] Complete [backend exercises](exercises/backend/README.md)
+- [ ] Complete [backend quizzes](quizzes/backend/README.md)
+- [ ] Review [backend solutions](solutions/backend/README.md)
+- [ ] Build and explain the [Simple REST API](projects/backend/simple-rest-api/README.md)
+- [ ] Explain what you need before adding databases, security, and deployment
 
 ## Reflection Log
 

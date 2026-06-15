@@ -10,6 +10,7 @@ Follow this path in order unless you already know a topic well.
 6. Functional Java: lambdas, functional interfaces, streams, Optional.
 7. Advanced Java: concurrency, executors, futures, locks, concurrent collections, JVM, garbage collection, performance.
 8. Professional practices: clean code, SOLID, design patterns, architecture, interview preparation.
+9. Backend Java: HTTP, REST APIs, Spring Boot fundamentals, layering, validation, and simple API projects.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -125,3 +126,33 @@ Move into Spring Boot and backend/API development when you can:
 - [ ] Handle networking timeouts and failures deliberately.
 - [ ] Use prepared statements and keep database credentials out of source code.
 - [ ] Describe a basic project structure with domain, service, and infrastructure boundaries.
+
+## Backend Java Learning Sequence
+
+Use this sequence after professional Java and before full database, security, and deployment projects.
+
+- [ ] Understand backend responsibilities: [Backend Java Foundations](docs/19-backend-java-foundations/README.md)
+- [ ] Learn HTTP and REST API basics: [HTTP REST API Basics](docs/20-http-rest-api-basics/README.md)
+- [ ] Review method and status choices: [HTTP Methods And Status Codes](docs/20-http-rest-api-basics/http-methods-status-codes.md)
+- [ ] Study request and response anatomy: [Request And Response Anatomy](docs/20-http-rest-api-basics/request-response-anatomy.md)
+- [ ] Practice REST resource design: [REST API Design Basics](docs/20-http-rest-api-basics/rest-api-design-basics.md)
+- [ ] Learn Spring Boot fundamentals: [Spring Boot Introduction](docs/21-spring-boot-introduction/README.md)
+- [ ] Review annotations and layering: [Spring Boot Common Annotations](docs/21-spring-boot-introduction/common-annotations.md) and [Backend Layering](docs/21-spring-boot-introduction/backend-layering.md)
+- [ ] Run framework-free backend examples: [Backend API Design Basics](examples/backend/api-design-basics/README.md)
+- [ ] Complete backend exercises: [Backend Exercises](exercises/backend/README.md)
+- [ ] Check understanding with backend quizzes: [Backend Quizzes](quizzes/backend/README.md)
+- [ ] Review backend solutions after attempting the work: [Backend Solutions](solutions/backend/README.md)
+- [ ] Build the simple Spring Boot REST API skeleton: [Simple REST API](projects/backend/simple-rest-api/README.md)
+
+## Ready For Full Backend Projects Checklist
+
+Move into database, security, and deployment topics when you can:
+
+- [ ] Explain the request-response lifecycle for a simple API.
+- [ ] Choose suitable HTTP methods and status codes.
+- [ ] Design resource-based endpoints without action-heavy paths.
+- [ ] Separate controller, DTO, service, repository, and model responsibilities.
+- [ ] Validate request data and return consistent error responses.
+- [ ] Use constructor injection in Spring Boot classes.
+- [ ] Test service logic without starting a full web server.
+- [ ] Build and run a small in-memory REST API.
