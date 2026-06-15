@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-ready-task-api-probes-and-resources
+  namespace: learnjava-task-api
+  labels:
+    app: deployment-ready-task-api-probes-and-resources
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-ready-task-api-probes-and-resources
+  template:
+    metadata:
+      labels:
+        app: deployment-ready-task-api-probes-and-resources
+    spec:
+      containers:
+        - name: deployment-ready-task-api
+          image: example/deployment-ready-task-api:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          startupProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+            failureThreshold: 12
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

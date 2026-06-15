@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-ready-task-api
+  namespace: learnjava-task-api
+  labels:
+    app: deployment-ready-task-api
+spec:
+  type: ClusterIP
+  selector:
+    app: deployment-ready-task-api
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

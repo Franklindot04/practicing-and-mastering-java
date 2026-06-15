@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: deployment-ready-task-api-config
+  namespace: learnjava-task-api
+  labels:
+    app: deployment-ready-task-api
+data:
+  SPRING_PROFILES_ACTIVE: kubernetes-local
+  APP_RELEASE_VERSION: local-kubernetes-learning
+  APP_COMMIT_SHA: local
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"
