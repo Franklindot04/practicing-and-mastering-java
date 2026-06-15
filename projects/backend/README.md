@@ -10,6 +10,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Production-Ready Task API Skeleton](production-ready-task-api/README.md): an educational production-readiness skeleton with profiles, logging, Actuator health, safe errors, security, and persistence.
 - [Deployment-Ready Task API Skeleton](deployment-ready-task-api/README.md): an educational deployment-readiness skeleton with runtime metadata, deployment-demo profile, smoke-test endpoint, health, security, and persistence.
 - [Kubernetes-Ready Task API Notes](kubernetes-ready-task-api/README.md): educational Kubernetes readiness notes and local-only manifests for the deployment-ready API concept.
+- [Helm-Ready Task API Notes](helm-ready-task-api/README.md): educational Helm packaging notes and a local-only chart for the deployment-ready/Kubernetes-ready API concept.
 
 ## Suggested Order
 
@@ -28,5 +29,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 13. Build the deployment-ready skeleton and explain how health, version, runtime config, and smoke-test endpoints support deployment checks.
 14. Study Kubernetes and container orchestration foundations.
 15. Review the Kubernetes-ready notes and explain how manifests, Services, probes, resources, and rollback notes relate to the deployment-ready API.
+16. Study Helm packaging and chart values.
+17. Review the Helm-ready notes and explain how values render Deployments, Services, ConfigMaps, Secret examples, probes, and resources.
 
-Do not add real cloud resources, production database configuration, production Kubernetes automation, Helm, Terraform, kubeconfig files, or real secrets in these learning projects. Demo credentials and placeholder manifests are not production credentials.
+Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform, service mesh, kubeconfig files, Helm release state, or real secrets in these learning projects. Demo credentials, placeholder manifests, and local-only charts are not production credentials.

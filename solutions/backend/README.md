@@ -23,5 +23,9 @@ These solution notes explain one reasonable approach for each backend exercise. 
 - [Kubernetes Objects Solutions](kubernetes/kubernetes-objects-solutions.md)
 - [Kubernetes Config, Probes, And Resources Solutions](kubernetes/config-probes-resources-solutions.md)
 - [Kubernetes Troubleshooting Solutions](kubernetes/troubleshooting-solutions.md)
+- [Helm Basics Solutions](helm/helm-basics-solutions.md)
+- [Helm Chart Values Solutions](helm/chart-values-solutions.md)
+- [Helm Backend Chart Design Solutions](helm/backend-chart-design-solutions.md)
+- [Helm Operations Solutions](helm/helm-operations-solutions.md)
 
-If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes safety, and no committed real secrets, it may still be a good solution.
+If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm safety, rendered manifest review, and no committed real secrets, it may still be a good solution.

@@ -47,6 +47,8 @@ After production readiness, follow the [deployment and cloud readiness learning 
 
 After deployment/cloud readiness, use the [Kubernetes and container orchestration learning sequence](LEARNING_PATH.md#kubernetes-and-container-orchestration-learning-sequence) for orchestration basics, Kubernetes objects, local-only manifests, probes, resources, and beginner operations.
 
+After Kubernetes foundations, follow the [Helm and Kubernetes packaging learning sequence](LEARNING_PATH.md#helm-and-kubernetes-packaging-learning-sequence) for chart basics, values, render-only chart examples, upgrades, rollbacks, and packaging practice.
+
 ## Folder Structure
 
 ```text
@@ -103,6 +105,7 @@ The repository grows in focused branches:
 - Production readiness, configuration, observability, Docker basics, and CI/CD foundations.
 - Deployment, release/rollback, platform, and cloud-readiness foundations.
 - Kubernetes, container orchestration, local-only manifests, and beginner operations foundations.
+- Helm packaging, chart values, render-only chart examples, and Kubernetes packaging foundations.
 
 ## Disclaimer
 
