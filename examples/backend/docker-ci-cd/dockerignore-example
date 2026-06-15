@@ -1,0 +1,13 @@
+# Copy this into a real project as .dockerignore, then adapt it.
+
+.git
+.github
+.idea
+.vscode
+.DS_Store
+target
+*.class
+*.log
+.env
+*.pem
+*.key
