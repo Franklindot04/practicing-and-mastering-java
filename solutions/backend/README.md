@@ -35,5 +35,9 @@ These solution notes explain one reasonable approach for each backend exercise. 
 - [Cloud Traffic And Data Patterns Solutions](cloud-architecture/traffic-data-patterns-solutions.md)
 - [Cloud Reliability, Failure, And Cost Solutions](cloud-architecture/reliability-failure-cost-solutions.md)
 - [Cloud Architecture Review Solutions](cloud-architecture/architecture-review-solutions.md)
+- [Service Mesh Basics Solutions](service-mesh/service-mesh-basics-solutions.md)
+- [Service Mesh Traffic Reliability Solutions](service-mesh/traffic-reliability-solutions.md)
+- [Service Mesh Observability Security Solutions](service-mesh/observability-security-solutions.md)
+- [Service Mesh Operations Readiness Solutions](service-mesh/operations-readiness-solutions.md)
 
-If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm/IaC safety, rendered manifest review, plan-review reasoning, state/secrets caution, vendor-neutral cloud architecture reasoning, cost awareness, and no committed real secrets, it may still be a good solution.
+If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm/IaC safety, rendered manifest review, plan-review reasoning, state/secrets caution, vendor-neutral cloud architecture reasoning, cost awareness, service mesh readiness thinking, traffic-policy caution, mTLS identity boundaries, and no committed real secrets, it may still be a good solution.

@@ -53,6 +53,8 @@ After Helm packaging, use the [Infrastructure as Code learning sequence](LEARNIN
 
 After IaC foundations, follow the [cloud architecture learning sequence](LEARNING_PATH.md#cloud-architecture-learning-sequence) for availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
 
+After cloud architecture, use the [service mesh learning sequence](LEARNING_PATH.md#service-mesh-learning-sequence) for service mesh concepts, sidecar communication, traffic policy, observability, security boundaries, operations, and readiness planning.
+
 ## Folder Structure
 
 ```text
@@ -112,6 +114,7 @@ The repository grows in focused branches:
 - Helm packaging, chart values, render-only chart examples, and Kubernetes packaging foundations.
 - Infrastructure as Code, Terraform/OpenTofu concepts, state and secrets safety, local-only examples, modules, environments, and operations foundations.
 - Advanced cloud architecture foundations, availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
+- Service mesh foundations, sidecar communication, traffic policy, observability, mTLS identity, operations, and readiness planning.
 
 ## Disclaimer
 
