@@ -39,6 +39,13 @@ Use these exercises after reading the backend notes and before building the simp
 - [Service Mesh Traffic Reliability Exercises](service-mesh/traffic-reliability-exercises.md)
 - [Service Mesh Observability Security Exercises](service-mesh/observability-security-exercises.md)
 - [Service Mesh Operations Readiness Exercises](service-mesh/operations-readiness-exercises.md)
+- [Distributed Systems CAP Exercises](distributed-systems/cap-exercises.md)
+- [Distributed Systems Consistency Exercises](distributed-systems/consistency-exercises.md)
+- [Distributed Systems Idempotency Exercises](distributed-systems/idempotency-exercises.md)
+- [Distributed Systems Retry Exercises](distributed-systems/retry-exercises.md)
+- [Distributed Systems Saga Exercises](distributed-systems/saga-exercises.md)
+- [Distributed Systems Discovery Exercises](distributed-systems/discovery-exercises.md)
+- [Distributed Systems Coordination Exercises](distributed-systems/coordination-exercises.md)
 
 ## Study Routine
 
@@ -54,5 +61,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat IaC prompts as planning and review practice; do not run apply/destroy, commit state or plan files, or add provider credentials.
 - Treat cloud architecture prompts as vendor-neutral planning practice; do not add provider-specific automation, real domains, account IDs, or secrets.
 - Treat service mesh prompts as vendor-neutral design and operations practice; do not install a mesh, create clusters, commit certificates/private keys, or add real mesh manifests.
+- Treat distributed systems prompts as conceptual design practice; do not create real clusters, messaging systems, streaming systems, service mesh deployments, cloud resources, real domains, or provider-specific automation.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.

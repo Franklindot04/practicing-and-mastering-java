@@ -83,6 +83,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Service mesh traffic and reliability
 - [ ] Service mesh observability and security
 - [ ] Service mesh operations basics
+- [ ] Distributed systems foundations
+- [ ] CAP theorem and consistency models
+- [ ] Idempotency, retries, and sagas
+- [ ] Service discovery and distributed coordination
+- [ ] Distributed systems operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -258,6 +263,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [service mesh quizzes](quizzes/backend/service-mesh/service-mesh-basics-quiz.md)
 - [ ] Review [service mesh solutions](solutions/backend/service-mesh/service-mesh-basics-solutions.md)
 - [ ] Explain what you need before distributed systems, event-driven architecture implementation, production Kubernetes, or real mesh operations
+
+## Distributed Systems Path Checklist
+
+- [ ] Study [Distributed Systems Foundations](docs/61-distributed-systems-foundations/README.md)
+- [ ] Study [Consistency And CAP](docs/62-consistency-and-cap/README.md)
+- [ ] Study [Idempotency, Retries, And Sagas](docs/63-idempotency-retries-sagas/README.md)
+- [ ] Study [Distributed Discovery And Coordination](docs/64-distributed-discovery-coordination/README.md)
+- [ ] Inspect [distributed systems design examples](examples/backend/distributed-systems-designs/request-flow-example.md)
+- [ ] Review [distributed systems-ready backend API notes](projects/backend/distributed-systems-ready-task-api/README.md)
+- [ ] Study [Distributed Systems Operations](docs/65-distributed-systems-operations/README.md)
+- [ ] Complete [distributed systems exercises](exercises/backend/distributed-systems/cap-exercises.md)
+- [ ] Complete [distributed systems quizzes](quizzes/backend/distributed-systems/multiple-choice-quiz.md)
+- [ ] Review [distributed systems solutions](solutions/backend/distributed-systems/cap-solutions.md)
+- [ ] Explain what you need before event-driven architecture, messaging systems, streaming systems, or advanced production infrastructure
 
 ## Reflection Log
 

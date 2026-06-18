@@ -55,6 +55,8 @@ After IaC foundations, follow the [cloud architecture learning sequence](LEARNIN
 
 After cloud architecture, use the [service mesh learning sequence](LEARNING_PATH.md#service-mesh-learning-sequence) for service mesh concepts, sidecar communication, traffic policy, observability, security boundaries, operations, and readiness planning.
 
+After service mesh foundations, use the [distributed systems learning sequence](LEARNING_PATH.md#distributed-systems-learning-sequence) for distributed system concepts, CAP, consistency, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
+
 ## Folder Structure
 
 ```text
@@ -115,6 +117,7 @@ The repository grows in focused branches:
 - Infrastructure as Code, Terraform/OpenTofu concepts, state and secrets safety, local-only examples, modules, environments, and operations foundations.
 - Advanced cloud architecture foundations, availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
 - Service mesh foundations, sidecar communication, traffic policy, observability, mTLS identity, operations, and readiness planning.
+- Distributed systems foundations, CAP theorem, consistency models, idempotency, retries, sagas, service discovery, coordination, operations, and readiness planning before future event-driven, messaging, streaming, and advanced production infrastructure topics.
 
 ## Disclaimer
 
