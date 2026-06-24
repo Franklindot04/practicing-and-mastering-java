@@ -34,6 +34,9 @@ Use these quizzes to check whether backend Java and Spring Boot foundation conce
 - [Service Mesh Basics Quiz](service-mesh/service-mesh-basics-quiz.md)
 - [Service Mesh Traffic Reliability Quiz](service-mesh/traffic-reliability-quiz.md)
 - [Service Mesh Observability, Security, And Operations Quiz](service-mesh/observability-security-operations-quiz.md)
+- [Distributed Systems Multiple Choice Quiz](distributed-systems/multiple-choice-quiz.md)
+- [Distributed Systems Short Answer Quiz](distributed-systems/short-answer-quiz.md)
+- [Distributed Systems Design Reading Quiz](distributed-systems/design-reading-quiz.md)
 - [Answer Key](answer-key.md)
 - [Persistence Answer Key](persistence/answer-key.md)
 - [Security Answer Key](security/answer-key.md)
@@ -44,7 +47,8 @@ Use these quizzes to check whether backend Java and Spring Boot foundation conce
 - [IaC Answer Key](iac/answer-key.md)
 - [Cloud Architecture Answer Key](cloud-architecture/answer-key.md)
 - [Service Mesh Answer Key](service-mesh/answer-key.md)
+- [Distributed Systems Answer Key](distributed-systems/answer-key.md)
 
 ## Before Moving On
 
-You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, common local troubleshooting states, Helm charts, values, templates, releases, upgrades, rollbacks, rendered manifest review, IaC desired state, Terraform/OpenTofu concepts, state safety, modules, environments, plan review, cloud architecture tradeoffs, traffic/data patterns, reliability, scalability, cost review, operations basics, service mesh purpose, sidecar communication, mTLS workload identity, traffic policy, mesh observability, security boundaries, and mesh operations tradeoffs.
+You should be able to explain HTTP methods, status codes, DTOs, services, controllers, validation, error responses, common Spring Boot annotations, basic service testing, SQL basics, repositories, entities, transaction boundaries, authentication, authorization, password hashing, token tradeoffs, basic Spring Security route protection, external configuration, safe logging, health checks, Docker basics, CI test workflows, deployment lifecycle, release/rollback basics, cloud-readiness concepts, smoke testing, Kubernetes desired state, Pods, Deployments, Services, ConfigMaps, Secrets, probes, resources, rollouts, common local troubleshooting states, Helm charts, values, templates, releases, upgrades, rollbacks, rendered manifest review, IaC desired state, Terraform/OpenTofu concepts, state safety, modules, environments, plan review, cloud architecture tradeoffs, traffic/data patterns, reliability, scalability, cost review, operations basics, service mesh purpose, sidecar communication, mTLS workload identity, traffic policy, mesh observability, security boundaries, mesh operations tradeoffs, distributed system boundaries, CAP, consistency models, idempotency, retries, sagas, discovery, coordination, and distributed operations basics.

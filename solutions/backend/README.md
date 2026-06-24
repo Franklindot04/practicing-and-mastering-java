@@ -39,5 +39,12 @@ These solution notes explain one reasonable approach for each backend exercise. 
 - [Service Mesh Traffic Reliability Solutions](service-mesh/traffic-reliability-solutions.md)
 - [Service Mesh Observability Security Solutions](service-mesh/observability-security-solutions.md)
 - [Service Mesh Operations Readiness Solutions](service-mesh/operations-readiness-solutions.md)
+- [Distributed Systems CAP Solutions](distributed-systems/cap-solutions.md)
+- [Distributed Systems Consistency Solutions](distributed-systems/consistency-solutions.md)
+- [Distributed Systems Idempotency Solutions](distributed-systems/idempotency-solutions.md)
+- [Distributed Systems Retry Solutions](distributed-systems/retry-solutions.md)
+- [Distributed Systems Saga Solutions](distributed-systems/saga-solutions.md)
+- [Distributed Systems Discovery Solutions](distributed-systems/discovery-solutions.md)
+- [Distributed Systems Coordination Solutions](distributed-systems/coordination-solutions.md)
 
-If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm/IaC safety, rendered manifest review, plan-review reasoning, state/secrets caution, vendor-neutral cloud architecture reasoning, cost awareness, service mesh readiness thinking, traffic-policy caution, mTLS identity boundaries, and no committed real secrets, it may still be a good solution.
+If your answer is different but still uses clear resource design, correct status codes, separate layers, consistent validation, least privilege, safe error handling, safe configuration, useful logs, rollback thinking, local-only Kubernetes/Helm/IaC safety, rendered manifest review, plan-review reasoning, state/secrets caution, vendor-neutral cloud architecture reasoning, cost awareness, service mesh readiness thinking, traffic-policy caution, mTLS identity boundaries, distributed failure awareness, idempotency, consistency tradeoff reasoning, and no committed real secrets, it may still be a good solution.

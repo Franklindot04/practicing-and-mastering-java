@@ -20,6 +20,7 @@ Follow this path in order unless you already know a topic well.
 16. Infrastructure as Code foundations: IaC concepts, Terraform/OpenTofu basics, providers, resources, variables, outputs, state, plans, secrets safety, modules, environments, local-only examples, and plan-review operations.
 17. Advanced cloud architecture foundations: availability, scalability, reliability, traffic flow, load balancing, caching, queues, managed databases, object storage, cost-aware review, and operations planning.
 18. Service mesh foundations: service mesh concepts, sidecar communication, service-to-service traffic, mTLS identity, traffic splitting, retries, timeouts, observability, security limits, operations, and readiness planning.
+19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -426,7 +427,7 @@ Use this sequence after cloud architecture foundations and before distributed sy
 
 ## Ready For Later Distributed Systems Topics Checklist
 
-Move into distributed systems, event-driven architecture implementation, production Kubernetes, or real provider-specific mesh operations later when you can:
+Move into distributed systems foundations first, then event-driven architecture implementation, production Kubernetes, or real provider-specific mesh operations later when you can:
 
 - [ ] Explain service mesh as infrastructure for internal service-to-service communication.
 - [ ] Separate service mesh, API gateway, Kubernetes, and application responsibilities.
@@ -438,3 +439,37 @@ Move into distributed systems, event-driven architecture implementation, product
 - [ ] Explain observability signals from traces, metrics, and access logs.
 - [ ] Identify when a service mesh is premature.
 - [ ] Explain what remains out of scope: real mesh installation, cluster operations, production certificates, provider-specific automation, and distributed systems implementation.
+
+## Distributed Systems Learning Sequence
+
+Use this sequence after service mesh foundations and before event-driven architecture, messaging systems, streaming systems, advanced production infrastructure, or real distributed system implementation.
+
+- [ ] Study distributed systems foundations: [Distributed Systems Foundations](docs/61-distributed-systems-foundations/README.md)
+- [ ] Review network latency, partial failures, and common misconceptions: [Network Latency And Failures](docs/61-distributed-systems-foundations/network-latency-and-failures.md)
+- [ ] Study consistency and CAP theorem: [Consistency And CAP](docs/62-consistency-and-cap/README.md)
+- [ ] Compare consistency models and availability tradeoffs: [Consistency Models](docs/62-consistency-and-cap/consistency-models.md)
+- [ ] Study idempotency, retries, and saga concepts: [Idempotency, Retries, And Sagas](docs/63-idempotency-retries-sagas/README.md)
+- [ ] Review safe retry and distributed transaction tradeoffs: [Retry Patterns](docs/63-idempotency-retries-sagas/retry-patterns.md)
+- [ ] Study discovery and coordination concepts: [Distributed Discovery And Coordination](docs/64-distributed-discovery-coordination/README.md)
+- [ ] Review service discovery, leader election, consensus, and distributed locks: [Consensus Overview](docs/64-distributed-discovery-coordination/consensus-overview.md)
+- [ ] Inspect distributed systems design examples: [Distributed Systems Design Examples](examples/backend/distributed-systems-designs/request-flow-example.md)
+- [ ] Review distributed systems readiness notes for the backend API: [Distributed Systems Ready Task API Notes](projects/backend/distributed-systems-ready-task-api/README.md)
+- [ ] Study distributed systems operations: [Distributed Systems Operations](docs/65-distributed-systems-operations/README.md)
+- [ ] Complete distributed systems exercises: [Distributed Systems Exercises](exercises/backend/distributed-systems/cap-exercises.md)
+- [ ] Check understanding with distributed systems quizzes: [Distributed Systems Quizzes](quizzes/backend/distributed-systems/multiple-choice-quiz.md)
+- [ ] Review distributed systems solutions after attempting the work: [Distributed Systems Solutions](solutions/backend/distributed-systems/cap-solutions.md)
+
+## Ready For Event-Driven And Messaging Topics Checklist
+
+Move into event-driven architecture, messaging systems, streaming systems, or advanced production infrastructure later when you can:
+
+- [ ] Explain distributed systems without treating microservices as automatically better.
+- [ ] Describe latency, timeouts, partial failures, and duplicate requests.
+- [ ] Explain CAP theorem as an operation-level tradeoff during partitions.
+- [ ] Choose between strong consistency, eventual consistency, and read-after-write consistency for simple workflows.
+- [ ] Design idempotency keys for retried create operations.
+- [ ] Describe retry limits, backoff, jitter, and retry-storm risk.
+- [ ] Explain saga steps, compensation actions, and workflow status.
+- [ ] Describe service discovery, leader election, consensus, and distributed locks at a conceptual level.
+- [ ] Use logs, metrics, traces, and workflow state to investigate distributed failures.
+- [ ] Explain what remains out of scope: real distributed system deployment, Kafka clusters, RabbitMQ clusters, production messaging, streaming infrastructure, provider-specific automation, and advanced production controls.
