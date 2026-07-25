@@ -21,6 +21,7 @@ Follow this path in order unless you already know a topic well.
 17. Advanced cloud architecture foundations: availability, scalability, reliability, traffic flow, load balancing, caching, queues, managed databases, object storage, cost-aware review, and operations planning.
 18. Service mesh foundations: service mesh concepts, sidecar communication, service-to-service traffic, mTLS identity, traffic splitting, retries, timeouts, observability, security limits, operations, and readiness planning.
 19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
+20. Event-driven architecture foundations: events, commands, asynchronous communication, producers, consumers, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -461,7 +462,7 @@ Use this sequence after service mesh foundations and before event-driven archite
 
 ## Ready For Event-Driven And Messaging Topics Checklist
 
-Move into event-driven architecture, messaging systems, streaming systems, or advanced production infrastructure later when you can:
+Move into event-driven architecture first, then Stage 19 messaging and streaming with Java, or advanced production infrastructure later when you can:
 
 - [ ] Explain distributed systems without treating microservices as automatically better.
 - [ ] Describe latency, timeouts, partial failures, and duplicate requests.
@@ -472,4 +473,37 @@ Move into event-driven architecture, messaging systems, streaming systems, or ad
 - [ ] Explain saga steps, compensation actions, and workflow status.
 - [ ] Describe service discovery, leader election, consensus, and distributed locks at a conceptual level.
 - [ ] Use logs, metrics, traces, and workflow state to investigate distributed failures.
-- [ ] Explain what remains out of scope: real distributed system deployment, Kafka clusters, RabbitMQ clusters, production messaging, streaming infrastructure, provider-specific automation, and advanced production controls.
+- [ ] Explain what remains out of scope: real distributed system deployment, production messaging infrastructure, streaming infrastructure, provider-specific automation, and advanced production controls.
+
+## Event-Driven Architecture Learning Sequence
+
+Use this sequence after distributed systems foundations and before Stage 19 messaging and streaming with Java, advanced production infrastructure, or real event-driven implementation.
+
+- [ ] Study event-driven architecture foundations: [Event-Driven Architecture Foundations](docs/66-event-driven-architecture/README.md)
+- [ ] Compare events, commands, synchronous communication, and asynchronous communication: [Events Vs Commands](docs/66-event-driven-architecture/events-vs-commands.md)
+- [ ] Study event design principles: [Event Design Principles](docs/67-event-design/README.md)
+- [ ] Review naming, payloads, immutability, versioning, schema evolution, and compatibility: [Schema Evolution](docs/67-event-design/schema-evolution.md)
+- [ ] Study event-driven patterns: [Event-Driven Patterns](docs/68-event-patterns/README.md)
+- [ ] Compare publish/subscribe, fan-out, event notification, event-carried state transfer, choreography, and orchestration: [Choreography](docs/68-event-patterns/choreography.md)
+- [ ] Study outbox and CQRS concepts: [Outbox And CQRS Introduction](docs/69-outbox-and-cqrs/README.md)
+- [ ] Review the transactional messaging problem, dual-write problem, read models, and write models: [Outbox Pattern](docs/69-outbox-and-cqrs/outbox-pattern.md)
+- [ ] Inspect event-driven design examples: [Event-Driven Design Examples](examples/backend/event-driven-designs/README.md)
+- [ ] Review event-driven readiness notes for the backend API: [Event-Driven Ready Task API Notes](projects/backend/event-driven-ready-api/README.md)
+- [ ] Study event-driven operations: [Event-Driven Operations](docs/70-event-driven-operations/README.md)
+- [ ] Complete event-driven architecture exercises: [Event-Driven Architecture Exercises](exercises/backend/event-driven/event-driven-architecture-exercises.md)
+- [ ] Check understanding with event-driven architecture quizzes: [Event-Driven Architecture Quizzes](quizzes/backend/event-driven/multiple-choice-quiz.md)
+- [ ] Review event-driven architecture solutions after attempting the work: [Event-Driven Architecture Solutions](solutions/backend/event-driven/event-driven-architecture-solutions.md)
+
+## Ready For Messaging And Streaming With Java Checklist
+
+Move into Stage 19 messaging and streaming with Java when you can:
+
+- [ ] Explain the difference between events and commands.
+- [ ] Decide when synchronous communication is clearer than asynchronous communication.
+- [ ] Identify producers, consumers, event contracts, and event ownership.
+- [ ] Design event names and payloads with compatibility in mind.
+- [ ] Compare publish/subscribe, fan-out, event notification, event-carried state transfer, choreography, and orchestration.
+- [ ] Explain the transactional messaging problem and how an outbox changes the failure model.
+- [ ] Explain CQRS, read models, and write models without over-applying the pattern.
+- [ ] Plan duplicate handling, poison event review, correlation identifiers, tracing, replay, and failure investigation.
+- [ ] Explain what remains out of scope until Stage 19: concrete messaging products, streaming products, broker setup, clusters, cloud messaging resources, credentials, and production infrastructure.

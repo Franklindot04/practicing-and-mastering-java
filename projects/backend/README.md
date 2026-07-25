@@ -15,6 +15,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Cloud Architecture-Ready Task API Notes](cloud-architecture-ready-task-api/README.md): educational architecture planning notes for task API traffic flow, reliability, scaling, cost, and failure modes.
 - [Service Mesh-Ready Task API Notes](service-mesh-ready-task-api/README.md): educational service mesh readiness notes for service boundaries, traffic policy, observability, mTLS identity, operations, and when not to add a mesh.
 - [Distributed Systems Ready Task API Notes](distributed-systems-ready-task-api/README.md): educational distributed systems readiness notes for boundaries, consistency, retries, observability, and failure planning.
+- [Event-Driven Ready Task API Notes](event-driven-ready-api/README.md): educational event-driven readiness notes for boundaries, contracts, producers, consumers, failure handling, duplicate handling, event evolution, observability, and operations.
 
 ## Suggested Order
 
@@ -43,5 +44,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 23. Review the service mesh-ready notes and explain whether mesh adoption solves real task API communication problems or adds premature complexity.
 24. Study distributed systems foundations, CAP, consistency models, idempotency, retries, sagas, discovery, coordination, and operations basics.
 25. Review the distributed systems-ready notes and explain which task API boundaries might later support event-driven architecture, messaging, streaming, or advanced production infrastructure.
+26. Study event-driven architecture foundations, event design, event patterns, outbox, CQRS, and operations basics.
+27. Review the event-driven-ready notes and explain which task API events, contracts, consumers, failure modes, duplicate handling rules, and operational signals should exist before Stage 19 messaging and streaming with Java.
 
-Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform/OpenTofu apply or destroy workflows, real service mesh installation, distributed systems implementation, Kafka clusters, RabbitMQ clusters, streaming infrastructure, kubeconfig files, Helm release state, IaC state files, plan files, mesh certificates, provider credentials, real domains, account IDs, or real secrets in these learning projects. Demo credentials, placeholder manifests, local-only charts, pseudo-HCL, conceptual workflow notes, and vendor-neutral diagrams are not production credentials or production infrastructure.
+Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform/OpenTofu apply or destroy workflows, real service mesh installation, distributed systems implementation, event-driven infrastructure, messaging infrastructure, streaming infrastructure, kubeconfig files, Helm release state, IaC state files, plan files, mesh certificates, provider credentials, real domains, account IDs, or real secrets in these learning projects. Demo credentials, placeholder manifests, local-only charts, pseudo-HCL, conceptual workflow notes, and vendor-neutral diagrams are not production credentials or production infrastructure.
