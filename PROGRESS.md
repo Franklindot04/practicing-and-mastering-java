@@ -93,6 +93,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Event-driven patterns
 - [ ] Outbox and CQRS concepts
 - [ ] Event-driven operations basics
+- [ ] Messaging and streaming foundations
+- [ ] Message delivery and reliability
+- [ ] Kafka foundations
+- [ ] RabbitMQ foundations
+- [ ] Messaging operations and observability
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -296,6 +301,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [event-driven architecture quizzes](quizzes/backend/event-driven/multiple-choice-quiz.md)
 - [ ] Review [event-driven architecture solutions](solutions/backend/event-driven/event-driven-architecture-solutions.md)
 - [ ] Explain what you need before Stage 19 messaging and streaming with Java
+
+## Messaging And Streaming With Java Path Checklist
+
+- [ ] Study [Messaging And Streaming Foundations](docs/71-messaging-and-streaming-foundations/README.md)
+- [ ] Study [Message Delivery And Reliability](docs/72-message-delivery-and-reliability/README.md)
+- [ ] Study [Kafka Foundations](docs/73-kafka-foundations/README.md)
+- [ ] Study [RabbitMQ Foundations](docs/74-rabbitmq-foundations/README.md)
+- [ ] Run and modify [Java Messaging Patterns](examples/backend/java-messaging-patterns/README.md)
+- [ ] Review [messaging-ready backend service design](projects/backend/messaging-ready-service/README.md)
+- [ ] Study [Messaging Operations And Observability](docs/75-messaging-operations-and-observability/README.md)
+- [ ] Complete [messaging and streaming exercises](exercises/backend/messaging-streaming/messaging-streaming-exercises.md)
+- [ ] Complete [messaging and streaming quizzes](quizzes/backend/messaging-streaming/README.md)
+- [ ] Review [messaging and streaming solutions](solutions/backend/messaging-streaming/messaging-streaming-solutions.md)
+- [ ] Explain what you need before Stage 20 advanced backend system design
 
 ## Reflection Log
 

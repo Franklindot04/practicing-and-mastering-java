@@ -47,6 +47,7 @@ Use these exercises after reading the backend notes and before building the simp
 - [Distributed Systems Discovery Exercises](distributed-systems/discovery-exercises.md)
 - [Distributed Systems Coordination Exercises](distributed-systems/coordination-exercises.md)
 - [Event-Driven Architecture Exercises](event-driven/event-driven-architecture-exercises.md)
+- [Messaging And Streaming Exercises](messaging-streaming/messaging-streaming-exercises.md)
 
 ## Study Routine
 
@@ -64,5 +65,6 @@ Use these exercises after reading the backend notes and before building the simp
 - Treat service mesh prompts as vendor-neutral design and operations practice; do not install a mesh, create clusters, commit certificates/private keys, or add real mesh manifests.
 - Treat distributed systems prompts as conceptual design practice; do not create real clusters, messaging systems, streaming systems, service mesh deployments, cloud resources, real domains, or provider-specific automation.
 - Treat event-driven prompts as conceptual design practice; do not create brokers, clusters, messaging systems, streaming systems, cloud resources, credentials, or production infrastructure.
+- Treat messaging and streaming prompts as Java design practice; do not create production brokers, clusters, cloud messaging resources, credentials, or production infrastructure.
 
 Review the [backend solutions](../../solutions/backend/README.md) after attempting the work.
