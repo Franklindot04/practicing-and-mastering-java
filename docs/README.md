@@ -75,6 +75,11 @@ These docs are organized in the order most learners should study Java.
 69. `68-event-patterns`
 70. `69-outbox-and-cqrs`
 71. `70-event-driven-operations`
+72. `71-messaging-and-streaming-foundations`
+73. `72-message-delivery-and-reliability`
+74. `73-kafka-foundations`
+75. `74-rabbitmq-foundations`
+76. `75-messaging-operations-and-observability`
 
 ## How To Study A Topic
 

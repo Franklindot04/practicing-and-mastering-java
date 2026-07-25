@@ -22,6 +22,7 @@ Follow this path in order unless you already know a topic well.
 18. Service mesh foundations: service mesh concepts, sidecar communication, service-to-service traffic, mTLS identity, traffic splitting, retries, timeouts, observability, security limits, operations, and readiness planning.
 19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 20. Event-driven architecture foundations: events, commands, asynchronous communication, producers, consumers, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
+21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -477,7 +478,7 @@ Move into event-driven architecture first, then Stage 19 messaging and streaming
 
 ## Event-Driven Architecture Learning Sequence
 
-Use this sequence after distributed systems foundations and before Stage 19 messaging and streaming with Java, advanced production infrastructure, or real event-driven implementation.
+Use this sequence after distributed systems foundations and before messaging and streaming with Java, advanced production infrastructure, or real event-driven implementation.
 
 - [ ] Study event-driven architecture foundations: [Event-Driven Architecture Foundations](docs/66-event-driven-architecture/README.md)
 - [ ] Compare events, commands, synchronous communication, and asynchronous communication: [Events Vs Commands](docs/66-event-driven-architecture/events-vs-commands.md)
@@ -507,3 +508,36 @@ Move into Stage 19 messaging and streaming with Java when you can:
 - [ ] Explain CQRS, read models, and write models without over-applying the pattern.
 - [ ] Plan duplicate handling, poison event review, correlation identifiers, tracing, replay, and failure investigation.
 - [ ] Explain what remains out of scope until Stage 19: concrete messaging products, streaming products, broker setup, clusters, cloud messaging resources, credentials, and production infrastructure.
+
+## Messaging And Streaming With Java Learning Sequence
+
+Use this sequence after event-driven architecture foundations and before Stage 20 advanced backend system design or real production messaging infrastructure.
+
+- [ ] Study messaging and streaming foundations: [Messaging And Streaming Foundations](docs/71-messaging-and-streaming-foundations/README.md)
+- [ ] Compare messaging, streaming, direct request/response, queues, topics, producers, consumers, and brokers: [Messaging Basics](docs/71-messaging-and-streaming-foundations/messaging-basics.md)
+- [ ] Study delivery reliability: [Message Delivery And Reliability](docs/72-message-delivery-and-reliability/README.md)
+- [ ] Review acknowledgements, retries, dead letters, duplicates, idempotency, and ordering: [Delivery Guarantees](docs/72-message-delivery-and-reliability/delivery-guarantees.md)
+- [ ] Study Kafka foundations: [Kafka Foundations](docs/73-kafka-foundations/README.md)
+- [ ] Review topics, partitions, offsets, records, producers, consumers, consumer groups, keys, retention, and replay: [Kafka Architecture](docs/73-kafka-foundations/kafka-architecture.md)
+- [ ] Study RabbitMQ foundations: [RabbitMQ Foundations](docs/74-rabbitmq-foundations/README.md)
+- [ ] Review exchanges, queues, bindings, routing keys, exchange types, acknowledgements, dead letters, and prefetch: [RabbitMQ Architecture](docs/74-rabbitmq-foundations/rabbitmq-architecture.md)
+- [ ] Run and modify pure Java messaging examples: [Java Messaging Patterns](examples/backend/java-messaging-patterns/README.md)
+- [ ] Review messaging-ready backend service design: [Messaging-Ready Service Design](projects/backend/messaging-ready-service/README.md)
+- [ ] Study messaging operations and observability: [Messaging Operations And Observability](docs/75-messaging-operations-and-observability/README.md)
+- [ ] Complete messaging and streaming exercises: [Messaging And Streaming Exercises](exercises/backend/messaging-streaming/messaging-streaming-exercises.md)
+- [ ] Check understanding with messaging and streaming quizzes: [Messaging And Streaming Quizzes](quizzes/backend/messaging-streaming/README.md)
+- [ ] Review messaging and streaming solutions after attempting the work: [Messaging And Streaming Solutions](solutions/backend/messaging-streaming/messaging-streaming-solutions.md)
+
+## Ready For Advanced Backend System Design Checklist
+
+Move into Stage 20 advanced backend system design when you can:
+
+- [ ] Explain queues, topics, producers, consumers, brokers, and message lifecycles.
+- [ ] Compare messaging, streaming, and direct request/response.
+- [ ] Explain at-most-once, at-least-once, exactly-once concepts, acknowledgements, retries, backoff, dead letters, duplicates, idempotent consumers, and ordering limits.
+- [ ] Describe Kafka topics, partitions, offsets, records, producers, consumers, consumer groups, keys, retention, replay, and delivery semantics.
+- [ ] Describe RabbitMQ exchanges, queues, bindings, routing keys, exchange types, acknowledgements, durability concepts, dead letters, and prefetch.
+- [ ] Keep Java domain code behind producer, consumer, serialization, retry, dead-letter, idempotency, and observability boundaries.
+- [ ] Test messaging behavior without requiring a broker when the behavior is pure application logic.
+- [ ] Investigate lag, queue depth, retries, dead letters, duplicates, correlation identifiers, traces, and slow consumers.
+- [ ] Explain what remains out of scope: production broker provisioning, cloud-managed messaging services, real credentials, production tuning, and advanced backend system design tradeoff synthesis.

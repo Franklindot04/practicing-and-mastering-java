@@ -57,7 +57,9 @@ After cloud architecture, use the [service mesh learning sequence](LEARNING_PATH
 
 After service mesh foundations, use the [distributed systems learning sequence](LEARNING_PATH.md#distributed-systems-learning-sequence) for distributed system concepts, CAP, consistency, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 
-After distributed systems foundations, use the [event-driven architecture learning sequence](LEARNING_PATH.md#event-driven-architecture-learning-sequence) for events, commands, asynchronous communication, event design, event patterns, outbox, CQRS, operations, exercises, quizzes, examples, and readiness planning before Stage 19 messaging and streaming with Java.
+After distributed systems foundations, use the [event-driven architecture learning sequence](LEARNING_PATH.md#event-driven-architecture-learning-sequence) for events, commands, asynchronous communication, event design, event patterns, outbox, CQRS, operations, exercises, quizzes, examples, and readiness planning.
+
+After event-driven architecture foundations, use the [messaging and streaming with Java learning sequence](LEARNING_PATH.md#messaging-and-streaming-with-java-learning-sequence) for queues, topics, delivery guarantees, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, exercises, quizzes, examples, and readiness planning before advanced backend system design.
 
 ## Folder Structure
 
@@ -120,7 +122,8 @@ The repository grows in focused branches:
 - Advanced cloud architecture foundations, availability, scalability, reliability, traffic/data patterns, cost-aware review, and operations planning.
 - Service mesh foundations, sidecar communication, traffic policy, observability, mTLS identity, operations, and readiness planning.
 - Distributed systems foundations, CAP theorem, consistency models, idempotency, retries, sagas, service discovery, coordination, operations, and readiness planning.
-- Event-driven architecture foundations, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning before future messaging, streaming, and advanced production infrastructure topics.
+- Event-driven architecture foundations, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
+- Messaging and streaming with Java foundations, delivery reliability, Kafka, RabbitMQ, Java messaging patterns, messaging-ready service design, operations, exercises, quizzes, and readiness planning before advanced backend system design and advanced production infrastructure topics.
 
 ## Disclaimer
 
