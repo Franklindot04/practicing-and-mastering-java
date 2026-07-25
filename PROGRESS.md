@@ -88,6 +88,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Idempotency, retries, and sagas
 - [ ] Service discovery and distributed coordination
 - [ ] Distributed systems operations basics
+- [ ] Event-driven architecture foundations
+- [ ] Event design principles
+- [ ] Event-driven patterns
+- [ ] Outbox and CQRS concepts
+- [ ] Event-driven operations basics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -277,6 +282,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [distributed systems quizzes](quizzes/backend/distributed-systems/multiple-choice-quiz.md)
 - [ ] Review [distributed systems solutions](solutions/backend/distributed-systems/cap-solutions.md)
 - [ ] Explain what you need before event-driven architecture, messaging systems, streaming systems, or advanced production infrastructure
+
+## Event-Driven Architecture Path Checklist
+
+- [ ] Study [Event-Driven Architecture Foundations](docs/66-event-driven-architecture/README.md)
+- [ ] Study [Event Design Principles](docs/67-event-design/README.md)
+- [ ] Study [Event-Driven Patterns](docs/68-event-patterns/README.md)
+- [ ] Study [Outbox And CQRS Introduction](docs/69-outbox-and-cqrs/README.md)
+- [ ] Inspect [event-driven design examples](examples/backend/event-driven-designs/README.md)
+- [ ] Review [event-driven-ready backend API notes](projects/backend/event-driven-ready-api/README.md)
+- [ ] Study [Event-Driven Operations](docs/70-event-driven-operations/README.md)
+- [ ] Complete [event-driven architecture exercises](exercises/backend/event-driven/event-driven-architecture-exercises.md)
+- [ ] Complete [event-driven architecture quizzes](quizzes/backend/event-driven/multiple-choice-quiz.md)
+- [ ] Review [event-driven architecture solutions](solutions/backend/event-driven/event-driven-architecture-solutions.md)
+- [ ] Explain what you need before Stage 19 messaging and streaming with Java
 
 ## Reflection Log
 
