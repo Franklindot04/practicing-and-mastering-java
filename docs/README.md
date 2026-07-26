@@ -80,6 +80,11 @@ These docs are organized in the order most learners should study Java.
 74. `73-kafka-foundations`
 75. `74-rabbitmq-foundations`
 76. `75-messaging-operations-and-observability`
+77. `76-system-design-foundations`
+78. `77-scalability-availability-reliability`
+79. `78-data-system-design`
+80. `79-service-architecture-patterns`
+81. `80-system-design-operations-and-evolution`
 
 ## How To Study A Topic
 
