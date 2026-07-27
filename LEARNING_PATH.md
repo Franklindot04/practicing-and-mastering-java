@@ -23,6 +23,7 @@ Follow this path in order unless you already know a topic well.
 19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 20. Event-driven architecture foundations: events, commands, asynchronous communication, producers, consumers, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
 21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
+22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -541,3 +542,34 @@ Move into Stage 20 advanced backend system design when you can:
 - [ ] Test messaging behavior without requiring a broker when the behavior is pure application logic.
 - [ ] Investigate lag, queue depth, retries, dead letters, duplicates, correlation identifiers, traces, and slow consumers.
 - [ ] Explain what remains out of scope: production broker provisioning, cloud-managed messaging services, real credentials, production tuning, and advanced backend system design tradeoff synthesis.
+
+## Advanced Backend System Design Learning Sequence
+
+Use this sequence after Stage 19 messaging and streaming with Java and before Stage 21 testing strategy and quality engineering.
+
+- [ ] Study system design foundations: [System Design Foundations](docs/76-system-design-foundations/README.md)
+- [ ] Practice requirements clarification, assumptions, workflows, boundaries, diagrams, and review questions: [System Design Process](docs/76-system-design-foundations/system-design-process.md)
+- [ ] Study scalability, availability, and reliability: [Scalability Availability And Reliability](docs/77-scalability-availability-reliability/README.md)
+- [ ] Compare scaling, fault tolerance, redundancy, resilience, backpressure, recovery objectives, and SLO thinking: [SLOs Recovery And Tradeoffs](docs/77-scalability-availability-reliability/slos-recovery-and-tradeoffs.md)
+- [ ] Study data system design: [Data System Design](docs/78-data-system-design/README.md)
+- [ ] Review data ownership, read/write models, consistency, replication, partitioning, migrations, and privacy boundaries: [Data Design Review Questions](docs/78-data-system-design/mistakes-and-review-questions.md)
+- [ ] Study service architecture patterns: [Service Architecture Patterns](docs/79-service-architecture-patterns/README.md)
+- [ ] Compare layered, hexagonal, clean architecture, modular monoliths, microservices, orchestration, choreography, sagas, and strangler migrations: [Architecture Comparisons](docs/79-service-architecture-patterns/comparisons-failure-modes-reviews.md)
+- [ ] Run and modify pure Java system design pattern examples: [Backend System Design Patterns](examples/backend/system-design-patterns/README.md)
+- [ ] Review the scalable order platform case study: [Scalable Order Platform Design](projects/backend/scalable-order-platform-design/README.md)
+- [ ] Study operations and evolutionary architecture: [System Design Operations And Evolution](docs/80-system-design-operations-and-evolution/README.md)
+- [ ] Complete advanced backend system design exercises: [Advanced Backend System Design Exercises](exercises/backend/system-design/system-design-exercises.md)
+- [ ] Check understanding with advanced backend system design quizzes: [Advanced Backend System Design Quizzes](quizzes/backend/system-design/README.md)
+- [ ] Review advanced backend system design solutions after attempting the work: [Advanced Backend System Design Solutions](solutions/backend/system-design/system-design-solutions.md)
+
+## Ready For Testing Strategy And Quality Engineering Checklist
+
+Move into Stage 21 testing strategy and quality engineering when you can:
+
+- [ ] Clarify functional and non-functional requirements before proposing architecture.
+- [ ] Estimate capacity with explicit assumptions and revisit measurements.
+- [ ] Compare modular monoliths and microservices without architecture absolutism.
+- [ ] Explain read paths, write paths, data ownership, consistency choices, replication, partitioning, and migration tradeoffs.
+- [ ] Design boundaries for synchronous and asynchronous communication with idempotency, retries, circuit breakers, and backpressure in mind.
+- [ ] Discuss observability, failure scenarios, security boundaries, cost awareness, and ADRs as part of the design.
+- [ ] Explain what remains out of scope until Stage 21: full testing strategy, quality gates, test pyramid/deployment test strategy synthesis, and quality engineering practice.

@@ -124,6 +124,7 @@ The repository grows in focused branches:
 - Distributed systems foundations, CAP theorem, consistency models, idempotency, retries, sagas, service discovery, coordination, operations, and readiness planning.
 - Event-driven architecture foundations, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
 - Messaging and streaming with Java foundations, delivery reliability, Kafka, RabbitMQ, Java messaging patterns, messaging-ready service design, operations, exercises, quizzes, and readiness planning before advanced backend system design and advanced production infrastructure topics.
+- Advanced backend system design foundations, scalability, reliability, data design, architecture patterns, Java design pattern examples, scalable order platform case study, operations, evolution, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 
 ## Disclaimer
 

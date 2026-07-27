@@ -98,6 +98,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Kafka foundations
 - [ ] RabbitMQ foundations
 - [ ] Messaging operations and observability
+- [ ] System design foundations
+- [ ] Scalability, availability, and reliability
+- [ ] Data system design
+- [ ] Service architecture patterns
+- [ ] System design operations and evolution
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -315,6 +320,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [messaging and streaming quizzes](quizzes/backend/messaging-streaming/README.md)
 - [ ] Review [messaging and streaming solutions](solutions/backend/messaging-streaming/messaging-streaming-solutions.md)
 - [ ] Explain what you need before Stage 20 advanced backend system design
+
+## Advanced Backend System Design Path Checklist
+
+- [ ] Study [System Design Foundations](docs/76-system-design-foundations/README.md)
+- [ ] Study [Scalability Availability And Reliability](docs/77-scalability-availability-reliability/README.md)
+- [ ] Study [Data System Design](docs/78-data-system-design/README.md)
+- [ ] Study [Service Architecture Patterns](docs/79-service-architecture-patterns/README.md)
+- [ ] Run and modify [Backend System Design Patterns](examples/backend/system-design-patterns/README.md)
+- [ ] Review [Scalable Order Platform Design](projects/backend/scalable-order-platform-design/README.md)
+- [ ] Study [System Design Operations And Evolution](docs/80-system-design-operations-and-evolution/README.md)
+- [ ] Complete [advanced backend system design exercises](exercises/backend/system-design/system-design-exercises.md)
+- [ ] Complete [advanced backend system design quizzes](quizzes/backend/system-design/README.md)
+- [ ] Review [advanced backend system design solutions](solutions/backend/system-design/system-design-solutions.md)
+- [ ] Explain what you need before Stage 21 testing strategy and quality engineering
 
 ## Reflection Log
 

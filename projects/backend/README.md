@@ -17,6 +17,7 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 - [Distributed Systems Ready Task API Notes](distributed-systems-ready-task-api/README.md): educational distributed systems readiness notes for boundaries, consistency, retries, observability, and failure planning.
 - [Event-Driven Ready Task API Notes](event-driven-ready-api/README.md): educational event-driven readiness notes for boundaries, contracts, producers, consumers, failure handling, duplicate handling, event evolution, observability, and operations.
 - [Messaging-Ready Service Design](messaging-ready-service/README.md): educational messaging readiness skeleton for producer and consumer boundaries, envelopes, serialization, retry policy, dead letters, idempotency, observability, and future Kafka or RabbitMQ adapters.
+- [Scalable Order Platform Design](scalable-order-platform-design/README.md): educational advanced system design case study for requirements, boundaries, capacity, order submission, idempotency, data ownership, observability, migration, cost, and ADRs.
 
 ## Suggested Order
 
@@ -49,5 +50,6 @@ Backend projects turn Java design skills into HTTP APIs and service applications
 27. Review the event-driven-ready notes and explain which task API events, contracts, consumers, failure modes, duplicate handling rules, and operational signals should exist before Stage 19 messaging and streaming with Java.
 28. Study messaging and streaming foundations, delivery reliability, Kafka, RabbitMQ, Java messaging patterns, and messaging operations.
 29. Review the messaging-ready service design and explain which producer ports, consumer ports, envelopes, retry policies, dead-letter flows, idempotency stores, observability signals, and future adapters belong before advanced backend system design.
+30. Study advanced backend system design and review the scalable order platform design to explain requirements, assumptions, API boundaries, data ownership, read/write paths, idempotency, capacity, failure scenarios, migration strategy, cost tradeoffs, and ADRs before Stage 21 testing strategy and quality engineering.
 
 Do not add real cloud resources, production database configuration, production Kubernetes automation, Terraform/OpenTofu apply or destroy workflows, real service mesh installation, distributed systems implementation, event-driven infrastructure, production messaging infrastructure, production streaming infrastructure, kubeconfig files, Helm release state, IaC state files, plan files, mesh certificates, provider credentials, real domains, account IDs, or real secrets in these learning projects. Demo credentials, placeholder manifests, local-only charts, pseudo-HCL, conceptual workflow notes, pure Java messaging simulations, and vendor-neutral diagrams are not production credentials or production infrastructure.
