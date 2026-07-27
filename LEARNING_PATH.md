@@ -24,6 +24,7 @@ Follow this path in order unless you already know a topic well.
 20. Event-driven architecture foundations: events, commands, asynchronous communication, producers, consumers, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
 21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
 22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
+23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -573,3 +574,37 @@ Move into Stage 21 testing strategy and quality engineering when you can:
 - [ ] Design boundaries for synchronous and asynchronous communication with idempotency, retries, circuit breakers, and backpressure in mind.
 - [ ] Discuss observability, failure scenarios, security boundaries, cost awareness, and ADRs as part of the design.
 - [ ] Explain what remains out of scope until Stage 21: full testing strategy, quality gates, test pyramid/deployment test strategy synthesis, and quality engineering practice.
+
+## Testing Strategy And Quality Engineering Learning Sequence
+
+Use this sequence after Stage 20 advanced backend system design and before Stage 22 performance, profiling, and JVM tuning.
+
+- [ ] Study testing strategy foundations: [Testing Strategy Foundations](docs/81-testing-strategy-foundations/README.md)
+- [ ] Review why testing exists and how it reduces risk: [Why Testing Exists](docs/81-testing-strategy-foundations/why-testing-exists.md)
+- [ ] Compare test levels and strategy tradeoffs: [Testing Levels And Tradeoffs](docs/81-testing-strategy-foundations/testing-levels-and-tradeoffs.md)
+- [ ] Study test design and isolation: [Test Design And Isolation](docs/82-test-design-and-isolation/README.md)
+- [ ] Practice readable test structure: [Readable Test Structure](docs/82-test-design-and-isolation/readable-test-structure.md)
+- [ ] Review deterministic test boundaries: [Isolation And Determinism](docs/82-test-design-and-isolation/isolation-and-determinism.md)
+- [ ] Study integration, contract, and end-to-end testing: [Integration, Contract, And End-To-End Testing](docs/83-integration-contract-and-e2e-testing/README.md)
+- [ ] Study quality engineering practices: [Quality Engineering Practices](docs/84-quality-engineering-practices/README.md)
+- [ ] Review coverage, mutation, and generative testing signals: [Coverage, Mutation, And Generative Testing](docs/84-quality-engineering-practices/coverage-mutation-and-generative-testing.md)
+- [ ] Run and modify Java testing pattern examples: [Java Testing Patterns](examples/testing/java-testing-patterns/README.md)
+- [ ] Build and explain the testing strategy lab: [Testing Strategy Lab](projects/testing/testing-strategy-lab/README.md)
+- [ ] Study CI testing and quality gates: [Testing In CI And Quality Gates](docs/85-testing-ci-quality-gates/README.md)
+- [ ] Complete testing and quality engineering exercises: [Testing And Quality Engineering Exercises](exercises/testing/testing-and-quality-engineering-exercises.md)
+- [ ] Check understanding with testing and quality engineering quizzes: [Testing And Quality Engineering Quizzes](quizzes/testing/README.md)
+- [ ] Review testing and quality engineering solutions after attempting the work: [Testing And Quality Engineering Solutions](solutions/testing/testing-and-quality-engineering-solutions.md)
+
+## Ready For Performance, Profiling, And JVM Tuning Checklist
+
+Move into Stage 22 performance, profiling, and JVM tuning when you can:
+
+- [ ] Explain how tests support system design assumptions without proving complete correctness.
+- [ ] Choose between unit, component, integration, contract, and end-to-end tests by risk and boundary.
+- [ ] Keep tests deterministic with controlled time, IDs, randomness, data, and file-system state.
+- [ ] Use test doubles deliberately without mocking every dependency.
+- [ ] Interpret coverage, mutation, and static-analysis results as quality signals rather than guarantees.
+- [ ] Design CI quality gates that separate required checks from advisory evidence.
+- [ ] Diagnose flaky tests with logs, timing data, seeds, environment metadata, and ownership.
+- [ ] Explain release confidence as evidence-based risk reduction, not production certification.
+- [ ] Explain what remains out of scope until Stage 22: measurement-driven performance analysis, profiling tools, JVM tuning, garbage-collection tuning, benchmarking methodology, and performance-regression strategy.
