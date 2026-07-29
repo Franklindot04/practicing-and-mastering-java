@@ -1,170 +1,121 @@
 # Retry Safety And Budgeting
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Retry safety is about protecting correctness and dependencies. Budgeting turns retry from an instinct into an explicit limit.
 
-## Retry Amplification
+## Coverage Notes
 
-Retry Amplification describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Amplification
 
-Practical questions:
+Retry amplification is the multiplication of downstream calls per user request.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Three layers with three attempts can create many calls.
 
-## Retry Storms
+Tradeoff or failure case: Amplification is dangerous during overload.
 
-Retry Storms describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Storms
 
-Practical questions:
+Retry storms are synchronized, amplified retries after a shared failure.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use jitter and shared budgets.
 
-## Layered Retries
+Tradeoff or failure case: Storms can outlast the original failure.
 
-Layered Retries describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Layered Retries
 
-Practical questions:
+Layered retries occur when clients, services, SDKs, and queues all retry.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Decide where retry ownership belongs.
 
-## Retry Budgets
+Tradeoff or failure case: Hidden SDK retries can break budgets.
 
-Retry Budgets describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Budgets
 
-Practical questions:
+A retry budget limits the fraction or number of calls spent on retries.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Track retry counts as telemetry.
 
-## Request Budgets
+Tradeoff or failure case: A retry budget should protect the dependency, not just the caller.
 
-Request Budgets describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Request Budgets
 
-Practical questions:
+A request budget is the total time allowed for the whole workflow.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Each attempt and delay must fit inside it.
 
-## Time Budgets
+Tradeoff or failure case: Starting work after expiration creates orphaned operations.
 
-Time Budgets describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Time Budgets
 
-Practical questions:
+Time budgets divide a deadline among validation, dependencies, retries, and response handling.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use `Clock` and `Duration` in tests.
 
-## Attempt Budgets
+Tradeoff or failure case: Leaving no time for cleanup can make recovery unclear.
 
-Attempt Budgets describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Attempt Budgets
 
-Practical questions:
+Attempt budgets bound how many tries are allowed.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Attempt one is the original call.
 
-## Dependency Protection
+Tradeoff or failure case: Attempt budgets without elapsed limits can still exceed the caller deadline.
 
-Dependency Protection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Dependency Protection
 
-Practical questions:
+Retries should not overwhelm the dependency they are trying to help.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Circuit breakers, bulkheads, and load shedding work with retry policy.
 
-## Idempotency Requirements
+Tradeoff or failure case: Retrying every 500 response is often unsafe.
 
-Idempotency Requirements describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Side-Effect Safety
 
-Practical questions:
+Only retry side effects when idempotency or deduplication makes duplicates safe.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use idempotency keys for create or payment-like operations.
 
-## Side-Effect Safety
+Tradeoff or failure case: Safe reads and unsafe writes have different retry rules.
 
-Side-Effect Safety describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Idempotency Requirements
 
-Practical questions:
+Idempotency lets repeated equivalent requests produce one effect.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Store fingerprints and responses for duplicate keys.
 
-## Fallback After Retry Exhaustion
+Tradeoff or failure case: In-memory idempotency is educational, not durable.
 
-Fallback After Retry Exhaustion describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fallback After Exhaustion
 
-Practical questions:
+After retries are exhausted, either fail clearly or use an honest fallback.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Return partial status when optional work is deferred.
 
-## Retry Telemetry
+Tradeoff or failure case: Do not pretend a critical write succeeded.
 
-Retry Telemetry describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Telemetry
 
-Practical questions:
+Record attempts, delay, final result, and classification.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Metrics should be aggregated; logs should avoid per-attempt noise unless useful.
 
-## Logging Attempts Without Noise
+Tradeoff or failure case: Noisy logs can hide the real incident.
 
-Logging Attempts Without Noise describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Ownership
 
-Practical questions:
+Retry belongs closest to the component that understands safety, budget, and classification.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A service may retry an idempotent dependency call; a UI may retry a safe read.
 
-## Where Retries Belong
+Tradeoff or failure case: Multiple owners cause layered retries.
 
-Where Retries Belong describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

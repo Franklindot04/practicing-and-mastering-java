@@ -1,170 +1,129 @@
 # Retry Strategies And Backoff
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Retry strategy determines when another attempt is useful. Backoff spaces attempts so transient failures have time to recover and dependencies are protected.
 
-## Immediate Retry
+## Coverage Notes
 
-Immediate Retry describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Immediate Retry
 
-Practical questions:
+An immediate retry runs again without delay.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Useful only for rare races or already-local operations.
 
-## Fixed Delay
+Tradeoff or failure case: Can create retry storms under dependency failure.
 
-Fixed Delay describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fixed Delay
 
-Practical questions:
+Fixed delay waits the same time between attempts.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Simple and deterministic in tests with an injected sleeper.
 
-## Linear Backoff
+Tradeoff or failure case: Many clients can synchronize on the same delay.
 
-Linear Backoff describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Linear Backoff
 
-Practical questions:
+Linear backoff increases delay by a fixed amount.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Easy to reason about for local examples.
 
-## Exponential Backoff
+Tradeoff or failure case: May still be too aggressive during overload.
 
-Exponential Backoff describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Exponential Backoff
 
-Practical questions:
+Exponential backoff multiplies delay after each attempt.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use `initialDelay * 2^(attempt-1)` with overflow protection.
 
-## Capped Exponential Backoff
+Tradeoff or failure case: Uncapped exponential delays can exceed request budgets.
 
-Capped Exponential Backoff describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Capped Exponential Backoff
 
-Practical questions:
+A cap limits maximum delay.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java `Duration` cap keeps calculations bounded.
 
-## Jitter
+Tradeoff or failure case: The cap is not universal; choose it from the request budget.
 
-Jitter describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Jitter
 
-Practical questions:
+Jitter randomizes delay to avoid synchronized retries.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Inject a seeded random or deterministic function in tests.
 
-## Full Jitter
+Tradeoff or failure case: Uncontrolled randomness makes tests flaky.
 
-Full Jitter describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Full Jitter
 
-Practical questions:
+Full jitter chooses a value between zero and the current cap.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: It spreads clients widely during overload.
 
-## Equal Jitter
+Tradeoff or failure case: A zero delay may still be too aggressive for some dependencies.
 
-Equal Jitter describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Equal Jitter
 
-Practical questions:
+Equal jitter keeps part of the delay fixed and randomizes the rest.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: It balances minimum slowdown with spreading.
 
-## Decorrelated Jitter
+Tradeoff or failure case: It is still a policy choice, not a default.
 
-Decorrelated Jitter describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Decorrelated Jitter
 
-Practical questions:
+Decorrelated jitter bases the next delay on the prior delay and a cap.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Explain it conceptually unless the implementation needs it.
 
-## Retryable Versus Non-Retryable Failures
+Tradeoff or failure case: Test it with injected deterministic randomness.
 
-Retryable Versus Non-Retryable Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retryable Versus Non-Retryable
 
-Practical questions:
+Retryable failures are likely temporary; non-retryable failures require a different action.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Classify exceptions before retrying.
 
-## Maximum Attempts
+Tradeoff or failure case: Validation errors and duplicate unsafe writes should not be retried blindly.
 
-Maximum Attempts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Maximum Attempts
 
-Practical questions:
+Maximum attempts bound call amplification.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Include the first try in the count.
 
-## Elapsed-Time Limits
+Tradeoff or failure case: Too many attempts can exhaust the caller deadline.
 
-Elapsed-Time Limits describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Elapsed-Time Limits
 
-Practical questions:
+Elapsed-time limits stop retries when the request budget is gone.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Check elapsed time before sleeping and before the next attempt.
 
-## Retry-After Hints
+Tradeoff or failure case: Attempt count alone is not enough.
 
-Retry-After Hints describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry-After Hints
 
-Practical questions:
+`Retry-After` or similar hints communicate when a caller should try again.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Respect hints when they fit the caller budget.
 
-## Avoiding Synchronized Retry Storms
+Tradeoff or failure case: Hints are not permission to retry unsafe operations.
 
-Avoiding Synchronized Retry Storms describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Synchronized Retry Storms
 
-Practical questions:
+A retry storm happens when many callers retry at the same time.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Backoff, jitter, budgets, and load shedding reduce storm risk.
 
-## Java-Oriented Example
+Tradeoff or failure case: Layered retries multiply the storm.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

@@ -1,203 +1,145 @@
 # Timeouts, Deadlines, And Cancellation
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+A timeout is a local waiting limit. A deadline is an absolute latest completion time for the request. Cancellation is the cooperative act of stopping work after the result is no longer useful.
 
-## Connection Timeout
+## Coverage Notes
 
-Connection Timeout describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Connection Timeout
 
-Practical questions:
+The maximum time allowed to establish a connection.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Configure HTTP and database clients so connection setup cannot block a worker forever.
 
-## Read Timeout
+Tradeoff or failure case: Too low causes false failures; too high hides dependency trouble.
 
-Read Timeout describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Read Timeout
 
-Practical questions:
+The maximum wait for response bytes after a request is sent.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java client should distinguish no response from a slow response.
 
-## Write Timeout
+Tradeoff or failure case: Missing read timeouts can pin request threads.
 
-Write Timeout describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Write Timeout
 
-Practical questions:
+The maximum wait while sending a request body.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Large uploads or slow sockets need bounded writes.
 
-## Operation Timeout
+Tradeoff or failure case: A write timeout does not prove the dependency did not receive partial data.
 
-Operation Timeout describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Operation Timeout
 
-Practical questions:
+A timeout for an entire local operation.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Wrap a dependency method with a total budget rather than only socket phases.
 
-## Request Deadline
+Tradeoff or failure case: Layered timeouts must fit inside the caller deadline.
 
-Request Deadline describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Request Deadline
 
-Practical questions:
+A deadline is an absolute end time shared across nested calls.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Pass remaining time through service methods.
 
-## Cancellation
+Tradeoff or failure case: A retry that starts after the deadline creates orphaned work.
 
-Cancellation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Cancellation
 
-Practical questions:
+Cancellation asks in-flight work to stop because the result is no longer needed.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use `Future.cancel`, interrupt-aware blocking, or explicit cancellation flags where appropriate.
 
-## Timeout Propagation
+Tradeoff or failure case: Cancellation in Java is cooperative, not magic.
 
-Timeout Propagation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Timeout Propagation
 
-Practical questions:
+Timeout propagation passes local limits to downstream calls.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Convert remaining deadline to a shorter timeout before calling a dependency.
 
-## Deadline Propagation
+Tradeoff or failure case: An inner timeout longer than the outer request wastes work.
 
-Deadline Propagation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Deadline Propagation
 
-Practical questions:
+Deadline propagation carries the absolute deadline across layers.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A `RequestContext` can expose `remaining()` and `isExpired()`.
 
-## Bounded Waiting
+Tradeoff or failure case: Clock differences matter across machines; local examples can use injected clocks.
 
-Bounded Waiting describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Bounded Waiting
 
-Practical questions:
+Bounded waiting means every blocking point has a limit.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use bounded queues, timed acquires, and client timeouts.
 
-## Why Missing Timeouts Are Dangerous
+Tradeoff or failure case: Unbounded waiting is a reliability bug.
 
-Why Missing Timeouts Are Dangerous describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Timeout Selection
 
-Practical questions:
+Timeouts should reflect caller expectations, dependency behavior, and recovery cost.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Start from measured latency and SLO needs, then test edge cases.
 
-## Timeout Selection
+Tradeoff or failure case: There is no universal timeout value.
 
-Timeout Selection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Timeout Layering
 
-Practical questions:
+Outer deadlines should be longer than inner dependency timeouts plus retry delay.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Make the math visible in code or configuration.
 
-## Timeout Layering
+Tradeoff or failure case: Layering mistakes create work that cannot complete in time.
 
-Timeout Layering describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Java Interruption
 
-Practical questions:
+Interruption is Java's standard signal for cooperative cancellation in blocking code.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Catch `InterruptedException`, restore interrupt status, and exit or propagate.
 
-## Interrupt Handling In Java
+Tradeoff or failure case: Swallowing interruption can prevent shutdown.
 
-Interrupt Handling In Java describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Cooperative Cancellation
 
-Practical questions:
+Code must periodically check whether cancellation was requested.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Loops can check `Thread.currentThread().isInterrupted()` or a request budget.
 
-## Cooperative Cancellation
+Tradeoff or failure case: CPU-bound work will not stop unless it checks.
 
-Cooperative Cancellation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Preserving Interrupt Status
 
-Practical questions:
+If a method cannot throw `InterruptedException`, it should call `Thread.currentThread().interrupt()`.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: This lets outer code observe the cancellation signal.
 
-## Preserving Interrupt Status
+Tradeoff or failure case: Clearing the flag hides shutdown requests.
 
-Preserving Interrupt Status describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### CompletableFuture Timeout Concepts
 
-Practical questions:
+`orTimeout` completes the future exceptionally; `completeOnTimeout` supplies a fallback value.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: The underlying work may continue unless the executor and task cooperate.
 
-## CompletableFuture Timeout Concepts
+Tradeoff or failure case: Do not confuse future completion with stopping side effects.
 
-CompletableFuture Timeout Concepts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Orphaned Work
 
-Practical questions:
+Orphaned work continues after the caller has left.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use deadlines, cancellation, and bounded executors to reduce it.
 
-## Avoiding Orphaned Work
+Tradeoff or failure case: Orphaned writes can corrupt user expectations.
 
-Avoiding Orphaned Work describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
