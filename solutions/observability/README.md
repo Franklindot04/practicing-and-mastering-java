@@ -5,7 +5,3 @@ These solutions explain one reasonable line of thinking. They are not universal 
 ## Solution Set
 
 1. [Observability And Production Diagnostics Solutions](observability-and-production-diagnostics-solutions.md)
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/learnjava
