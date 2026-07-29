@@ -67,6 +67,8 @@ After testing strategy and quality engineering, use the [performance, profiling,
 
 After performance, profiling, and JVM tuning, use the [observability and production diagnostics learning sequence](LEARNING_PATH.md#observability-and-production-diagnostics-learning-sequence) to connect runtime evidence, structured telemetry, health signals, alert review, SLO reasoning, and incident diagnostics.
 
+After observability and production diagnostics, use the [reliability engineering, resilience, and failure recovery learning sequence](LEARNING_PATH.md#reliability-engineering-resilience-and-failure-recovery-learning-sequence) for Stage 24 — Reliability Engineering, Resilience, and Failure Recovery.
+
 ## Folder Structure
 
 ```text
