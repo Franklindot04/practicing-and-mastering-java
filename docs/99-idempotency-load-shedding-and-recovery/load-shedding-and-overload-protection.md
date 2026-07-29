@@ -1,203 +1,153 @@
 # Load Shedding And Overload Protection
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Overload protection rejects or defers work before saturation collapses the whole system.
 
-## Overload
+## Coverage Notes
 
-Overload describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Overload
 
-Practical questions:
+Overload means offered work exceeds useful capacity.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Measure queue depth, latency, active threads, and rejection counts.
 
-## Saturation
+Tradeoff or failure case: Retrying into overload makes it worse.
 
-Saturation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Saturation
 
-Practical questions:
+Saturation means a resource is at or near its limit.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Threads, connections, memory, CPU, and queues can saturate.
 
-## Admission Control
+Tradeoff or failure case: Latency often rises before hard failure.
 
-Admission Control describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Admission Control
 
-Practical questions:
+Admission control decides whether work may enter the system.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Reject early when there is no capacity or budget.
 
-## Load Shedding
+Tradeoff or failure case: Late rejection wastes resources.
 
-Load Shedding describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Load Shedding
 
-Practical questions:
+Load shedding deliberately rejects lower-value or impossible work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Return a clear overloaded status and retry hint when appropriate.
 
-## Bounded Queues
+Tradeoff or failure case: Silent shedding loses trust.
 
-Bounded Queues describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Bounded Queues
 
-Practical questions:
+Bounded queues limit waiting work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use a rejection policy when full.
 
-## Concurrency Limits
+Tradeoff or failure case: Unbounded queues hide overload until memory or latency fails.
 
-Concurrency Limits describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Concurrency Limits
 
-Practical questions:
+Concurrency limits cap simultaneous work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A semaphore can protect a dependency.
 
-## Rate Limits
+Tradeoff or failure case: Too high is no protection; too low wastes capacity.
 
-Rate Limits describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rate Limits
 
-Practical questions:
+Rate limits bound requests over time.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: They can protect shared APIs.
 
-## Token-Bucket Concepts
+Tradeoff or failure case: Rate limits do not replace concurrency limits.
 
-Token-Bucket Concepts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Token-Bucket Concepts
 
-Practical questions:
+A token bucket allows bursts up to bucket size while refilling over time.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Useful for explaining rate limits without external infrastructure.
 
-## Queue Rejection
+Tradeoff or failure case: Bucket settings must match business needs.
 
-Queue Rejection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rejection
 
-Practical questions:
+Rejection should be fast, observable, and understandable.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use a typed exception, status, or response field.
 
-## Priority-Based Shedding
+Tradeoff or failure case: Dropping requests silently creates unknown outcomes.
 
-Priority-Based Shedding describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Priority Shedding
 
-Practical questions:
+Priority shedding rejects less critical work first.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Protect checkout before recommendations.
 
-## Stale Request Rejection
+Tradeoff or failure case: Priority systems need fairness review.
 
-Stale Request Rejection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Stale Rejection
 
-Practical questions:
+Stale requests are rejected because they are too old to matter.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Compare now to request deadline.
 
-## Deadline-Aware Rejection
+Tradeoff or failure case: Processing stale work can create wrong side effects.
 
-Deadline-Aware Rejection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Deadline-Aware Rejection
 
-Practical questions:
+Deadline-aware rejection stops work that cannot finish before the caller deadline.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Check the budget before acquiring scarce resources.
 
-## Backpressure
+Tradeoff or failure case: It is better to reject than start doomed work.
 
-Backpressure describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Backpressure
 
-Practical questions:
+Backpressure tells upstream callers to slow down.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Queues, reactive streams, or HTTP 429-style responses can express it.
 
-## Protecting Critical Operations
+Tradeoff or failure case: Backpressure requires callers to cooperate.
 
-Protecting Critical Operations describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Critical-Operation Protection
 
-Practical questions:
+Critical operations deserve reserved capacity or stricter protection.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Separate payment from optional notification.
 
-## Fairness
+Tradeoff or failure case: Do not let optional work starve recovery.
 
-Fairness describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fairness
 
-Practical questions:
+Fairness prevents one caller or tenant from monopolizing capacity.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Per-tenant limits can help.
 
-## Retry-After Behavior
+Tradeoff or failure case: Fairness can conflict with raw throughput.
 
-Retry-After Behavior describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry-After
 
-Practical questions:
+Retry-After communicates when retry may be useful.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use it with overload responses when safe.
 
-## Avoiding Overload Collapse
+Tradeoff or failure case: Do not encourage retries for non-idempotent operations.
 
-Avoiding Overload Collapse describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Overload Collapse
 
-Practical questions:
+Overload collapse happens when the system spends capacity on doomed or repeated work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Load shedding, budgets, and backoff prevent collapse.
 
-## Java-Oriented Example
+Tradeoff or failure case: Adding workers may worsen dependency saturation.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

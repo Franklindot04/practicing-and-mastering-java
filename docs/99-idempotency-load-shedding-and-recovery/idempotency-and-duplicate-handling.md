@@ -1,192 +1,137 @@
 # Idempotency And Duplicate Handling
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Distributed callers retry, networks fail, users double-submit, and queues redeliver. Idempotency makes equivalent repeats safe.
 
-## Mathematical And Operational Idempotency
+## Coverage Notes
 
-Mathematical And Operational Idempotency describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Mathematical And Operational Idempotency
 
-Practical questions:
+Mathematically, applying an operation more than once has the same effect as once; operationally, duplicate requests produce one accepted side effect.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Setting a task status is naturally closer to idempotent than charging a card.
 
-## Naturally Idempotent Operations
+Tradeoff or failure case: Do not call an operation idempotent only because the response text is the same.
 
-Naturally Idempotent Operations describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Naturally Idempotent Operations
 
-Practical questions:
+Reads and assignments like `setEmail(value)` can be naturally idempotent.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Prefer PUT-like replace semantics where they fit.
 
-## Idempotency Keys
+Tradeoff or failure case: Increment, append, and charge are not naturally idempotent.
 
-Idempotency Keys describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Idempotency Keys
 
-Practical questions:
+An idempotency key identifies one logical request across retries.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Store the key before executing side effects.
 
-## Request Fingerprints
+Tradeoff or failure case: Keys must be scoped to the caller and operation.
 
-Request Fingerprints describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fingerprints
 
-Practical questions:
+A fingerprint summarizes the request shape that belongs to a key.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Reject the same key with a different fingerprint.
 
-## Deduplication Records
+Tradeoff or failure case: Without fingerprints, callers can accidentally reuse keys for different work.
 
-Deduplication Records describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Deduplication Records
 
-Practical questions:
+Deduplication records store key, fingerprint, status, and response.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: In Java examples this may be an in-memory map.
 
-## Duplicate Suppression
+Tradeoff or failure case: Production systems need durable storage.
 
-Duplicate Suppression describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Suppression
 
-Practical questions:
+Duplicate suppression avoids repeating side effects for equivalent requests.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Return the stored response for a duplicate key.
 
-## Replay Safety
+Tradeoff or failure case: Suppression before completion needs concurrency handling.
 
-Replay Safety describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Replay Safety
 
-Practical questions:
+Replay safety means reprocessing an event or request does not repeat unsafe work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Idempotent consumers record processed message IDs.
 
-## Idempotency Windows
+Tradeoff or failure case: Replay safety must include side-effect ordering.
 
-Idempotency Windows describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Windows
 
-Practical questions:
+Idempotency windows define how long duplicate records are retained.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Choose based on retry and replay behavior.
 
-## Stored Responses
+Tradeoff or failure case: Too short a window allows late duplicates.
 
-Stored Responses describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Stored Responses
 
-Practical questions:
+Stored responses let duplicates receive the same outcome.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Cache success, failure, or in-progress state deliberately.
 
-## Race Conditions
+Tradeoff or failure case: Storing only success can repeat failed side effects.
 
-Race Conditions describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Races And Concurrent Duplicates
 
-Practical questions:
+Concurrent duplicates arrive before the first request completes.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use atomic map operations, locks, or database uniqueness.
 
-## Concurrent Duplicate Requests
+Tradeoff or failure case: Check-then-act maps can execute twice.
 
-Concurrent Duplicate Requests describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Uniqueness Constraints
 
-Practical questions:
+Database uniqueness constraints enforce one record per logical key.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: They are a production-grade backstop beyond in-memory examples.
 
-## Database Uniqueness Constraints
+Tradeoff or failure case: A constraint alone does not define the response to duplicates.
 
-Database Uniqueness Constraints describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### At-Least-Once Delivery
 
-Practical questions:
+At-least-once systems may deliver the same message repeatedly.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Consumers must be idempotent.
 
-## At-Least-Once Delivery
+Tradeoff or failure case: At-least-once is common because it preserves durability.
 
-At-Least-Once Delivery describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Exactly-Once Claims
 
-Practical questions:
+Exactly-once usually means a scoped guarantee with conditions, not magic absence of duplicates.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Read vendor guarantees carefully.
 
-## Exactly-Once Claims And Limitations
+Tradeoff or failure case: Application side effects can still duplicate.
 
-Exactly-Once Claims And Limitations describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Idempotent Consumers
 
-Practical questions:
+Idempotent consumers record processed identifiers or write deterministic upserts.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Handle redelivery after crashes.
 
-## Idempotent Consumers
+Tradeoff or failure case: Acknowledging before side effects can lose work.
 
-Idempotent Consumers describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Side-Effect Ordering
 
-Practical questions:
+Side effects must happen in an order that can be recovered.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Record intent before irreversible work when appropriate.
 
-## Side-Effect Ordering
+Tradeoff or failure case: Sending notification before payment commit can mislead users.
 
-Side-Effect Ordering describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

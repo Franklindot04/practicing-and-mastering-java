@@ -1,192 +1,137 @@
 # Recovery Patterns And Operational Readiness
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Recovery is the work of getting back to correct, verified behavior after failure. Operational readiness means people know how to do that work.
 
-## Restart And Retry Recovery
+## Coverage Notes
 
-Restart And Retry Recovery describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Restart And Retry Recovery
 
-Practical questions:
+Some faults clear after restart or retry.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use restarts for clean process state, not data repair.
 
-## Checkpointing
+Tradeoff or failure case: Restart loops can hide persistent faults.
 
-Checkpointing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Checkpointing
 
-Practical questions:
+Checkpointing records progress so work can resume.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Batch jobs can store last processed ID.
 
-## Replay
+Tradeoff or failure case: Bad checkpoints can skip or duplicate work.
 
-Replay describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Replay
 
-Practical questions:
+Replay reprocesses stored events or requests.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Idempotency makes replay safer.
 
-## Reconciliation
+Tradeoff or failure case: Replay can overload dependencies.
 
-Reconciliation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Reconciliation
 
-Practical questions:
+Reconciliation compares systems of record and repairs differences.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use deterministic comparison jobs.
 
-## Compensating Actions
+Tradeoff or failure case: It needs ownership and auditability.
 
-Compensating Actions describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Compensation
 
-Practical questions:
+Compensating actions offset prior work when rollback is impossible.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Issue a refund rather than deleting payment history.
 
-## Rollback
+Tradeoff or failure case: Compensation is not always equivalent to undo.
 
-Rollback describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rollback And Roll-Forward
 
-Practical questions:
+Rollback returns to an earlier version; roll-forward deploys a fix.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Choose based on data migrations and risk.
 
-## Roll-Forward
+Tradeoff or failure case: Rollback can be unsafe after irreversible data changes.
 
-Roll-Forward describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### State Repair
 
-Practical questions:
+State repair fixes incorrect data.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Scripts should be reviewed, tested, and logged.
 
-## State Repair
+Tradeoff or failure case: Manual repair without evidence creates new risk.
 
-State Repair describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Reprocessing
 
-Practical questions:
+Reprocessing reruns data through a pipeline.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Bound it and observe progress.
 
-## Data Reprocessing
+Tradeoff or failure case: Reprocessing old data may trigger old side effects.
 
-Data Reprocessing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Degraded Operation
 
-Practical questions:
+Degraded mode preserves essential work while reducing functionality.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Expose degraded status in diagnostics.
 
-## Degraded-Mode Operation
+Tradeoff or failure case: A degraded mode needs exit criteria.
 
-Degraded-Mode Operation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Recovery Verification
 
-Practical questions:
+Recovery is complete only after checks pass.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Verify data, metrics, user paths, and dependency health.
 
-## Recovery Verification
+Tradeoff or failure case: Green health checks alone may be insufficient.
 
-Recovery Verification describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Runbooks
 
-Practical questions:
+Runbooks list symptoms, diagnosis, mitigation, escalation, and verification.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Keep commands and decision points clear.
 
-## Recovery Runbooks
+Tradeoff or failure case: Untested runbooks are guesses.
 
-Recovery Runbooks describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Ownership And Escalation
 
-Practical questions:
+Ownership identifies who decides and who acts.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Escalation paths prevent delay.
 
-## Ownership And Escalation
+Tradeoff or failure case: Ambiguous ownership lengthens incidents.
 
-Ownership And Escalation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Readiness Reviews
 
-Practical questions:
+Readiness reviews check observability, limits, rollback, recovery, and support before release.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Review reliability code and runbooks together.
 
-## Operational Readiness Reviews
+Tradeoff or failure case: A review without action tracking is weak.
 
-Operational Readiness Reviews describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Drills
 
-Practical questions:
+Recovery drills test whether people and systems can recover.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use safe test environments or controlled scopes.
 
-## Recovery Drills
+Tradeoff or failure case: A drill should not end until findings are tracked.
 
-Recovery Drills describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Post-Incident Learning
 
-Practical questions:
+Post-incident learning improves systems without blame.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Convert findings into tests, alerts, docs, or design changes.
 
-## Post-Incident Learning
+Tradeoff or failure case: Learning without follow-through repeats incidents.
 
-Post-Incident Learning describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
