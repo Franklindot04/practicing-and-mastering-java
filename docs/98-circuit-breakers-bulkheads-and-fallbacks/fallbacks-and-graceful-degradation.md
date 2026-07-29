@@ -1,159 +1,121 @@
 # Fallbacks And Graceful Degradation
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+A fallback is an alternative result when the preferred path is unavailable. It must be honest about what is missing.
 
-## Cached Fallback
+## Coverage Notes
 
-Cached Fallback describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Cached Fallback
 
-Practical questions:
+Cached fallback returns a previously known value.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Useful for read-only reference data.
 
-## Static Fallback
+Tradeoff or failure case: Stale cache can violate correctness.
 
-Static Fallback describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Static Fallback
 
-Practical questions:
+Static fallback returns a safe constant result.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A feature flag may hide optional recommendations.
 
-## Stale-But-Usable Data
+Tradeoff or failure case: Static values can be misleading if presented as live data.
 
-Stale-But-Usable Data describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Stale-But-Usable Data
 
-Practical questions:
+Stale data is acceptable only when freshness is not critical.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Include age or diagnostic metadata when possible.
 
-## Partial Response
+Tradeoff or failure case: Stale inventory or payment status can be unsafe.
 
-Partial Response describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Partial Response
 
-Practical questions:
+Partial response returns available fields and marks missing parts.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use structured response status.
 
-## Optional Feature Disablement
+Tradeoff or failure case: Do not return HTTP 200 with hidden critical failure.
 
-Optional Feature Disablement describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Optional Feature Disablement
 
-Practical questions:
+Optional features can be disabled to protect core flows.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Recommendation, notification, or analytics paths often degrade.
 
-## Default Values
+Tradeoff or failure case: Disabling security or payment checks is not graceful degradation.
 
-Default Values describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Default Values
 
-Practical questions:
+Defaults fill missing non-critical data.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use defaults only when the caller can safely interpret them.
 
-## Read-Only Mode
+Tradeoff or failure case: A default can hide data loss.
 
-Read-Only Mode describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Read-Only Mode
 
-Practical questions:
+Read-only mode accepts reads while rejecting writes.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Useful during storage recovery.
 
-## Reduced Functionality
+Tradeoff or failure case: It must be visible to users or callers.
 
-Reduced Functionality describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Reduced Functionality
 
-Practical questions:
+Reduced functionality preserves essential work while cutting optional work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Checkout may accept orders but defer notification.
 
-## Fallback Correctness Risks
+Tradeoff or failure case: Reduced mode needs observability and recovery tasks.
 
-Fallback Correctness Risks describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Correctness Risks
 
-Practical questions:
+Fallbacks can preserve availability while reducing correctness.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Define which invariant still holds.
 
-## Misleading Success
+Tradeoff or failure case: Payment fallback is usually unsafe.
 
-Misleading Success describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Misleading Success
 
-Practical questions:
+Misleading success claims work completed when it did not.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Return degraded or partial statuses.
 
-## Fallback Observability
+Tradeoff or failure case: Misleading success damages recovery.
 
-Fallback Observability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fallback Observability
 
-Practical questions:
+Record fallback use as a metric and diagnostic event.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Operators need to know degraded mode is active.
 
-## User-Facing Transparency
+Tradeoff or failure case: Invisible fallback can hide incidents.
 
-User-Facing Transparency describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### User Transparency
 
-Practical questions:
+Callers should know when behavior is degraded.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Expose status and next action when appropriate.
 
-## When Failing Clearly Is Safer
+Tradeoff or failure case: Too much detail can leak internals.
 
-When Failing Clearly Is Safer describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Explicit Failure Safer
 
-Practical questions:
+Explicit failure is safer when fallback would violate correctness, safety, or compliance.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Reject duplicate payment uncertainty rather than ship unpaid goods.
 
-## Java-Oriented Example
+Tradeoff or failure case: Availability is not always the highest priority.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

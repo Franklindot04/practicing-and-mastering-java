@@ -1,181 +1,129 @@
 # Circuit Breaker Pattern
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+A circuit breaker is a state machine around a dependency call. It protects callers and dependencies by failing fast after enough evidence of failure.
 
-## Closed State
+## Coverage Notes
 
-Closed State describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### CLOSED
 
-Practical questions:
+Closed means calls are allowed and outcomes are recorded.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Wrap the dependency method and count failures in a window.
 
-## Open State
+Tradeoff or failure case: A closed breaker still needs timeouts.
 
-Open State describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### OPEN
 
-Practical questions:
+Open means calls are rejected without invoking the dependency.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Throw a clear exception or return a controlled failure.
 
-## Half-Open State
+Tradeoff or failure case: Opening too eagerly can create false positives.
 
-Half-Open State describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### HALF_OPEN
 
-Practical questions:
+Half-open allows limited probe calls after the open duration.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use an injected `Clock` in tests to avoid waiting.
 
-## Failure Thresholds
+Tradeoff or failure case: Allowing many probes can overload a recovering dependency.
 
-Failure Thresholds describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Thresholds
 
-Practical questions:
+Thresholds define how many failures or what failure rate opens the breaker.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Require a meaningful minimum-call count.
 
-## Rolling Windows
+Tradeoff or failure case: A threshold of one can be noisy for low-volume dependencies.
 
-Rolling Windows describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rolling Windows
 
-Practical questions:
+Rolling windows evaluate recent calls rather than lifetime totals.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples can simplify to counters, but production designs need windows.
 
-## Minimum Call Counts
+Tradeoff or failure case: Lifetime counters may keep a dependency open long after recovery.
 
-Minimum Call Counts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Minimum-Call Counts
 
-Practical questions:
+Minimum call counts prevent decisions from tiny samples.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Do not open based on one failure out of one call unless the workflow is intentionally strict.
 
-## Open Duration
+Tradeoff or failure case: Too high delays protection.
 
-Open Duration describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Open Duration
 
-Practical questions:
+Open duration is how long the breaker rejects before probing.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use `Duration` and `Clock` for deterministic tests.
 
-## Probe Calls
+Tradeoff or failure case: Too short can hammer dependencies; too long can extend outages.
 
-Probe Calls describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Probes
 
-Practical questions:
+Probe calls test whether recovery is likely.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Limit concurrent probes with a boolean or semaphore.
 
-## Success Thresholds
+Tradeoff or failure case: Probe side effects must be safe or idempotent.
 
-Success Thresholds describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Success Thresholds
 
-Practical questions:
+Some breakers require multiple successful probes before closing.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A simple educational breaker may close after one success and document the simplification.
 
-## State Transitions
+Tradeoff or failure case: One success may be a false recovery.
 
-State Transitions describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Transitions
 
-Practical questions:
+Closed to open follows failure evidence; open to half-open follows time; half-open closes on success or reopens on failure.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Expose state snapshots for diagnostics.
 
-## Dependency-Specific Breakers
+Tradeoff or failure case: Hidden transitions are hard to operate.
 
-Dependency-Specific Breakers describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Dependency-Specific Breakers
 
-Practical questions:
+Each dependency should have its own breaker policy.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Payment and notification have different criticality.
 
-## Breaker Metrics
+Tradeoff or failure case: A shared breaker can block healthy dependencies.
 
-Breaker Metrics describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Metrics
 
-Practical questions:
+Record state, rejected calls, failures, probes, and recoveries.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Metrics help explain why callers fail fast.
 
-## False Positives
+Tradeoff or failure case: Metrics without labels can hide which dependency failed.
 
-False Positives describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Configuration Risks
 
-Practical questions:
+Bad thresholds, missing minimums, and wrong failure classification create risk.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Review breaker settings with dependency behavior.
 
-## Configuration Risks
+Tradeoff or failure case: Copying settings between systems is unsafe.
 
-Configuration Risks describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Timeout And Retry Interaction
 
-Practical questions:
+Timeouts define failure evidence; retries should stop when the breaker opens.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Retry outside an open breaker usually fails fast.
 
-## Interaction With Retries And Timeouts
+Tradeoff or failure case: Retries before breaker recording can hide failure rate.
 
-Interaction With Retries And Timeouts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

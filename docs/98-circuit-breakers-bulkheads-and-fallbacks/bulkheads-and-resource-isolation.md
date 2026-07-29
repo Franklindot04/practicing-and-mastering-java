@@ -1,170 +1,121 @@
 # Bulkheads And Resource Isolation
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Bulkheads keep one class of work from consuming all shared resources. They reduce blast radius by setting explicit isolation boundaries.
 
-## Bulkhead Pattern
+## Coverage Notes
 
-Bulkhead Pattern describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Thread-Pool Isolation
 
-Practical questions:
+Thread-pool isolation gives risky work its own executor.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use bounded executors for dependency-heavy tasks.
 
-## Thread-Pool Isolation
+Tradeoff or failure case: Too many pools waste threads.
 
-Thread-Pool Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Semaphore Isolation
 
-Practical questions:
+Semaphore isolation limits concurrent calls without creating threads.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java `Semaphore` can reject immediately when full.
 
-## Semaphore Isolation
+Tradeoff or failure case: Always release permits in `finally`.
 
-Semaphore Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Queue Isolation
 
-Practical questions:
+Queue isolation separates waiting work by class.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use bounded queues and clear rejection behavior.
 
-## Queue Isolation
+Tradeoff or failure case: Unbounded queues create memory and latency failures.
 
-Queue Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Connection-Pool Isolation
 
-Practical questions:
+Connection pools isolate database or HTTP connections.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Separate pools for critical dependencies can prevent starvation.
 
-## Connection-Pool Isolation
+Tradeoff or failure case: Oversized pools can overload the dependency.
 
-Connection-Pool Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Tenant Isolation
 
-Practical questions:
+Tenant isolation prevents one tenant from consuming all capacity.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Rate limits or per-tenant semaphores can help.
 
-## Tenant Isolation
+Tradeoff or failure case: Strict isolation can strand capacity.
 
-Tenant Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Dependency Isolation
 
-Practical questions:
+Dependency isolation allocates separate resources per downstream system.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Notification should not starve payment.
 
-## Dependency Isolation
+Tradeoff or failure case: Isolation boundaries should reflect criticality.
 
-Dependency Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Bounded Queues
 
-Practical questions:
+Bounded queues define how much waiting is acceptable.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Reject when full and report the reason.
 
-## Bounded Queues
+Tradeoff or failure case: A full queue is a signal, not just an exception.
 
-Bounded Queues describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Concurrency Limits
 
-Practical questions:
+Concurrency limits cap simultaneous work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Expose active and available counts for diagnostics.
 
-## Concurrency Limits
+Tradeoff or failure case: A limit that is too high can still saturate the dependency.
 
-Concurrency Limits describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Starvation
 
-Practical questions:
+Starvation means lower-priority work never gets resources.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Reserve capacity or split pools when necessary.
 
-## Starvation
+Tradeoff or failure case: Priority systems can starve normal users.
 
-Starvation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rejection Policies
 
-Practical questions:
+Rejection can fail fast, return retry hints, or degrade optional work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use typed exceptions or status codes.
 
-## Rejection Policies
+Tradeoff or failure case: Silent dropping is misleading.
 
-Rejection Policies describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Leaks
 
-Practical questions:
+Leaks happen when permits, threads, connections, or buffers are not released.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use try/finally and tests for exception paths.
 
-## Resource Leaks
+Tradeoff or failure case: Leaks become outages over time.
 
-Resource Leaks describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Blast-Radius Reduction
 
-Practical questions:
+Bulkheads contain dependency or tenant failure.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A saturated search dependency should not prevent checkout payment.
 
-## Blast-Radius Reduction
+Tradeoff or failure case: Containment may reduce total throughput.
 
-Blast-Radius Reduction describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Isolation-Boundary Selection
 
-Practical questions:
+Choose boundaries by criticality, failure behavior, and shared resource risk.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Review thread pools, queues, clients, and database pools.
 
-## Selecting Isolation Boundaries
+Tradeoff or failure case: Do not isolate everything without evidence.
 
-Selecting Isolation Boundaries describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+## Java Review Questions
 
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
