@@ -95,6 +95,11 @@ These docs are organized in the order most learners should study Java.
 89. `88-profiling-and-diagnostics`
 90. `89-benchmarking-and-performance-testing`
 91. `90-jvm-tuning-and-capacity-planning`
+92. `91-observability-foundations`
+93. `92-logging-and-structured-events`
+94. `93-metrics-and-service-health`
+95. `94-tracing-and-request-correlation`
+96. `95-alerting-slos-and-incident-diagnostics`
 
 ## How To Study A Topic
 

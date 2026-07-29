@@ -9,5 +9,6 @@ Quizzes help learners check understanding after reading notes and completing exe
 - `advanced/`
 - `testing/`
 - `performance/`
+- `observability/`
 
 Each quiz should include questions, an answer key, and short explanations.
