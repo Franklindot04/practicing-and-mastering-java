@@ -11,3 +11,4 @@ Exercises help learners practice concepts before checking solutions.
 - `backend/`
 - `testing/`
 - `performance/`
+- `observability/`

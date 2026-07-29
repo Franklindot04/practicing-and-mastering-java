@@ -10,3 +10,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `backend/`
 - `testing/`
 - `performance/`
+- `observability/`

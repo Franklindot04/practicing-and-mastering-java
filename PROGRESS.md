@@ -113,6 +113,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Profiling and diagnostics
 - [ ] Benchmarking and performance testing
 - [ ] JVM tuning and capacity planning
+- [ ] Observability foundations
+- [ ] Logging and structured events
+- [ ] Metrics and service health
+- [ ] Tracing and request correlation
+- [ ] Alerting, SLOs, and incident diagnostics
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -156,6 +161,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [performance quizzes](quizzes/performance/README.md)
 - [ ] Review [performance solutions](solutions/performance/performance-profiling-and-jvm-tuning-solutions.md)
 - [ ] Explain why functional correctness and performance confidence require different evidence.
+
+## Observability And Production Diagnostics Path Checklist
+
+- [ ] Study [Observability Foundations](docs/91-observability-foundations/README.md)
+- [ ] Study [Logging And Structured Events](docs/92-logging-and-structured-events/README.md)
+- [ ] Study [Metrics And Service Health](docs/93-metrics-and-service-health/README.md)
+- [ ] Study [Tracing And Request Correlation](docs/94-tracing-and-request-correlation/README.md)
+- [ ] Run and modify [Java Observability Patterns](examples/observability/java-observability-patterns/README.md)
+- [ ] Build and explain the [Production Diagnostics Lab](projects/observability/production-diagnostics-lab/README.md)
+- [ ] Study [Alerting, SLOs, And Incident Diagnostics](docs/95-alerting-slos-and-incident-diagnostics/README.md)
+- [ ] Complete [observability exercises](exercises/observability/observability-and-production-diagnostics-exercises.md)
+- [ ] Complete [observability quizzes](quizzes/observability/README.md)
+- [ ] Review [observability solutions](solutions/observability/observability-and-production-diagnostics-solutions.md)
+- [ ] Explain why runtime evidence can reduce uncertainty without guaranteeing root-cause identification.
 
 ## Professional Path Checklist
 

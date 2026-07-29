@@ -26,6 +26,7 @@ Follow this path in order unless you already know a topic well.
 22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 24. Performance, profiling, and JVM tuning: performance engineering foundations, latency, throughput, percentiles, JVM runtime and memory, profiling, diagnostics, benchmarking, load-test design, Java performance examples, JVM tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
+25. Observability and production diagnostics: observability versus monitoring, structured logs, metrics, service health, tracing, request correlation, Java observability examples, diagnostic snapshots, alerting, SLOs, error budgets, incident evidence, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -646,3 +647,38 @@ Move into Stage 23 observability and production diagnostics when you can:
 - [ ] Design benchmarks and load tests without fixed wall-clock unit-test thresholds.
 - [ ] Explain JVM tuning as measured experimentation with rollback planning.
 - [ ] Explain what remains out of scope until Stage 23: deeper observability signal design, production diagnostic workflows, incident evidence correlation, dashboards, alert review, and production troubleshooting practice.
+
+## Observability And Production Diagnostics Learning Sequence
+
+Use this sequence after Stage 22 performance, profiling, and JVM tuning and before Stage 24 reliability engineering, resilience, and failure recovery.
+
+Stage 21 established testing and quality engineering. Stage 22 established performance, profiling, and JVM tuning. Stage 23 establishes observability and production diagnostics. Testing provides controlled evidence before release. Performance engineering measures efficiency and capacity. Observability provides runtime evidence about system behavior. Production diagnostics uses that evidence to investigate and mitigate failures.
+
+- [ ] Study observability foundations: [Observability Foundations](docs/91-observability-foundations/README.md)
+- [ ] Review vocabulary, telemetry models, diagnostic context, cardinality, golden signals, RED, USE, and evidence-first investigation: [Observability Vocabulary And Models](docs/91-observability-foundations/observability-vocabulary-and-models.md)
+- [ ] Study structured logging and event design: [Logging And Structured Events](docs/92-logging-and-structured-events/README.md)
+- [ ] Review safe fields, severity, exception logging, MDC-style context, redaction, sampling, and duplicate logging: [Safe Logging And Operational Practices](docs/92-logging-and-structured-events/safe-logging-and-operational-practices.md)
+- [ ] Study metrics and service health: [Metrics And Service Health](docs/93-metrics-and-service-health/README.md)
+- [ ] Review counters, gauges, histograms, cardinality, JVM metrics, dependency metrics, liveness, readiness, startup health, and dashboards: [Service Health And Dashboard Design](docs/93-metrics-and-service-health/service-health-and-dashboard-design.md)
+- [ ] Study tracing and request correlation: [Tracing And Request Correlation](docs/94-tracing-and-request-correlation/README.md)
+- [ ] Review spans, parent-child relationships, asynchronous context propagation, sampling, trace-log correlation, and context-loss diagnosis: [Context Propagation And Asynchronous Work](docs/94-tracing-and-request-correlation/context-propagation-and-asynchronous-work.md)
+- [ ] Run and modify Java observability examples: [Java Observability Patterns](examples/observability/java-observability-patterns/README.md)
+- [ ] Build and explain the production diagnostics lab: [Production Diagnostics Lab](projects/observability/production-diagnostics-lab/README.md)
+- [ ] Study alerting, SLOs, and incident diagnostics: [Alerting, SLOs, And Incident Diagnostics](docs/95-alerting-slos-and-incident-diagnostics/README.md)
+- [ ] Review actionable alerts, alert fatigue, SLIs, SLOs, error budgets, burn rates, evidence preservation, dumps, JFR, rollback decisions, and post-incident learning: [Incident Diagnostics And Learning](docs/95-alerting-slos-and-incident-diagnostics/incident-diagnostics-and-learning.md)
+- [ ] Complete observability exercises: [Observability And Production Diagnostics Exercises](exercises/observability/observability-and-production-diagnostics-exercises.md)
+- [ ] Check understanding with observability quizzes: [Observability Quizzes](quizzes/observability/README.md)
+- [ ] Review observability solutions after attempting the work: [Observability And Production Diagnostics Solutions](solutions/observability/observability-and-production-diagnostics-solutions.md)
+
+## Ready For Reliability Engineering, Resilience, And Failure Recovery Checklist
+
+Move into Stage 24 reliability engineering, resilience, and failure recovery when you can:
+
+- [ ] Distinguish observability from monitoring without treating either as automatic explanation.
+- [ ] Design safe structured log events with stable fields, proportional severity, and redaction.
+- [ ] Choose counters, gauges, histograms, health checks, and dashboards from operational questions.
+- [ ] Explain high-cardinality risks in metrics and sensitive-data risks in logs, traces, dumps, and snapshots.
+- [ ] Propagate request context across Java executor and asynchronous boundaries without leaking context between tasks.
+- [ ] Reason from partial logs, metrics, traces, health reports, and bounded diagnostic snapshots while naming uncertainty.
+- [ ] Review alert actionability, SLI choice, SLO windows, error-budget burn, and incident evidence preservation.
+- [ ] Explain what remains out of scope until Stage 24: resilience patterns, failure recovery design, graceful degradation, chaos-style validation, and reliability engineering practice.
