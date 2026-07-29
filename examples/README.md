@@ -10,4 +10,4 @@ Examples help learners run small Java programs and Maven projects that connect t
 - `professional/`
 - `backend/`
 - `testing/`
-
+- `performance/`

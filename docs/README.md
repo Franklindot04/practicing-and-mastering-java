@@ -90,6 +90,11 @@ These docs are organized in the order most learners should study Java.
 84. `83-integration-contract-and-e2e-testing`
 85. `84-quality-engineering-practices`
 86. `85-testing-ci-quality-gates`
+87. `86-performance-engineering-foundations`
+88. `87-jvm-runtime-and-memory`
+89. `88-profiling-and-diagnostics`
+90. `89-benchmarking-and-performance-testing`
+91. `90-jvm-tuning-and-capacity-planning`
 
 ## How To Study A Topic
 

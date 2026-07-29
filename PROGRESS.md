@@ -108,6 +108,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Integration, contract, and end-to-end testing
 - [ ] Quality engineering practices
 - [ ] Testing CI and quality gates
+- [ ] Performance engineering foundations
+- [ ] JVM runtime and memory behavior
+- [ ] Profiling and diagnostics
+- [ ] Benchmarking and performance testing
+- [ ] JVM tuning and capacity planning
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -137,6 +142,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Build one advanced project
 - [ ] Complete advanced quizzes
 - [ ] Review advanced solutions after attempting the work
+
+## Performance, Profiling, And JVM Tuning Path Checklist
+
+- [ ] Study [Performance Engineering Foundations](docs/86-performance-engineering-foundations/README.md)
+- [ ] Study [JVM Runtime And Memory](docs/87-jvm-runtime-and-memory/README.md)
+- [ ] Study [Profiling And Diagnostics](docs/88-profiling-and-diagnostics/README.md)
+- [ ] Study [Benchmarking And Performance Testing](docs/89-benchmarking-and-performance-testing/README.md)
+- [ ] Run and modify [Java Performance Patterns](examples/performance/java-performance-patterns/README.md)
+- [ ] Build and explain the [JVM Performance Lab](projects/performance/jvm-performance-lab/README.md)
+- [ ] Study [JVM Tuning And Capacity Planning](docs/90-jvm-tuning-and-capacity-planning/README.md)
+- [ ] Complete [performance exercises](exercises/performance/performance-profiling-and-jvm-tuning-exercises.md)
+- [ ] Complete [performance quizzes](quizzes/performance/README.md)
+- [ ] Review [performance solutions](solutions/performance/performance-profiling-and-jvm-tuning-solutions.md)
+- [ ] Explain why functional correctness and performance confidence require different evidence.
 
 ## Professional Path Checklist
 

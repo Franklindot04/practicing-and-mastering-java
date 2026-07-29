@@ -25,6 +25,7 @@ Follow this path in order unless you already know a topic well.
 21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
 22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
+24. Performance, profiling, and JVM tuning: performance engineering foundations, latency, throughput, percentiles, JVM runtime and memory, profiling, diagnostics, benchmarking, load-test design, Java performance examples, JVM tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -608,3 +609,40 @@ Move into Stage 22 performance, profiling, and JVM tuning when you can:
 - [ ] Diagnose flaky tests with logs, timing data, seeds, environment metadata, and ownership.
 - [ ] Explain release confidence as evidence-based risk reduction, not production certification.
 - [ ] Explain what remains out of scope until Stage 22: measurement-driven performance analysis, profiling tools, JVM tuning, garbage-collection tuning, benchmarking methodology, and performance-regression strategy.
+
+## Performance, Profiling, And JVM Tuning Learning Sequence
+
+Use this sequence after Stage 21 testing strategy and quality engineering and before Stage 23 observability and production diagnostics.
+
+Functional correctness and performance confidence require different evidence. Tests can show that code returns the right result for selected cases. Performance work asks whether the system still returns the right result under representative demand, resource limits, JVM behavior, queueing, contention, dependency latency, and measurement noise.
+
+- [ ] Study performance engineering foundations: [Performance Engineering Foundations](docs/86-performance-engineering-foundations/README.md)
+- [ ] Review latency, throughput, response time, capacity, saturation, tail latency, percentiles, baselines, performance budgets, and safe optimization workflow: [Core Performance Vocabulary](docs/86-performance-engineering-foundations/core-performance-vocabulary.md)
+- [ ] Study JVM runtime behavior and memory: [JVM Runtime And Memory](docs/87-jvm-runtime-and-memory/README.md)
+- [ ] Review bytecode execution, interpreter, JIT, tiered compilation, warm-up, dead-code elimination, object allocation, heap, stacks, metaspace, direct memory, reachability, and GC concepts: [Execution, JIT, And Warm-Up](docs/87-jvm-runtime-and-memory/execution-jit-warm-up.md)
+- [ ] Study profiling and diagnostics: [Profiling And Diagnostics](docs/88-profiling-and-diagnostics/README.md)
+- [ ] Compare sampling, instrumentation, CPU, wall-clock, allocation, memory, lock, thread, heap dump, thread dump, JFR, JMC, `jcmd`, `jstack`, `jmap`, and `jstat` concepts: [Java Diagnostic Evidence](docs/88-profiling-and-diagnostics/java-diagnostic-evidence.md)
+- [ ] Study benchmarking and performance testing: [Benchmarking And Performance Testing](docs/89-benchmarking-and-performance-testing/README.md)
+- [ ] Review microbenchmark, JMH concepts, load, stress, spike, soak, capacity, coordinated omission, workload models, warm-up, measurement, and result analysis: [Benchmark Types And JMH Concepts](docs/89-benchmarking-and-performance-testing/benchmark-types-and-jmh-concepts.md)
+- [ ] Run and modify Java performance examples: [Java Performance Patterns](examples/performance/java-performance-patterns/README.md)
+- [ ] Build and explain the JVM performance lab: [JVM Performance Lab](projects/performance/jvm-performance-lab/README.md)
+- [ ] Study JVM tuning and capacity planning: [JVM Tuning And Capacity Planning](docs/90-jvm-tuning-and-capacity-planning/README.md)
+- [ ] Review collector tradeoffs, heap sizing, native-memory headroom, thread-count impact, capacity models, backpressure, performance budgets, and regression gates: [Capacity Planning And Regression Gates](docs/90-jvm-tuning-and-capacity-planning/capacity-planning-and-regression-gates.md)
+- [ ] Complete performance exercises: [Performance Profiling And JVM Tuning Exercises](exercises/performance/performance-profiling-and-jvm-tuning-exercises.md)
+- [ ] Check understanding with performance quizzes: [Performance Profiling And JVM Tuning Quizzes](quizzes/performance/README.md)
+- [ ] Review performance solutions after attempting the work: [Performance Profiling And JVM Tuning Solutions](solutions/performance/performance-profiling-and-jvm-tuning-solutions.md)
+
+## Ready For Observability And Production Diagnostics Checklist
+
+Move into Stage 23 observability and production diagnostics when you can:
+
+- [ ] Define performance requirements with workload, target, statistic, and environment.
+- [ ] Explain latency, throughput, utilization, saturation, capacity, and tail latency without treating one metric as universally best.
+- [ ] Interpret p50, p95, p99, maximum, and error rate together.
+- [ ] Distinguish profiling from monitoring and CPU time from wall-clock time.
+- [ ] Explain JVM warm-up, JIT optimization effects, dead-code elimination, and constant-folding benchmark risks.
+- [ ] Distinguish allocation rate from retained memory and heap memory from non-heap memory.
+- [ ] Choose diagnostic evidence for CPU spikes, lock contention, slow requests, memory leaks, and long GC pauses.
+- [ ] Design benchmarks and load tests without fixed wall-clock unit-test thresholds.
+- [ ] Explain JVM tuning as measured experimentation with rollback planning.
+- [ ] Explain what remains out of scope until Stage 23: deeper observability signal design, production diagnostic workflows, incident evidence correlation, dashboards, alert review, and production troubleshooting practice.
