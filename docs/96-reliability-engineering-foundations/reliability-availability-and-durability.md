@@ -1,159 +1,121 @@
 # Reliability, Availability, And Durability
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+These terms sound similar, but they answer different questions. Reliable systems do the right thing over time, available systems answer when needed, durable systems keep accepted data, and safe systems avoid harmful behavior even when something fails.
 
-## Reliability
+## Coverage Notes
 
-Reliability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Reliability
 
-Practical questions:
+Reliability is the probability that a system performs its intended behavior correctly for a period of time.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A reliable Java service validates inputs, handles expected exceptions, bounds waiting, and returns results that match its contract.
 
-## Availability
+Tradeoff or failure case: A fast response is not reliable if it returns the wrong state or silently drops accepted work.
 
-Availability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Availability
 
-Practical questions:
+Availability is the fraction of time a service can successfully serve valid requests.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Availability is measured from the caller's perspective, often with successful response rate or health checks.
 
-## Durability
+Tradeoff or failure case: A service can be available while a non-critical feature is degraded, but it should not hide critical failure as success.
 
-Durability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Durability
 
-Practical questions:
+Durability means accepted data survives process restarts, crashes, and expected storage failures.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: In-memory maps are useful for examples but not durable across JVM restarts.
 
-## Correctness
+Tradeoff or failure case: Backups help durability only when restore has been tested and data corruption is considered.
 
-Correctness describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Correctness
 
-Practical questions:
+Correctness means the system preserves its business rules and data invariants.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Unit tests, validation, transaction boundaries, and idempotency checks protect correctness.
 
-## Safety
+Tradeoff or failure case: Retries can damage correctness when they repeat payments, messages, or writes without duplicate protection.
 
-Safety describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Safety
 
-Practical questions:
+Safety means the system avoids unacceptable harm even when it cannot fully succeed.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java method may reject a request clearly rather than make an unsafe best-effort write.
 
-## Resilience
+Tradeoff or failure case: Failing closed can reduce harm, but it may reduce availability.
 
-Resilience describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Resilience
 
-Practical questions:
+Resilience is the ability to absorb, adapt to, and recover from failures while preserving essential behavior.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Retries, circuit breakers, bulkheads, fallbacks, and load shedding are resilience techniques.
 
-## Recoverability
+Tradeoff or failure case: A resilience pattern can make incidents worse when configured without budgets or observability.
 
-Recoverability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Recoverability
 
-Practical questions:
+Recoverability is the ability to return to a known good state after failure.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Recovery may use restart, replay, reconciliation, or repair jobs.
 
-## Maintainability
+Tradeoff or failure case: A service is not recoverable just because it restarts; the state must be verified.
 
-Maintainability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Maintainability
 
-Practical questions:
+Maintainability is the ease of changing, debugging, and operating the system safely.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Small Java classes with clear boundaries make failure handling testable.
 
-## Reliability Versus Performance
+Tradeoff or failure case: Complex reliability code can become its own source of outages.
 
-Reliability Versus Performance describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Reliability Versus Performance
 
-Practical questions:
+Performance measures speed and resource use; reliability measures correct behavior under expected conditions.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A low-latency Java endpoint still needs timeouts, validation, and failure classification.
 
-## Availability Percentages And Downtime
+Tradeoff or failure case: Aggressive optimization can remove safety checks or overload dependencies.
 
-Availability Percentages And Downtime describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Availability Percentages And Downtime
 
-Practical questions:
+Availability percentages imply downtime budgets: 99.9 percent over 30 days allows roughly 43 minutes of downtime, while 99.99 percent allows roughly 4 minutes.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use these numbers to discuss tradeoffs, not to invent production promises.
 
-## SLIs And SLOs
+Tradeoff or failure case: Higher targets usually require more engineering, operations, and cost.
 
-SLIs And SLOs describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### SLIs And SLOs
 
-Practical questions:
+A service-level indicator is a measured signal; a service-level objective is a target for that signal.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples include request success rate, latency percentile, freshness, or processing lag.
 
-## Why 100 Percent Availability Is Usually Unrealistic
+Tradeoff or failure case: An SLO without reliable measurement is only a wish.
 
-Why 100 Percent Availability Is Usually Unrealistic describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Why 100 Percent Availability Is Usually Unrealistic
 
-Practical questions:
+Hardware, networks, dependencies, deployments, operator mistakes, and software defects all fail.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Java code can reduce risk with bounded waits and graceful handling, but it cannot remove every failure.
 
-## Reliability As An End-To-End Property
+Tradeoff or failure case: Chasing 100 percent can waste effort and make systems harder to change.
 
-Reliability As An End-To-End Property describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### End-To-End Reliability
 
-Practical questions:
+End-to-end reliability depends on the full path: caller, service, dependency, data store, queue, network, and operator workflow.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A method can be locally correct but still fail users because a downstream dependency is unreliable.
 
-## Java-Oriented Example
+Tradeoff or failure case: Improving one layer does not guarantee the whole workflow.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

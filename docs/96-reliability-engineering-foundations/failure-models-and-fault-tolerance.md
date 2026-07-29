@@ -1,192 +1,145 @@
 # Failure Models And Fault Tolerance
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+A failure model names how the system can go wrong. Fault tolerance starts by deciding which faults are expected, how they are contained, and what the caller sees.
 
-## Transient Failures
+## Coverage Notes
 
-Transient Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Transient Failures
 
-Practical questions:
+Transient failures are temporary conditions that may succeed if retried after a short delay.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples include a short network timeout or a temporarily busy dependency.
 
-## Persistent Failures
+Tradeoff or failure case: Retry only when the operation is safe and the request still has budget.
 
-Persistent Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Persistent Failures
 
-Practical questions:
+Persistent failures continue until something changes, such as configuration, deployment, capacity, or data repair.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A bad JDBC URL or incompatible schema is persistent until corrected.
 
-## Intermittent Failures
+Tradeoff or failure case: Repeated retries usually increase noise and load.
 
-Intermittent Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Intermittent Failures
 
-Practical questions:
+Intermittent failures appear and disappear, often because of race conditions, load, resource pressure, or unstable dependencies.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: They often show up as flaky tests or rare production exceptions.
 
-## Partial Failures
+Tradeoff or failure case: They need evidence over time rather than one isolated log line.
 
-Partial Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Partial Failures
 
-Practical questions:
+Partial failures happen when one part of a workflow fails while another part remains healthy.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Payment may work while notification fails.
 
-## Fail-Stop Behavior
+Tradeoff or failure case: Partial success must be represented honestly in responses and recovery records.
 
-Fail-Stop Behavior describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fail-Stop Behavior
 
-Practical questions:
+Fail-stop systems stop responding clearly when they cannot continue safely.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Throwing a clear exception before writing partial state is often fail-stop.
 
-## Omission Failures
+Tradeoff or failure case: Fail-stop is easier to detect but can reduce availability.
 
-Omission Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Omission Failures
 
-Practical questions:
+Omission failures occur when an expected response, event, or write never happens.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java consumer may acknowledge a message before performing the side effect and omit the actual work.
 
-## Timing Failures
+Tradeoff or failure case: Missing evidence can be harder to diagnose than explicit errors.
 
-Timing Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Timing Failures
 
-Practical questions:
+Timing failures happen when work completes too late to be useful.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A response after the caller deadline may waste threads and produce orphaned work.
 
-## Dependency Failures
+Tradeoff or failure case: Timeouts must be layered so inner work stops before outer callers give up.
 
-Dependency Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Dependency Failure
 
-Practical questions:
+Dependency failure is a caller-visible problem caused by another service, database, queue, cache, or filesystem.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Wrap dependency clients with timeouts, classification, and telemetry.
 
-## Resource Exhaustion
+Tradeoff or failure case: Do not let one dependency consume all worker threads.
 
-Resource Exhaustion describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Resource Exhaustion
 
-Practical questions:
+Resource exhaustion means a bounded resource such as threads, memory, connections, permits, or disk is depleted.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use bounded executors, pools, queues, and semaphores.
 
-## Cascading Failures
+Tradeoff or failure case: Unbounded queues can convert overload into latency collapse.
 
-Cascading Failures describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Cascading Failure
 
-Practical questions:
+Cascading failure occurs when one failing component causes pressure or failure in others.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Layered retries can multiply traffic from one request into many downstream calls.
 
-## Fault Versus Error Versus Failure
+Tradeoff or failure case: Bulkheads, load shedding, and retry budgets reduce blast radius.
 
-Fault Versus Error Versus Failure describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fault Versus Error Versus Failure
 
-Practical questions:
+A fault is the underlying defect or condition, an error is an incorrect internal state, and a failure is externally visible behavior.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A null configuration value is a fault; a thrown NullPointerException is an error; a failed request is the failure.
 
-## Fault Containment
+Tradeoff or failure case: Good diagnostics separate root conditions from symptoms.
 
-Fault Containment describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fault Containment
 
-Practical questions:
+Fault containment limits how far a fault can spread.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Separate thread pools or semaphores can isolate slow dependencies.
 
-## Redundancy
+Tradeoff or failure case: Containment costs resources and must be sized deliberately.
 
-Redundancy describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Redundancy
 
-Practical questions:
+Redundancy adds alternative capacity or copies so one failure does not stop the workflow.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples include multiple instances or replicated data, even if the repo examples stay in-memory.
 
-## Isolation
+Tradeoff or failure case: Redundancy can duplicate bugs and increase consistency complexity.
 
-Isolation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Isolation
 
-Practical questions:
+Isolation separates tenants, dependencies, resource pools, or work classes.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A Java service may isolate admin operations from user traffic with separate executors.
 
-## Graceful Recovery
+Tradeoff or failure case: Too many isolated pools can waste capacity.
 
-Graceful Recovery describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Graceful Recovery
 
-Practical questions:
+Graceful recovery restores service without misleading callers or losing accepted work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Replay, reconciliation, and idempotency support safe recovery.
 
-## Fail-Fast Versus Fail-Safe Behavior
+Tradeoff or failure case: Recovery must be verified, not assumed.
 
-Fail-Fast Versus Fail-Safe Behavior describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fail-Fast Versus Fail-Safe
 
-Practical questions:
+Fail-fast rejects quickly when success is impossible; fail-safe preserves a safer state even if availability drops.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Validation failures should fail fast; payment uncertainty may fail safe by stopping fulfillment.
 
-## Java-Oriented Example
+Tradeoff or failure case: The safer choice depends on the harm of wrong success versus clear failure.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.

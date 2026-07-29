@@ -1,12 +1,12 @@
 # Reliability Engineering Foundations
 
-Reliability Engineering Foundations introduces the vocabulary and engineering habits needed to reason about failure before it becomes an incident.
+Reliability engineering is the practice of designing software so that expected failures are classified, contained, observed, and recovered from deliberately.
 
-Stage 24 builds on Stage 23 observability by asking what to do after telemetry shows that something is slow, failing, saturated, or recovering. Observability supplies evidence; reliability engineering uses that evidence to design bounded failure, safer recovery, and clearer tradeoffs.
+Stage 24 follows the observability stage: telemetry helps you notice symptoms, and reliability engineering helps you decide what failure means, how far it can spread, and how recovery should work.
 
 ## Scope
 
-This section is framework-light and Java-oriented. It focuses on terms, design questions, and deterministic examples you can reason about without external infrastructure.
+This section stays framework-light and Java-oriented. It focuses on concepts that apply whether the Java code later runs in a CLI, web service, batch job, or message consumer.
 
 ## Recommended Reading Order
 

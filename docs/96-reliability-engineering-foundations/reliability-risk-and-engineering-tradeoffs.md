@@ -1,137 +1,113 @@
 # Reliability Risk And Engineering Tradeoffs
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Reliability choices trade probability, impact, cost, complexity, and user expectations. The goal is not to add every pattern, but to match the risk.
 
-## Risk Probability And Impact
+## Coverage Notes
 
-Risk Probability And Impact describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Probability And Impact
 
-Practical questions:
+Risk combines how likely a failure is with how severe the outcome would be.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A rare but harmful billing defect deserves more protection than a cosmetic intermittent error.
 
-## Blast Radius
+Tradeoff or failure case: Do not treat all exceptions as equal.
 
-Blast Radius describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Blast Radius
 
-Practical questions:
+Blast radius is the amount of traffic, data, tenants, or operations affected by a failure.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Bulkheads reduce blast radius by limiting shared resources.
 
-## Recovery Cost
+Tradeoff or failure case: Large shared pools can turn one dependency issue into a whole-service outage.
 
-Recovery Cost describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Recovery Cost
 
-Practical questions:
+Recovery cost includes time, people, lost data, customer impact, and verification work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A repair job should be testable and observable.
 
-## Operational Complexity
+Tradeoff or failure case: Cheap prevention may be better than expensive manual recovery.
 
-Operational Complexity describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Operational Complexity
 
-Practical questions:
+Every reliability pattern adds behavior operators must understand.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A circuit breaker with clear snapshots is easier to operate than hidden state.
 
-## Redundancy Cost
+Tradeoff or failure case: Complexity can slow incidents if runbooks do not explain it.
 
-Redundancy Cost describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Redundancy Cost
 
-Practical questions:
+Redundancy costs infrastructure, testing, data consistency work, and operational attention.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Local examples can explain redundancy without requiring external infrastructure.
 
-## Consistency Versus Availability
+Tradeoff or failure case: Unused or untested redundancy may fail during the first real incident.
 
-Consistency Versus Availability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Consistency Versus Availability
 
-Practical questions:
+Some designs preserve availability by accepting stale or partial data; others preserve consistency by rejecting work.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Java service methods should document which invariant they protect.
 
-## Latency Versus Reliability
+Tradeoff or failure case: Do not claim both perfect consistency and perfect availability under partition.
 
-Latency Versus Reliability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Latency Versus Reliability
 
-Practical questions:
+Extra checks, replication, retries, or consensus can improve reliability while adding latency.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Budgeted retries make this tradeoff explicit.
 
-## Retries Versus Overload Risk
+Tradeoff or failure case: Retrying past the caller deadline only adds load.
 
-Retries Versus Overload Risk describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Retry Versus Overload Risk
 
-Practical questions:
+Retries help transient failures but amplify traffic during overload.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use maximum attempts, jitter, elapsed-time limits, and idempotency.
 
-## Prevention Detection Mitigation And Recovery
+Tradeoff or failure case: Layered retries are a common cascading-failure trigger.
 
-Prevention Detection Mitigation And Recovery describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Prevention Detection Mitigation Recovery
 
-Practical questions:
+Prevention reduces fault likelihood, detection finds symptoms, mitigation limits impact, and recovery restores correct state.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Tests, telemetry, load shedding, and runbooks cover different parts of this chain.
 
-## Risk Registers And Failure-Mode Reviews
+Tradeoff or failure case: Observability alone does not recover the system.
 
-Risk Registers And Failure-Mode Reviews describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Risk Registers
 
-Practical questions:
+A risk register records failure mode, probability, impact, owner, mitigation, and evidence.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Keep entries specific enough to test.
 
-## Reliability By System Criticality
+Tradeoff or failure case: A stale register is less useful than a small current one.
 
-Reliability By System Criticality describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Failure-Mode Reviews
 
-Practical questions:
+Failure-mode reviews ask how a workflow breaks before it breaks in production.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Review dependency timeouts, duplicate requests, partial writes, and recovery steps.
 
-## Java-Oriented Example
+Tradeoff or failure case: They should produce concrete tests or runbook changes.
+
+### System Criticality
+
+Criticality determines how much rigor a workflow needs.
+
+Java angle: Authentication, payment, medical, safety, or data-loss paths deserve stricter handling than optional suggestions.
+
+Tradeoff or failure case: Do not copy thresholds from one system criticality level to another.
+
+## Java Review Questions
+
+- Which exception, timeout, metric, or log line would prove this condition happened?
+- Is retrying safe for this method, or could it repeat a side effect?
+- What caller-visible result should happen when recovery is impossible within the request budget?
 
 ```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
+if (requestBudget.isExpired()) {
+    throw new TimeoutException("request deadline exhausted before dependency call");
 }
 ```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
