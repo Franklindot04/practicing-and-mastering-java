@@ -10,4 +10,4 @@ Exercises help learners practice concepts before checking solutions.
 - `professional/`
 - `backend/`
 - `testing/`
-
+- `performance/`

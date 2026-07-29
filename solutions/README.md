@@ -9,4 +9,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `professional/`
 - `backend/`
 - `testing/`
-
+- `performance/`

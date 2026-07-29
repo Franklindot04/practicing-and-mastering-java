@@ -63,6 +63,8 @@ After event-driven architecture foundations, use the [messaging and streaming wi
 
 After advanced backend system design, use the [testing strategy and quality engineering learning sequence](LEARNING_PATH.md#testing-strategy-and-quality-engineering-learning-sequence) to turn design assumptions into practical verification, observability, quality gates, exercises, quizzes, examples, and release-confidence thinking.
 
+After testing strategy and quality engineering, use the [performance, profiling, and JVM tuning learning sequence](LEARNING_PATH.md#performance-profiling-and-jvm-tuning-learning-sequence) to separate functional correctness evidence from performance evidence, measurement, profiling, benchmarking, capacity planning, and safe JVM tuning.
+
 ## Folder Structure
 
 ```text
@@ -128,6 +130,7 @@ The repository grows in focused branches:
 - Messaging and streaming with Java foundations, delivery reliability, Kafka, RabbitMQ, Java messaging patterns, messaging-ready service design, operations, exercises, quizzes, and readiness planning before advanced backend system design and advanced production infrastructure topics.
 - Advanced backend system design foundations, scalability, reliability, data design, architecture patterns, Java design pattern examples, scalable order platform case study, operations, evolution, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 - Testing strategy and quality engineering foundations, test design, isolation, integration, contract and end-to-end testing, quality gates, Java testing examples, a testing strategy lab, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
+- Performance engineering foundations, JVM runtime and memory, profiling and diagnostics, benchmarking, Java performance patterns, a JVM performance lab, tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 
 ## Disclaimer
 
