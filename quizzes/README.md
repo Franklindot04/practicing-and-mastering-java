@@ -7,5 +7,6 @@ Quizzes help learners check understanding after reading notes and completing exe
 - `beginner/`
 - `intermediate/`
 - `advanced/`
+- `testing/`
 
 Each quiz should include questions, an answer key, and short explanations.

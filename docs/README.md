@@ -85,6 +85,11 @@ These docs are organized in the order most learners should study Java.
 79. `78-data-system-design`
 80. `79-service-architecture-patterns`
 81. `80-system-design-operations-and-evolution`
+82. `81-testing-strategy-foundations`
+83. `82-test-design-and-isolation`
+84. `83-integration-contract-and-e2e-testing`
+85. `84-quality-engineering-practices`
+86. `85-testing-ci-quality-gates`
 
 ## How To Study A Topic
 

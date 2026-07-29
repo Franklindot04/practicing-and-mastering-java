@@ -103,6 +103,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Data system design
 - [ ] Service architecture patterns
 - [ ] System design operations and evolution
+- [ ] Testing strategy foundations
+- [ ] Test design and isolation
+- [ ] Integration, contract, and end-to-end testing
+- [ ] Quality engineering practices
+- [ ] Testing CI and quality gates
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -334,6 +339,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Complete [advanced backend system design quizzes](quizzes/backend/system-design/README.md)
 - [ ] Review [advanced backend system design solutions](solutions/backend/system-design/system-design-solutions.md)
 - [ ] Explain what you need before Stage 21 testing strategy and quality engineering
+
+## Testing Strategy And Quality Engineering Path Checklist
+
+- [ ] Study [Testing Strategy Foundations](docs/81-testing-strategy-foundations/README.md)
+- [ ] Study [Test Design And Isolation](docs/82-test-design-and-isolation/README.md)
+- [ ] Study [Integration, Contract, And End-To-End Testing](docs/83-integration-contract-and-e2e-testing/README.md)
+- [ ] Study [Quality Engineering Practices](docs/84-quality-engineering-practices/README.md)
+- [ ] Run and modify [Java Testing Patterns](examples/testing/java-testing-patterns/README.md)
+- [ ] Build and explain the [Testing Strategy Lab](projects/testing/testing-strategy-lab/README.md)
+- [ ] Study [Testing In CI And Quality Gates](docs/85-testing-ci-quality-gates/README.md)
+- [ ] Complete [testing and quality engineering exercises](exercises/testing/testing-and-quality-engineering-exercises.md)
+- [ ] Complete [testing and quality engineering quizzes](quizzes/testing/README.md)
+- [ ] Review [testing and quality engineering solutions](solutions/testing/testing-and-quality-engineering-solutions.md)
+- [ ] Explain what you need before performance, profiling, and JVM tuning
 
 ## Reflection Log
 
