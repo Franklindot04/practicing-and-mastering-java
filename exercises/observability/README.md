@@ -14,3 +14,7 @@ Use these exercises after studying observability foundations, logging, metrics, 
 - Avoid vendor-specific answers.
 - Explain privacy and cardinality risks.
 - Compare your work with the matching solutions only after attempting the prompts.
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/learnjava

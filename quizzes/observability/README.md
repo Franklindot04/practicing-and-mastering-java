@@ -11,3 +11,7 @@ Use these quizzes to check your understanding of observability and production di
 5. [Java Code Reading Quiz](java-code-reading-quiz.md)
 6. [Scenario Diagnosis Quiz](scenario-diagnosis-quiz.md)
 7. [Answer Key](answer-key.md)
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/learnjava
