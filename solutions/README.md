@@ -11,3 +11,5 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `testing/`
 - `performance/`
 - `observability/`
+
+- `reliability/`

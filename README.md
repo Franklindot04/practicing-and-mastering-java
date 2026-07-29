@@ -138,3 +138,7 @@ The repository grows in focused branches:
 ## Disclaimer
 
 This is a learning and mastery repository. Some examples may intentionally simplify real-world concerns. Security-sensitive or intentionally vulnerable examples must be clearly marked as educational.
+
+After observability and production diagnostics, use the [reliability and resilience learning sequence](LEARNING_PATH.md#reliability-and-resilience-learning-sequence) for failure classification, deadlines, retries, circuit breakers, bulkheads, idempotency, load shedding, recovery, disaster recovery, chaos engineering, examples, exercises, quizzes, and readiness practice.
+
+- Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before the planned Stage 25: Distributed Systems Foundations.
