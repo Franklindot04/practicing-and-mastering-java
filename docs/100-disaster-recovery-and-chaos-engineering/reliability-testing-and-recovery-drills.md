@@ -1,192 +1,125 @@
 # Reliability Testing And Recovery Drills
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Reliability claims need evidence from tests, drills, and recovery verification. Different test types find different risks.
 
-## Unit Testing Resilience Logic
+## Coverage Notes
 
-Unit Testing Resilience Logic describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Unit Testing Resilience Logic
 
-Practical questions:
+Unit tests verify retry, breaker, idempotency, and load-shedding decisions.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Inject clocks and sleepers.
 
-## Deterministic Clocks And Sleepers
+Tradeoff or failure case: Do not depend on machine speed.
 
-Deterministic Clocks And Sleepers describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Fault Injection
 
-Practical questions:
+Fault injection supplies controlled errors.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use deterministic failure plans.
 
-## Fault Injection
+Tradeoff or failure case: Random failure without a seed is hard to debug.
 
-Fault Injection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Concurrency Testing
 
-Practical questions:
+Concurrency tests check races such as duplicate idempotency keys.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use latches and bounded executors.
 
-## Concurrency Testing
+Tradeoff or failure case: Avoid leaked threads.
 
-Concurrency Testing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Soak Testing
 
-Practical questions:
+Soak testing runs for longer periods to reveal leaks and drift.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Monitor memory, thread, and queue trends.
 
-## Soak Testing
+Tradeoff or failure case: A short unit test cannot prove no leak exists.
 
-Soak Testing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Load Testing
 
-Practical questions:
+Load testing measures behavior under expected and high traffic.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Check latency, errors, and saturation.
 
-## Load Testing
+Tradeoff or failure case: Load tests without realistic workload can mislead.
 
-Load Testing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Recovery Testing
 
-Practical questions:
+Recovery testing verifies restart, replay, repair, and reconciliation.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Record recovery evidence.
 
-## Recovery Testing
+Tradeoff or failure case: Recovery is not complete until verified.
 
-Recovery Testing describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Backup-Restore Exercises
 
-Practical questions:
+Backup-restore exercises prove data recovery, not just backup creation.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Measure restore time and correctness.
 
-## Backup-Restore Exercises
+Tradeoff or failure case: Backups can be corrupt or incomplete.
 
-Backup-Restore Exercises describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Game Days
 
-Practical questions:
+Game days rehearse incidents with real roles.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use safe scenarios and clear objectives.
 
-## Game Days
+Tradeoff or failure case: They should produce corrective actions.
 
-Game Days describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Tabletop Exercises
 
-Practical questions:
+Tabletops walk through decisions without touching systems.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Good for communication and ownership.
 
-## Tabletop Exercises
+Tradeoff or failure case: They do not replace technical validation.
 
-Tabletop Exercises describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Runbook Validation
 
-Practical questions:
+Runbook validation checks steps, commands, owners, and exit criteria.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Operators should be able to follow it under stress.
 
-## Runbook Validation
+Tradeoff or failure case: Outdated runbooks create false confidence.
 
-Runbook Validation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Rollback Drills
 
-Practical questions:
+Rollback drills test reverting safely.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Include data migration considerations.
 
-## Rollback Drills
+Tradeoff or failure case: Rollback can be impossible after some changes.
 
-Rollback Drills describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Failover Drills
 
-Practical questions:
+Failover drills test moving traffic or responsibility.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Practice failback too.
 
-## Failover Drills
+Tradeoff or failure case: Unpracticed failover often fails in details.
 
-Failover Drills describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Post-Drill Reviews
 
-Practical questions:
+Reviews capture what happened and what to change.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Assign owners and due dates.
 
-## Post-Drill Review
+Tradeoff or failure case: A review without action is incomplete.
 
-Post-Drill Review describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Corrective Actions
 
-Practical questions:
+Corrective actions turn findings into fixes, tests, docs, or alerts.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Track completion.
 
-## Tracking Corrective Actions
+Tradeoff or failure case: Repeated findings indicate systemic gaps.
 
-Tracking Corrective Actions describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Evidence For Reliability Claims
 
-Practical questions:
+Evidence includes passing tests, measured recovery time, restore proof, and incident history.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: State limits of the evidence.
 
-## Evidence For Reliability Claims
-
-Evidence For Reliability Claims describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
-
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
-
-```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
-}
-```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
+Tradeoff or failure case: Avoid unsupported guarantees.

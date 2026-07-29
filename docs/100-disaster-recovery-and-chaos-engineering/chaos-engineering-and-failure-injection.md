@@ -1,192 +1,109 @@
 # Chaos Engineering And Failure Injection
 
-Reliability work starts by naming the behavior precisely. A vague statement such as `the service is down` is less useful than a statement about the caller, dependency, symptom, time window, and recovery expectation.
+Chaos engineering is controlled learning about failure. It is not breaking real systems for spectacle, and it must use blast-radius limits, abort conditions, and approval appropriate to the environment.
 
-## Chaos Engineering
+## Coverage Notes
 
-Chaos Engineering describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Controlled Experiments
 
-Practical questions:
+A chaos experiment changes one condition to test a hypothesis.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use safe test doubles in Java unit tests.
 
-## Controlled Experiments
+Tradeoff or failure case: Uncontrolled experiments are incidents.
 
-Controlled Experiments describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Steady-State Hypothesis
 
-Practical questions:
+The steady-state hypothesis defines normal behavior expected to continue.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples: success rate stays above target, queue drains, or fallback count remains bounded.
 
-## Steady-State Hypothesis
+Tradeoff or failure case: Without a hypothesis, results are hard to interpret.
 
-Steady-State Hypothesis describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Blast Radius
 
-Practical questions:
+Blast radius limits the users, traffic, data, or time affected.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Run local or staging experiments before production.
 
-## Blast-Radius Control
+Tradeoff or failure case: Large radius experiments require stronger controls.
 
-Blast-Radius Control describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Abort Conditions
 
-Practical questions:
+Abort conditions say when to stop immediately.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Examples include error rate, latency, or manual operator concern.
 
-## Abort Conditions
+Tradeoff or failure case: No abort condition means no safe boundary.
 
-Abort Conditions describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Safe Environments
 
-Practical questions:
+Safe environments include unit tests, local simulators, staging, and tightly scoped production experiments.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use injected failures in Java tests.
 
-## Safe Environments
+Tradeoff or failure case: Do not attack systems you do not own or have permission to test.
 
-Safe Environments describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Failure Injection
 
-Practical questions:
+Failure injection deliberately returns errors from dependencies.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: A fake client can throw configured exceptions.
 
-## Failure Injection
+Tradeoff or failure case: Injected failures should be reversible.
 
-Failure Injection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Latency Injection
 
-Practical questions:
+Latency injection delays responses to test deadlines and queues.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use virtual time or fake sleepers, not long real sleeps.
 
-## Latency Injection
+Tradeoff or failure case: Real sleeps make tests slow and flaky.
 
-Latency Injection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Exception Injection
 
-Practical questions:
+Exception injection verifies classification and fallback paths.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Throw typed exceptions from test doubles.
 
-## Exception Injection
+Tradeoff or failure case: Broad catch blocks can hide unsafe behavior.
 
-Exception Injection describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Dependency Unavailability
 
-Practical questions:
+Dependency unavailability tests circuit breakers and graceful degradation.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Model unavailable inventory, payment, or notification.
 
-## Dependency Unavailability
+Tradeoff or failure case: Critical dependencies should fail clearly.
 
-Dependency Unavailability describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Resource Exhaustion Simulation
 
-Practical questions:
+Resource exhaustion simulation fills bounded permits or queues.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Use semaphores and small limits in tests.
 
-## Resource Exhaustion Simulation
+Tradeoff or failure case: Do not exhaust a real shared machine.
 
-Resource Exhaustion Simulation describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Instance And Partition Concepts
 
-Practical questions:
+Instance termination and network partition are concepts for losing compute or communication.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Represent them locally as unavailable clients or timeout failures.
 
-## Instance Termination Concepts
+Tradeoff or failure case: Avoid unsafe real-system disruption instructions.
 
-Instance Termination Concepts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Production Safety
 
-Practical questions:
+Production chaos requires approval, monitoring, aborts, and customer-impact review.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Start small and reversible.
 
-## Network-Partition Concepts
+Tradeoff or failure case: Learning must never ignore user harm.
 
-Network-Partition Concepts describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
+### Ethical And Organizational Considerations
 
-Practical questions:
+Chaos work affects people and trust.
 
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
+Java angle: Communicate scope, timing, and ownership.
 
-## Production Safety
-
-Production Safety describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
-
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Ethical And Organizational Considerations
-
-Ethical And Organizational Considerations describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
-
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Learning Rather Than Destruction
-
-Learning Rather Than Destruction describes a reliability concern that should be tied to observable evidence, caller impact, and a recovery decision. In Java systems, look for where the behavior appears in method boundaries, thread pools, network clients, persistence code, and exception handling.
-
-Practical questions:
-
-- What caller observes this behavior?
-- Is the failure transient, persistent, partial, or caused by overload?
-- Does retrying make the system safer, or does it amplify pressure?
-- What signal would confirm recovery?
-
-## Java-Oriented Example
-
-```java
-try {
-    return dependency.call(request);
-} catch (TransientDependencyException ex) {
-    // Retry only when the operation is safe and the request still has budget.
-    throw ex;
-}
-```
-
-The example is intentionally small: the important lesson is not a library choice, but the decision to classify failure before choosing retry, fallback, rejection, or recovery.
+Tradeoff or failure case: Surprise destructive tests are not acceptable.
