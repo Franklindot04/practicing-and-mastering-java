@@ -683,7 +683,7 @@ Move into Stage 24 reliability engineering, resilience, and failure recovery whe
 - [ ] Review alert actionability, SLI choice, SLO windows, error-budget burn, and incident evidence preservation.
 - [ ] Explain what remains out of scope until Stage 24: resilience patterns, failure recovery design, graceful degradation, chaos-style validation, and reliability engineering practice.
 
-## Reliability And Resilience Learning Sequence
+## Reliability Engineering, Resilience, And Failure Recovery Learning Sequence
 
 Use this Stage 24 sequence after observability and production diagnostics. Prerequisites: you should be comfortable reading logs, metrics, health signals, traces, SLO notes, and incident evidence.
 
@@ -701,29 +701,6 @@ Learning objectives: classify failures, choose timeouts and deadlines, budget re
 
 Completion criteria: explain failure classes, implement deterministic retry and breaker tests, design idempotency for duplicate requests, justify load shedding, write a recovery runbook, and describe evidence needed for a reliability claim.
 
-Practical validation tasks: run both Maven project test suites, trace a failure scenario through diagnostics, review a retry budget, and rehearse a recovery decision without relying on external services.
-
-Next planned stage: Stage 25 — Distributed Systems Foundations.
-
-
-## Reliability Engineering, Resilience, And Failure Recovery Learning Sequence
-
-Use this Stage 24 sequence after observability and production diagnostics. Prerequisites: you should understand structured logs, metrics, health checks, tracing, SLOs, alerting, and incident evidence.
-
-Learning objectives: classify failures, choose timeout and retry budgets, use jittered backoff, reason about circuit breakers and bulkheads, design idempotency and load shedding, plan recovery, and test failure behavior deterministically.
-
-1. [Reliability engineering foundations](docs/96-reliability-engineering-foundations/README.md)
-2. [Timeouts, deadlines, retries, and backoff](docs/97-timeouts-retries-and-backoff/README.md)
-3. [Circuit breakers, bulkheads, and fallbacks](docs/98-circuit-breakers-bulkheads-and-fallbacks/README.md)
-4. [Idempotency, load shedding, and recovery](docs/99-idempotency-load-shedding-and-recovery/README.md)
-5. [Java resilience pattern examples](examples/reliability/java-resilience-patterns/README.md)
-6. [Reliable service simulator](projects/reliability/reliable-service-simulator/README.md)
-7. [Disaster recovery and chaos engineering](docs/100-disaster-recovery-and-chaos-engineering/README.md)
-8. [Exercises and solutions](exercises/reliability/README.md)
-9. [Quizzes and answer key](quizzes/reliability/README.md)
-
-Completion criteria: explain the required terms, run both Maven reliability suites, trace a failure scenario through diagnostics, design an idempotency record, review a retry budget, and outline a recovery runbook.
-
-Practical validation tasks: run the Java resilience examples, run the reliable service simulator tests, review staged failure scenarios, scan for generated artifacts, and explain which failures should be retried, rejected, degraded, or recovered.
+Practical validation tasks: run both Maven project test suites, trace a failure scenario through diagnostics, review a retry budget, rehearse a recovery decision, and explain which failures should be retried, rejected, degraded, or recovered.
 
 Next planned stage: Stage 25 — Distributed Systems Foundations.
