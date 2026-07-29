@@ -1,5 +1,5 @@
 # Circuit Breakers Bulkheads And Fallbacks Quiz
 
-1. Trace CLOSED to OPEN to HALF_OPEN transitions.
-2. Choose a bulkhead boundary for payment and search dependencies.
-3. Explain when failing clearly is safer than fallback.
+1. Trace CLOSED, OPEN, HALF_OPEN, CLOSED transitions.
+2. Choose a bulkhead for optional notification in a checkout service.
+3. True or false: every fallback improves reliability. Explain.

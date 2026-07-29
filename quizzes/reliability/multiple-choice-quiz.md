@@ -1,5 +1,5 @@
 # Multiple Choice Quiz
 
-1. Which metric is an SLI? A. observed latency B. team name C. code style D. ticket count
-2. Which operation is naturally idempotent? A. set email B. append charge C. send duplicate email D. increment balance
-3. What protects a saturated dependency? A. bounded concurrency B. infinite queue C. hidden retries D. no timeout
+1. Which is an SLI? A. request success rate B. team size C. code owner D. meeting count
+2. Which is naturally idempotent? A. set status to SHIPPED B. charge card C. append audit row D. increment balance
+3. What protects against saturation? A. bounded concurrency B. infinite queue C. hidden retry D. no timeout
