@@ -12,5 +12,3 @@ Exercises help learners practice concepts before checking solutions.
 - `testing/`
 - `performance/`
 - `observability/`
-
-- `reliability/`
