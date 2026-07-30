@@ -122,3 +122,5 @@ You should be able to answer:
 96. `96-reliability-engineering-foundations`
 97. `97-timeouts-retries-and-backoff`
 98. `98-circuit-breakers-bulkheads-and-fallbacks`
+99. `99-idempotency-load-shedding-and-recovery`
+100. `100-disaster-recovery-and-chaos-engineering`

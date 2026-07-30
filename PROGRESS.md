@@ -397,3 +397,20 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 | Date | Topic | What I learned | What confused me | Next action |
 | --- | --- | --- | --- | --- |
 | | | | | |
+
+## Stage 24 — Reliability Engineering, Resilience, and Failure Recovery
+
+Status: planned through feature branches; not complete until the Stage 24 branches are reviewed and merged.
+
+Deliverables:
+
+- docs/reliability-engineering-foundations
+- docs/timeouts-retries-and-backoff
+- docs/circuit-breakers-bulkheads-and-fallbacks
+- docs/idempotency-load-shedding-and-recovery
+- examples/java-resilience-patterns
+- projects/reliable-service-simulator
+- docs/disaster-recovery-and-chaos-engineering
+- exercises/reliability-resilience-and-recovery
+- quizzes/reliability-resilience-and-recovery
+- docs/reliability-learning-flow

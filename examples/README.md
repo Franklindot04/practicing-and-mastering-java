@@ -12,3 +12,4 @@ Examples help learners run small Java programs and Maven projects that connect t
 - `testing/`
 - `performance/`
 - `observability/`
+- `reliability/`

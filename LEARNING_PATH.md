@@ -682,3 +682,25 @@ Move into Stage 24 reliability engineering, resilience, and failure recovery whe
 - [ ] Reason from partial logs, metrics, traces, health reports, and bounded diagnostic snapshots while naming uncertainty.
 - [ ] Review alert actionability, SLI choice, SLO windows, error-budget burn, and incident evidence preservation.
 - [ ] Explain what remains out of scope until Stage 24: resilience patterns, failure recovery design, graceful degradation, chaos-style validation, and reliability engineering practice.
+
+## Reliability Engineering, Resilience, And Failure Recovery Learning Sequence
+
+Use this Stage 24 sequence after observability and production diagnostics. Prerequisites: you should be comfortable reading logs, metrics, health signals, traces, SLO notes, and incident evidence.
+
+Learning objectives: classify failures, choose timeouts and deadlines, budget retries, use jittered backoff, reason about circuit breakers and bulkheads, design idempotent operations, shed load safely, plan recovery, and test failure behavior deterministically.
+
+- [ ] Study reliability foundations: [Reliability Engineering Foundations](docs/96-reliability-engineering-foundations/README.md)
+- [ ] Study deadlines, cancellation, retry, and backoff: [Timeouts Retries And Backoff](docs/97-timeouts-retries-and-backoff/README.md)
+- [ ] Study circuit breakers, bulkheads, and fallbacks: [Circuit Breakers Bulkheads And Fallbacks](docs/98-circuit-breakers-bulkheads-and-fallbacks/README.md)
+- [ ] Study idempotency, load shedding, and recovery: [Idempotency Load Shedding And Recovery](docs/99-idempotency-load-shedding-and-recovery/README.md)
+- [ ] Run the Java resilience examples: [Java Resilience Patterns](examples/reliability/java-resilience-patterns/README.md)
+- [ ] Build and test the reliable service simulator: [Reliable Service Simulator](projects/reliability/reliable-service-simulator/README.md)
+- [ ] Study disaster recovery and chaos engineering: [Disaster Recovery And Chaos Engineering](docs/100-disaster-recovery-and-chaos-engineering/README.md)
+- [ ] Complete the exercises and review solutions: [Reliability Exercises](exercises/reliability/README.md) and [Reliability Solutions](solutions/reliability/README.md)
+- [ ] Check understanding with quizzes: [Reliability Quizzes](quizzes/reliability/README.md)
+
+Completion criteria: explain failure classes, implement deterministic retry and breaker tests, design idempotency for duplicate requests, justify load shedding, write a recovery runbook, and describe evidence needed for a reliability claim.
+
+Practical validation tasks: run both Maven project test suites, trace a failure scenario through diagnostics, review a retry budget, rehearse a recovery decision, and explain which failures should be retried, rejected, degraded, or recovered.
+
+Next planned stage: Stage 25 — Distributed Systems Foundations.
