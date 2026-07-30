@@ -136,11 +136,8 @@ The repository grows in focused branches:
 - Testing strategy and quality engineering foundations, test design, isolation, integration, contract and end-to-end testing, quality gates, Java testing examples, a testing strategy lab, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 - Performance engineering foundations, JVM runtime and memory, profiling and diagnostics, benchmarking, Java performance patterns, a JVM performance lab, tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 - Observability and production diagnostics foundations, structured logging, metrics, service health, tracing, request correlation, Java observability examples, a production diagnostics lab, alerting, SLOs, incident diagnostics, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
+- Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before the planned Stage 25: Distributed Systems Foundations.
 
 ## Disclaimer
 
 This is a learning and mastery repository. Some examples may intentionally simplify real-world concerns. Security-sensitive or intentionally vulnerable examples must be clearly marked as educational.
-
-After observability and production diagnostics, use the [reliability and resilience learning sequence](LEARNING_PATH.md#reliability-and-resilience-learning-sequence) for failure classification, deadlines, retries, circuit breakers, bulkheads, idempotency, load shedding, recovery, disaster recovery, chaos engineering, examples, exercises, quizzes, and readiness practice.
-
-- Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before the planned Stage 25: Distributed Systems Foundations.

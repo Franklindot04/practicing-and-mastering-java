@@ -11,5 +11,4 @@ Projects are larger practice areas that connect multiple concepts into a coheren
 - `testing/`
 - `performance/`
 - `observability/`
-
 - `reliability/`
