@@ -118,3 +118,5 @@ You should be able to answer:
 - What syntax or API do I need to remember?
 - What mistakes do beginners usually make here?
 - Can I write a small example without copying?
+
+96. `96-reliability-engineering-foundations`
