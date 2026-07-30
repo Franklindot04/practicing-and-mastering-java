@@ -120,3 +120,4 @@ You should be able to answer:
 - Can I write a small example without copying?
 
 96. `96-reliability-engineering-foundations`
+97. `97-timeouts-retries-and-backoff`
