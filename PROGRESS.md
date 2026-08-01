@@ -405,7 +405,7 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 
 ## Stage 24 — Reliability Engineering, Resilience, and Failure Recovery
 
-Status: planned through feature branches; not complete until the Stage 24 branches are reviewed and merged.
+Status: complete on `learnjava`; Stage 25 now builds on these reliability and recovery foundations.
 
 Deliverables:
 
@@ -422,7 +422,7 @@ Deliverables:
 
 ## Stage 25 — Distributed Systems Foundations
 
-Status: planned through feature branches; this integration PR should be merged after the other Stage 25 pull requests.
+Status: complete on `learnjava` after the Stage 25 documentation, examples, project, exercises, solutions, quiz, and shared learning-flow pull requests were merged.
 
 Deliverables:
 
@@ -446,4 +446,4 @@ Completion checks:
 - [ ] Demonstrate replication lag, stale reads, catch-up, partition healing, and convergence.
 - [ ] Compare modulo partitioning with consistent hashing and identify hot partitions.
 - [ ] Complete exercises, review solutions, and pass the Stage 25 quiz.
-- [ ] Do not start Stage 26 until this stage is reviewed and merged.
+- [ ] Confirm Stage 26 remains next and has not been started.
