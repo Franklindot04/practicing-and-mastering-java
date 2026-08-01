@@ -12,3 +12,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `performance/`
 - `observability/`
 - `reliability/`
+- `distributed-systems/`

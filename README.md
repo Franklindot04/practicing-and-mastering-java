@@ -69,6 +69,8 @@ After performance, profiling, and JVM tuning, use the [observability and product
 
 After observability and production diagnostics, use the [reliability engineering, resilience, and failure recovery learning sequence](LEARNING_PATH.md#reliability-engineering-resilience-and-failure-recovery-learning-sequence) for Stage 24 — Reliability Engineering, Resilience, and Failure Recovery.
 
+After reliability engineering, use the [Stage 25 distributed systems foundations learning sequence](LEARNING_PATH.md#stage-25-distributed-systems-foundations-learning-sequence) for Distributed Systems Foundations before starting event-driven architecture, brokers, Kafka, RabbitMQ, or streaming platforms.
+
 ## Folder Structure
 
 ```text
@@ -136,7 +138,8 @@ The repository grows in focused branches:
 - Testing strategy and quality engineering foundations, test design, isolation, integration, contract and end-to-end testing, quality gates, Java testing examples, a testing strategy lab, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 - Performance engineering foundations, JVM runtime and memory, profiling and diagnostics, benchmarking, Java performance patterns, a JVM performance lab, tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 - Observability and production diagnostics foundations, structured logging, metrics, service health, tracing, request correlation, Java observability examples, a production diagnostics lab, alerting, SLOs, incident diagnostics, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
-- Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before the planned Stage 25: Distributed Systems Foundations.
+- Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before Stage 25.
+- Stage 25 Distributed Systems Foundations: partial failure, unreliable networks, latency, ordering, consistency, CAP, time, membership, failure detection, leader terms, fencing, replication, partitioning, consistent hashing, split-brain risks, quorums, recovery, convergence, Java examples, a deterministic cluster simulator, exercises, solutions, and quizzes before Stage 26 event-driven architecture foundations.
 
 ## Disclaimer
 

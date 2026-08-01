@@ -27,6 +27,8 @@ Follow this path in order unless you already know a topic well.
 23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 24. Performance, profiling, and JVM tuning: performance engineering foundations, latency, throughput, percentiles, JVM runtime and memory, profiling, diagnostics, benchmarking, load-test design, Java performance examples, JVM tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 25. Observability and production diagnostics: observability versus monitoring, structured logs, metrics, service health, tracing, request correlation, Java observability examples, diagnostic snapshots, alerting, SLOs, error budgets, incident evidence, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
+26. Stage 24 reliability engineering, resilience, and failure recovery: failure models, timeouts, retries, backoff, circuit breakers, bulkheads, fallbacks, idempotency, load shedding, recovery, deterministic resilience examples, service simulation, exercises, quizzes, and readiness planning before Stage 25.
+27. Stage 25 distributed systems foundations: partial failure, unreliable networks, ordering, consistency, CAP, time and clocks, membership, failure detection, leader election terms, fencing, replication, partitioning, quorums, recovery, convergence, Java examples, a deterministic cluster simulator, exercises, solutions, and quizzes before Stage 26 event-driven architecture foundations.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
@@ -703,4 +705,35 @@ Completion criteria: explain failure classes, implement deterministic retry and 
 
 Practical validation tasks: run both Maven project test suites, trace a failure scenario through diagnostics, review a retry budget, rehearse a recovery decision, and explain which failures should be retried, rejected, degraded, or recovered.
 
-Next planned stage: Stage 25 — Distributed Systems Foundations.
+Next stage: Stage 25 — Distributed Systems Foundations.
+
+## Stage 25 Distributed Systems Foundations Learning Sequence
+
+Use this Stage 25 sequence after reliability engineering, resilience, and failure recovery. Stage 24 teaches how one service plans for failure and recovery; Stage 25 explains why multiple Java processes behave differently from one JVM once networks, independent clocks, stale state, and partial failure enter the design.
+
+Learning objective: understand and demonstrate partial failure, unreliable networks, latency, message ordering, consistency models, CAP, clock problems, membership, failure detection, leader election terms, stale leaders, fencing, replication lag, partitioning, consistent hashing, split-brain risks, quorums, operational readiness, recovery, and convergence.
+
+- [ ] Study distributed systems foundations: [Distributed Systems Foundations](docs/101-distributed-systems-foundations/README.md)
+- [ ] Study consistency, time, and ordering: [Consistency Time And Ordering](docs/102-consistency-time-and-ordering/README.md)
+- [ ] Study coordination, replication, and partitioning: [Coordination Replication And Partitioning](docs/103-coordination-replication-and-partitioning/README.md)
+- [ ] Run and modify the Java examples: [Java Distributed Systems Examples](examples/distributed-systems/java-distributed-systems/README.md)
+- [ ] Build and explain the deterministic simulator: [Distributed Cluster Simulator](projects/distributed-systems/distributed-cluster-simulator/README.md)
+- [ ] Complete the exercises: [Distributed Systems Exercises](exercises/distributed-systems/README.md)
+- [ ] Review solutions after attempting the work: [Distributed Systems Solutions](solutions/distributed-systems/README.md)
+- [ ] Check understanding with quizzes: [Distributed Systems Quiz](quizzes/distributed-systems/README.md)
+
+Completion criteria: explain why timeout is an unknown outcome, classify stale-read risk by business invariant, reason about simple quorum overlap, demonstrate heartbeat suspicion and recovery, show Lamport ordering limits, reject stale leadership terms, explain fencing-token checks, demonstrate replication lag and catch-up, compare modulo hashing with consistent hashing, and describe operational signals for partitions, leader changes, quorum health, and recovery.
+
+Recommended learning order:
+
+1. Distributed systems foundations
+2. Consistency, time, and ordering
+3. Coordination, replication, and partitioning
+4. Java examples
+5. Distributed cluster simulator
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+Next planned stage: Stage 26 — Event-Driven Architecture Foundations.
