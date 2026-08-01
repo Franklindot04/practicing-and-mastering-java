@@ -90,6 +90,14 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Stage 25 coordination, replication, and partitioning
 - [ ] Stage 25 Java distributed systems examples
 - [ ] Stage 25 distributed cluster simulator
+- [ ] Stage 26 event-driven architecture foundations
+- [ ] Stage 26 event contracts, delivery, and ordering
+- [ ] Stage 26 sagas, outbox, and event recovery
+- [ ] Stage 26 Java event-driven examples
+- [ ] Stage 26 event-driven order workflow simulator
+- [ ] Stage 26 event-driven architecture exercises
+- [ ] Stage 26 event-driven architecture solutions
+- [ ] Stage 26 event-driven architecture quiz
 - [ ] Idempotency, retries, and sagas
 - [ ] Service discovery and distributed coordination
 - [ ] Distributed systems operations basics
@@ -446,4 +454,45 @@ Completion checks:
 - [ ] Demonstrate replication lag, stale reads, catch-up, partition healing, and convergence.
 - [ ] Compare modulo partitioning with consistent hashing and identify hot partitions.
 - [ ] Complete exercises, review solutions, and pass the Stage 25 quiz.
-- [ ] Confirm Stage 26 remains next and has not been started.
+- [ ] Confirm Stage 25 foundations are understood before starting Stage 26 event-driven architecture foundations.
+
+## Stage 26 — Event-Driven Architecture Foundations
+
+Status: ready as the next learning stage after Stage 25 distributed systems foundations and before Stage 27 messaging and streaming with Java.
+
+Deliverables:
+
+- [ ] docs/104-event-driven-architecture-foundations
+- [ ] docs/105-event-contracts-delivery-and-ordering
+- [ ] docs/106-sagas-outbox-and-event-recovery
+- [ ] examples/event-driven-architecture/java-event-driven-foundations
+- [ ] projects/event-driven-architecture/event-driven-order-workflow
+- [ ] exercises/event-driven-architecture
+- [ ] solutions/event-driven-architecture
+- [ ] quizzes/event-driven-architecture
+- [ ] shared Stage 26 learning flow and navigation
+
+Recommended learning order:
+
+1. Event-driven architecture foundations
+2. Event contracts, delivery, and ordering
+3. Sagas, outbox, and event recovery
+4. Java event-driven examples
+5. Event-driven order workflow project
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+Completion checks:
+
+- [ ] Distinguish events, commands, queries, requests, and notifications.
+- [ ] Explain producers, consumers, channels, asynchronous communication, temporal decoupling, and spatial decoupling.
+- [ ] Design event envelopes with event IDs, type, version, source, timestamp, correlation ID, causation ID, partition key, payload, and metadata.
+- [ ] Explain schema ownership, compatibility, rolling upgrades, duplicate delivery, acknowledgement timing, idempotency, and replay safety.
+- [ ] Handle stale, duplicate, missing, late, and out-of-order events with aggregate versions or sequence numbers.
+- [ ] Design bounded retries, dead-letter handling, recovery verification, and event-driven operational metrics.
+- [ ] Compare orchestration and choreography, model saga state, and explain why compensation is not rollback.
+- [ ] Explain transactional outbox, consumer inbox, dual-write failures, duplicate publication, and cleanup trade-offs.
+- [ ] Run the Java examples and order workflow simulator tests.
+- [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 27 messaging and streaming technology adds.

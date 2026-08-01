@@ -13,3 +13,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `observability/`
 - `reliability/`
 - `distributed-systems/`
+- `event-driven-architecture/`

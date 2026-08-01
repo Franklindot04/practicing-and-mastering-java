@@ -127,3 +127,6 @@ You should be able to answer:
 101. `101-distributed-systems-foundations`
 102. `102-consistency-time-and-ordering`
 103. `103-coordination-replication-and-partitioning`
+104. `104-event-driven-architecture-foundations`
+105. `105-event-contracts-delivery-and-ordering`
+106. `106-sagas-outbox-and-event-recovery`

@@ -57,7 +57,7 @@ After cloud architecture, use the [service mesh learning sequence](LEARNING_PATH
 
 After service mesh foundations, use the [distributed systems learning sequence](LEARNING_PATH.md#distributed-systems-learning-sequence) for distributed system concepts, CAP, consistency, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 
-After distributed systems foundations, use the [event-driven architecture learning sequence](LEARNING_PATH.md#event-driven-architecture-learning-sequence) for events, commands, asynchronous communication, event design, event patterns, outbox, CQRS, operations, exercises, quizzes, examples, and readiness planning.
+After Stage 25 distributed systems foundations, use the [Stage 26 event-driven architecture learning sequence](LEARNING_PATH.md#event-driven-architecture-learning-sequence) for events, commands, queries, notifications, asynchronous communication, event contracts, delivery semantics, ordering, sagas, outbox/inbox patterns, Java examples, the order workflow simulator, exercises, solutions, quizzes, and readiness planning.
 
 After event-driven architecture foundations, use the [messaging and streaming with Java learning sequence](LEARNING_PATH.md#messaging-and-streaming-with-java-learning-sequence) for queues, topics, delivery guarantees, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, exercises, quizzes, examples, and readiness planning before advanced backend system design.
 
@@ -140,6 +140,7 @@ The repository grows in focused branches:
 - Observability and production diagnostics foundations, structured logging, metrics, service health, tracing, request correlation, Java observability examples, a production diagnostics lab, alerting, SLOs, incident diagnostics, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
 - Reliability engineering, resilience, failure recovery, Java resilience patterns, deterministic service simulation, recovery drills, exercises, quizzes, and readiness planning before Stage 25.
 - Stage 25 Distributed Systems Foundations: partial failure, unreliable networks, latency, ordering, consistency, CAP, time, membership, failure detection, leader terms, fencing, replication, partitioning, consistent hashing, split-brain risks, quorums, recovery, convergence, Java examples, a deterministic cluster simulator, exercises, solutions, and quizzes before Stage 26 event-driven architecture foundations.
+- Stage 26 Event-Driven Architecture Foundations: events, commands, queries, notifications, producers, consumers, channels, asynchronous communication, event contracts, delivery semantics, duplicate delivery, idempotent consumers, ordering, partitioning, retries, dead letters, replay, sagas, orchestration, choreography, compensation, transactional outbox/inbox, Java examples, an order workflow simulator, exercises, solutions, quizzes, and operational readiness before Stage 27 messaging and streaming with Java.
 
 ## Disclaimer
 

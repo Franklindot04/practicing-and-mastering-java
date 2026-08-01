@@ -14,3 +14,4 @@ Examples help learners run small Java programs and Maven projects that connect t
 - `observability/`
 - `reliability/`
 - `distributed-systems/`
+- `event-driven-architecture/`

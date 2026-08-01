@@ -14,3 +14,4 @@ Exercises help learners practice concepts before checking solutions.
 - `observability/`
 - `reliability/`
 - `distributed-systems/`
+- `event-driven-architecture/`
