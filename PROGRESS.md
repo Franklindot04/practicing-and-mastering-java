@@ -85,6 +85,11 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Service mesh operations basics
 - [ ] Distributed systems foundations
 - [ ] CAP theorem and consistency models
+- [ ] Stage 25 distributed systems foundations
+- [ ] Stage 25 consistency, time, and ordering
+- [ ] Stage 25 coordination, replication, and partitioning
+- [ ] Stage 25 Java distributed systems examples
+- [ ] Stage 25 distributed cluster simulator
 - [ ] Idempotency, retries, and sagas
 - [ ] Service discovery and distributed coordination
 - [ ] Distributed systems operations basics
@@ -414,3 +419,31 @@ Deliverables:
 - exercises/reliability-resilience-and-recovery
 - quizzes/reliability-resilience-and-recovery
 - docs/reliability-learning-flow
+
+## Stage 25 — Distributed Systems Foundations
+
+Status: planned through feature branches; this integration PR should be merged after the other Stage 25 pull requests.
+
+Deliverables:
+
+- [ ] docs/101-distributed-systems-foundations
+- [ ] docs/102-consistency-time-and-ordering
+- [ ] docs/103-coordination-replication-and-partitioning
+- [ ] examples/distributed-systems/java-distributed-systems
+- [ ] projects/distributed-systems/distributed-cluster-simulator
+- [ ] exercises/distributed-systems
+- [ ] solutions/distributed-systems
+- [ ] quizzes/distributed-systems
+- [ ] shared Stage 25 learning flow and navigation
+
+Completion checks:
+
+- [ ] Explain partial failure and why timeout is an unknown outcome.
+- [ ] Demonstrate deterministic heartbeat suspicion and recovery.
+- [ ] Explain CAP, stale reads, quorum overlap, and business consistency trade-offs.
+- [ ] Explain wall-clock skew, monotonic time, Lamport clocks, and causality limits.
+- [ ] Reject stale leadership terms and explain fencing-token boundaries.
+- [ ] Demonstrate replication lag, stale reads, catch-up, partition healing, and convergence.
+- [ ] Compare modulo partitioning with consistent hashing and identify hot partitions.
+- [ ] Complete exercises, review solutions, and pass the Stage 25 quiz.
+- [ ] Do not start Stage 26 until this stage is reviewed and merged.

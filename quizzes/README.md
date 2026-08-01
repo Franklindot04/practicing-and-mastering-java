@@ -14,3 +14,4 @@ Quizzes help learners check understanding after reading notes and completing exe
 Each quiz should include questions, an answer key, and short explanations.
 
 - `reliability/`
+- `distributed-systems/`

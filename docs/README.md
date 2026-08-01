@@ -124,3 +124,6 @@ You should be able to answer:
 98. `98-circuit-breakers-bulkheads-and-fallbacks`
 99. `99-idempotency-load-shedding-and-recovery`
 100. `100-disaster-recovery-and-chaos-engineering`
+101. `101-distributed-systems-foundations`
+102. `102-consistency-time-and-ordering`
+103. `103-coordination-replication-and-partitioning`

@@ -13,3 +13,4 @@ Exercises help learners practice concepts before checking solutions.
 - `performance/`
 - `observability/`
 - `reliability/`
+- `distributed-systems/`
