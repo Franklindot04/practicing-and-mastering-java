@@ -21,7 +21,7 @@ Follow this path in order unless you already know a topic well.
 17. Advanced cloud architecture foundations: availability, scalability, reliability, traffic flow, load balancing, caching, queues, managed databases, object storage, cost-aware review, and operations planning.
 18. Service mesh foundations: service mesh concepts, sidecar communication, service-to-service traffic, mTLS identity, traffic splitting, retries, timeouts, observability, security limits, operations, and readiness planning.
 19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
-20. Event-driven architecture foundations: events, commands, asynchronous communication, producers, consumers, event design, event patterns, outbox, CQRS, operations, examples, exercises, quizzes, and readiness planning.
+20. Stage 26 event-driven architecture foundations: events, commands, queries, notifications, asynchronous communication, producers, consumers, event contracts, delivery semantics, ordering, sagas, outbox/inbox patterns, Java examples, an order workflow simulator, exercises, solutions, quizzes, and readiness planning.
 21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
 22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
 23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
@@ -484,26 +484,21 @@ Move into event-driven architecture first, then Stage 19 messaging and streaming
 
 ## Event-Driven Architecture Learning Sequence
 
-Use this sequence after distributed systems foundations and before messaging and streaming with Java, advanced production infrastructure, or real event-driven implementation.
+Use this sequence after Stage 25 distributed systems foundations and before Stage 27 messaging and streaming with Java, advanced production infrastructure, or real broker deployment.
 
-- [ ] Study event-driven architecture foundations: [Event-Driven Architecture Foundations](docs/66-event-driven-architecture/README.md)
-- [ ] Compare events, commands, synchronous communication, and asynchronous communication: [Events Vs Commands](docs/66-event-driven-architecture/events-vs-commands.md)
-- [ ] Study event design principles: [Event Design Principles](docs/67-event-design/README.md)
-- [ ] Review naming, payloads, immutability, versioning, schema evolution, and compatibility: [Schema Evolution](docs/67-event-design/schema-evolution.md)
-- [ ] Study event-driven patterns: [Event-Driven Patterns](docs/68-event-patterns/README.md)
-- [ ] Compare publish/subscribe, fan-out, event notification, event-carried state transfer, choreography, and orchestration: [Choreography](docs/68-event-patterns/choreography.md)
-- [ ] Study outbox and CQRS concepts: [Outbox And CQRS Introduction](docs/69-outbox-and-cqrs/README.md)
-- [ ] Review the transactional messaging problem, dual-write problem, read models, and write models: [Outbox Pattern](docs/69-outbox-and-cqrs/outbox-pattern.md)
-- [ ] Inspect event-driven design examples: [Event-Driven Design Examples](examples/backend/event-driven-designs/README.md)
-- [ ] Review event-driven readiness notes for the backend API: [Event-Driven Ready Task API Notes](projects/backend/event-driven-ready-api/README.md)
-- [ ] Study event-driven operations: [Event-Driven Operations](docs/70-event-driven-operations/README.md)
-- [ ] Complete event-driven architecture exercises: [Event-Driven Architecture Exercises](exercises/backend/event-driven/event-driven-architecture-exercises.md)
-- [ ] Check understanding with event-driven architecture quizzes: [Event-Driven Architecture Quizzes](quizzes/backend/event-driven/multiple-choice-quiz.md)
-- [ ] Review event-driven architecture solutions after attempting the work: [Event-Driven Architecture Solutions](solutions/backend/event-driven/event-driven-architecture-solutions.md)
+- [ ] Study event-driven architecture foundations: [Event-Driven Architecture Foundations](docs/104-event-driven-architecture-foundations/README.md)
+- [ ] Study event contracts, delivery, and ordering: [Event Contracts Delivery And Ordering](docs/105-event-contracts-delivery-and-ordering/README.md)
+- [ ] Study sagas, outbox, and event recovery: [Sagas Outbox And Event Recovery](docs/106-sagas-outbox-and-event-recovery/README.md)
+- [ ] Run and modify Java event-driven examples: [Java Event-Driven Foundations](examples/event-driven-architecture/java-event-driven-foundations/README.md)
+- [ ] Build and explain the order workflow project: [Event-Driven Order Workflow Simulator](projects/event-driven-architecture/event-driven-order-workflow/README.md)
+- [ ] Complete event-driven architecture exercises: [Event-Driven Architecture Exercises](exercises/event-driven-architecture/README.md)
+- [ ] Review event-driven architecture solutions after attempting the work: [Event-Driven Architecture Solutions](solutions/event-driven-architecture/README.md)
+- [ ] Check understanding with the event-driven architecture quiz: [Event-Driven Architecture Quiz](quizzes/event-driven-architecture/README.md)
+- [ ] Explain event contracts, duplicate delivery, idempotent consumers, ordering, retries, dead letters, replay, sagas, compensation, outbox/inbox patterns, and operational readiness before Stage 27 messaging and streaming with Java.
 
 ## Ready For Messaging And Streaming With Java Checklist
 
-Move into Stage 19 messaging and streaming with Java when you can:
+Move into Stage 27 messaging and streaming with Java when you can:
 
 - [ ] Explain the difference between events and commands.
 - [ ] Decide when synchronous communication is clearer than asynchronous communication.
@@ -513,7 +508,7 @@ Move into Stage 19 messaging and streaming with Java when you can:
 - [ ] Explain the transactional messaging problem and how an outbox changes the failure model.
 - [ ] Explain CQRS, read models, and write models without over-applying the pattern.
 - [ ] Plan duplicate handling, poison event review, correlation identifiers, tracing, replay, and failure investigation.
-- [ ] Explain what remains out of scope until Stage 19: concrete messaging products, streaming products, broker setup, clusters, cloud messaging resources, credentials, and production infrastructure.
+- [ ] Explain what remains out of scope until Stage 27: concrete messaging products, streaming products, broker setup, clusters, cloud messaging resources, credentials, and production infrastructure.
 
 ## Messaging And Streaming With Java Learning Sequence
 
