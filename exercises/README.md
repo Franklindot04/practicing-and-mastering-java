@@ -16,3 +16,4 @@ Exercises help learners practice concepts before checking solutions.
 - `distributed-systems/`
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
+- `backend-system-design/`

@@ -545,3 +545,44 @@ Completion checks:
 - [ ] Reason about stream transformations, grouping, aggregation, event time, processing time, windows, watermarks, late events, and state recovery.
 - [ ] Run the Java messaging examples and order event pipeline tests without requiring brokers or Docker.
 - [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 28 advanced backend system design will synthesize.
+
+## Stage 28 — Advanced Backend System Design
+
+Status: complete after the Stage 28 documentation, examples, project, exercises, solutions, quiz, and shared learning-flow pull requests are merged.
+
+Deliverables:
+
+- [ ] docs/110-advanced-backend-system-design-requirements-and-architecture
+- [ ] docs/111-advanced-backend-system-design-data-consistency-caching-and-global-design
+- [ ] docs/112-advanced-backend-system-design-security-reliability-cost-and-decisions
+- [ ] examples/backend-system-design/java-architecture-patterns
+- [ ] projects/backend-system-design/scalable-commerce-platform
+- [ ] exercises/backend-system-design
+- [ ] solutions/backend-system-design
+- [ ] quizzes/backend-system-design
+- [ ] shared Stage 28 learning flow and navigation
+
+Recommended learning order:
+
+1. Requirements, capacity, and architecture styles
+2. Data, consistency, caching, and global design
+3. Security, reliability, cost, and decisions
+4. Java system-design examples
+5. Scalable commerce reference architecture
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+Completion checks:
+
+- [ ] Clarify functional requirements, non-functional requirements, constraints, assumptions, scope, success criteria, and failure criteria.
+- [ ] Estimate capacity, growth, bottlenecks, headroom, failure capacity, cost ranges, and uncertainty.
+- [ ] Choose architecture styles, module or service boundaries, communication patterns, and API evolution rules from requirements.
+- [ ] Choose data stores, ownership, transactions, consistency models, caches, search indexes, projections, partitioning, replication, and recovery strategies from workload needs.
+- [ ] Evaluate multi-region designs with RPO, RTO, failover, failback, split-brain, data-residency, and dependency-locality assumptions.
+- [ ] Incorporate security, trust boundaries, tenant isolation, SLOs, observability, deployment, incident response, cost, ADRs, and fitness functions from the start.
+- [ ] Run the Java backend system design examples and scalable commerce reference architecture tests without requiring external infrastructure.
+- [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 29 testing strategy and quality engineering will validate next.
+
+Next stage: Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning. Status: not started.

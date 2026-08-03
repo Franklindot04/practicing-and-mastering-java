@@ -17,3 +17,4 @@ Each quiz should include questions, an answer key, and short explanations.
 - `distributed-systems/`
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
+- `backend-system-design/`

@@ -16,3 +16,4 @@ Examples help learners run small Java programs and Maven projects that connect t
 - `distributed-systems/`
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
+- `backend-system-design/`

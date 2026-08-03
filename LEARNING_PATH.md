@@ -23,7 +23,7 @@ Follow this path in order unless you already know a topic well.
 19. Distributed systems foundations: distributed architecture concepts, network unreliability, CAP theorem, consistency models, idempotency, retries, sagas, discovery, coordination, operations, and readiness planning.
 20. Stage 26 event-driven architecture foundations: events, commands, queries, notifications, asynchronous communication, producers, consumers, event contracts, delivery semantics, ordering, sagas, outbox/inbox patterns, Java examples, an order workflow simulator, exercises, solutions, quizzes, and readiness planning.
 21. Messaging and streaming with Java: messaging fundamentals, queues, topics, delivery reliability, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, examples, exercises, quizzes, and readiness planning.
-22. Advanced backend system design: requirements, capacity estimation, data modeling, service architecture, scalability, reliability, operations, migration strategy, tradeoff analysis, examples, exercises, quizzes, and readiness planning before testing strategy and quality engineering.
+22. Advanced backend system design: requirements, capacity estimation, architecture styles, service boundaries, communication, data ownership, consistency, caching, search, partitioning, multi-region recovery, security, reliability, observability, deployment, cost, ADRs, Java examples, a scalable commerce reference architecture, exercises, solutions, quizzes, and readiness planning before testing strategy and quality engineering.
 23. Testing strategy and quality engineering: testing strategy, test design, unit/component/integration/contract/end-to-end testing, test doubles, isolation, coverage, mutation and property-based testing concepts, quality gates, CI testing strategy, flaky test management, examples, exercises, quizzes, and readiness planning before performance, profiling, and JVM tuning.
 24. Performance, profiling, and JVM tuning: performance engineering foundations, latency, throughput, percentiles, JVM runtime and memory, profiling, diagnostics, benchmarking, load-test design, Java performance examples, JVM tuning, capacity planning, exercises, quizzes, and readiness planning before observability and production diagnostics.
 25. Observability and production diagnostics: observability versus monitoring, structured logs, metrics, service health, tracing, request correlation, Java observability examples, diagnostic snapshots, alerting, SLOs, error budgets, incident evidence, exercises, quizzes, and readiness planning before reliability engineering, resilience, and failure recovery.
@@ -56,6 +56,47 @@ Move to advanced backend system design when you can:
 - [ ] Evolve message contracts with tolerant readers and contract tests.
 - [ ] Design bounded retries, dead-letter destinations, replay workflows, and operational runbooks.
 - [ ] Reason about stream transformations, event time, processing time, windows, watermarks, and late events.
+
+## Advanced Backend System Design Learning Sequence
+
+Use this sequence after Stage 27 messaging and streaming with Java and before Stage 29 testing strategy and quality engineering.
+
+Stage 28 synthesizes backend development, cloud architecture, Kubernetes, service mesh, observability, reliability, distributed systems, event-driven architecture, and messaging into complete architecture decisions. The objective is to translate product requirements into secure, reliable, scalable, operable, and economically sensible Java backend architectures.
+
+- [ ] Study requirements, capacity, and architecture styles: [Advanced Backend System Design Requirements And Architecture](docs/110-advanced-backend-system-design-requirements-and-architecture/README.md)
+- [ ] Study data, consistency, caching, and global design: [Advanced Backend System Design Data Consistency Caching And Global Design](docs/111-advanced-backend-system-design-data-consistency-caching-and-global-design/README.md)
+- [ ] Study security, reliability, cost, and decisions: [Advanced Backend System Design Security Reliability Cost And Decisions](docs/112-advanced-backend-system-design-security-reliability-cost-and-decisions/README.md)
+- [ ] Run and modify the Java system-design examples: [Java Backend System Design Patterns](examples/backend-system-design/java-architecture-patterns/README.md)
+- [ ] Build and explain the scalable commerce reference architecture: [Scalable Commerce Backend Reference Architecture](projects/backend-system-design/scalable-commerce-platform/README.md)
+- [ ] Complete the exercises: [Backend System Design Exercises](exercises/backend-system-design/README.md)
+- [ ] Review solutions after attempting the work: [Backend System Design Solutions](solutions/backend-system-design/README.md)
+- [ ] Check understanding with quizzes: [Backend System Design Quiz](quizzes/backend-system-design/README.md)
+- [ ] Explain requirements, capacity, boundaries, communication, data stores, consistency, caching, partitioning, multi-region recovery, security, SLOs, deployment, cost, ADRs, and fitness functions in your own words.
+
+Recommended learning order:
+
+1. Requirements, capacity, and architecture styles
+2. Data, consistency, caching, and global design
+3. Security, reliability, cost, and decisions
+4. Java system-design examples
+5. Scalable commerce reference architecture
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+## Ready For Stage 29 Checklist
+
+Move to testing strategy and quality engineering when you can:
+
+- [ ] Clarify functional and non-functional requirements before choosing architecture.
+- [ ] Estimate capacity, growth, bottlenecks, headroom, and uncertainty.
+- [ ] Define module or service boundaries with data ownership and operational ownership.
+- [ ] Choose synchronous and asynchronous communication patterns with failure handling.
+- [ ] Choose data stores, transactions, consistency models, caches, search indexes, projections, and partitions from workload needs.
+- [ ] Evaluate multi-region and disaster recovery strategies with RPO, RTO, failover, failback, and data-residency assumptions.
+- [ ] Incorporate security, SLOs, observability, deployment, recovery, cost, ADRs, and fitness functions into the design.
+- [ ] Run the Stage 28 Java example and scalable commerce project tests without external infrastructure.
 
 ## Beginner Learning Sequence
 

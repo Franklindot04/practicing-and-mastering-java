@@ -133,3 +133,6 @@ You should be able to answer:
 107. `107-messaging-systems-and-kafka-foundations`
 108. `108-rabbitmq-jms-and-message-contracts`
 109. `109-streaming-retries-and-messaging-operations`
+110. `110-advanced-backend-system-design-requirements-and-architecture`
+111. `111-advanced-backend-system-design-data-consistency-caching-and-global-design`
+112. `112-advanced-backend-system-design-security-reliability-cost-and-decisions`
