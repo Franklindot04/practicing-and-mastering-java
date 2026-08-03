@@ -14,3 +14,4 @@ Projects are larger practice areas that connect multiple concepts into a coheren
 - `reliability/`
 - `distributed-systems/`
 - `event-driven-architecture/`
+- `messaging-and-streaming/`

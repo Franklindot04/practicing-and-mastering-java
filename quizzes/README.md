@@ -16,3 +16,4 @@ Each quiz should include questions, an answer key, and short explanations.
 - `reliability/`
 - `distributed-systems/`
 - `event-driven-architecture/`
+- `messaging-and-streaming/`

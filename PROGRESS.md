@@ -98,6 +98,14 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Stage 26 event-driven architecture exercises
 - [ ] Stage 26 event-driven architecture solutions
 - [ ] Stage 26 event-driven architecture quiz
+- [ ] Stage 27 messaging systems and Kafka foundations
+- [ ] Stage 27 RabbitMQ, JMS, and message contracts
+- [ ] Stage 27 streaming, retries, and messaging operations
+- [ ] Stage 27 Java messaging and streaming examples
+- [ ] Stage 27 order event pipeline project
+- [ ] Stage 27 messaging and streaming exercises
+- [ ] Stage 27 messaging and streaming solutions
+- [ ] Stage 27 messaging and streaming quiz
 - [ ] Idempotency, retries, and sagas
 - [ ] Service discovery and distributed coordination
 - [ ] Distributed systems operations basics

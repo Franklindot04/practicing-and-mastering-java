@@ -14,3 +14,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `reliability/`
 - `distributed-systems/`
 - `event-driven-architecture/`
+- `messaging-and-streaming/`

@@ -130,3 +130,6 @@ You should be able to answer:
 104. `104-event-driven-architecture-foundations`
 105. `105-event-contracts-delivery-and-ordering`
 106. `106-sagas-outbox-and-event-recovery`
+107. `107-messaging-systems-and-kafka-foundations`
+108. `108-rabbitmq-jms-and-message-contracts`
+109. `109-streaming-retries-and-messaging-operations`
