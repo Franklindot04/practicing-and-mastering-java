@@ -15,3 +15,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `distributed-systems/`
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
+- `backend-system-design/`
