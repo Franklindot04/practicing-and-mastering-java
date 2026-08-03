@@ -1,0 +1,11 @@
+package dev.franklindot04.learnjava.qualitylab;
+
+import java.util.*;
+import java.util.concurrent.*;
+
+final class LabCache { private final Map<String,String> data=new ConcurrentHashMap<>(); private int hits; private int misses; String get(String key){ String v=data.get(key); if(v==null) misses++; else hits++; return v; } void put(String key,String value){ data.put(key,value); } int hits(){return hits;} int misses(){return misses;} boolean stale(String key,String expected){ return data.containsKey(key) && !Objects.equals(data.get(key), expected); } }
+final class ContractVerifier { boolean compatible(Contract oldC, Contract next){ return next.requiredFields().containsAll(oldC.requiredFields()) && next.version() >= oldC.version(); } }
+final class InvariantChecker { boolean stockNeverNegative(QualityPerformanceLab.Repository repository, String sku){ return repository.available(sku) >= 0; } }
+final class QualityGate { boolean weakMutationSurvives(int available, int requested){ return available >= 0; } boolean strongMutationCaught(int available, int requested){ return requested > 0 && available >= requested; } boolean architectureAllowed(String dependency){ return !dependency.equals("api->repository"); } }
+final class FailureInjector implements QualityPerformanceLab.ExternalDependency { private final boolean fail; FailureInjector(boolean fail){this.fail=fail;} public String fetch(String sku){ if(fail) return "fallback"; return "fresh:" + sku; } }
+final class DiagnosticScenario { public static void main(String[] args) throws Exception { String mode=args.length==0?"allocation":args[0]; System.out.println(run(mode).evidence()); } static DiagnosticReport run(String mode) throws Exception { if("contention".equals(mode)){ Object lock=new Object(); CountDownLatch done=new CountDownLatch(2); ExecutorService pool=Executors.newFixedThreadPool(2); for(int i=0;i<2;i++) pool.submit(() -> { for(int j=0;j<500;j++) synchronized(lock){ Math.sqrt(j); } done.countDown(); }); done.await(2,TimeUnit.SECONDS); pool.shutdownNow(); return new DiagnosticReport(mode,"bounded lock contention completed",true);} List<byte[]> retained=new ArrayList<>(); for(int i=0;i<32;i++) retained.add(new byte[1024]); return new DiagnosticReport(mode,"bounded retained objects=" + retained.size(),true); } }
