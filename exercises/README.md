@@ -15,3 +15,4 @@ Exercises help learners practice concepts before checking solutions.
 - `reliability/`
 - `distributed-systems/`
 - `event-driven-architecture/`
+- `messaging-and-streaming/`

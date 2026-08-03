@@ -32,6 +32,31 @@ Follow this path in order unless you already know a topic well.
 
 Before moving on from each level, you should be able to explain the concepts in your own words, write a small example without copying, complete exercises, and build a mini project.
 
+## Stage 27 Messaging And Streaming With Java Learning Sequence
+
+Use this sequence after Stage 26 event-driven architecture foundations and before Stage 28 advanced backend system design.
+
+- [ ] Study [Messaging Systems And Kafka Foundations](docs/107-messaging-systems-and-kafka-foundations/README.md)
+- [ ] Study [RabbitMQ JMS And Message Contracts](docs/108-rabbitmq-jms-and-message-contracts/README.md)
+- [ ] Study [Streaming Retries And Messaging Operations](docs/109-streaming-retries-and-messaging-operations/README.md)
+- [ ] Run and modify [Java Messaging Foundations](examples/messaging-and-streaming/java-messaging-foundations/README.md)
+- [ ] Build and explain the [Messaging and Streaming Order Pipeline](projects/messaging-and-streaming/order-event-pipeline/README.md)
+- [ ] Complete [messaging and streaming exercises](exercises/messaging-and-streaming/README.md)
+- [ ] Review [messaging and streaming solutions](solutions/messaging-and-streaming/README.md)
+- [ ] Complete [messaging and streaming quizzes](quizzes/messaging-and-streaming/README.md)
+- [ ] Explain duplicate delivery, acknowledgement timing, offset commits, retry budgets, dead-letter handling, replay safety, stream windows, late events, and messaging operations in your own words.
+
+## Ready For Stage 28 Checklist
+
+Move to advanced backend system design when you can:
+
+- [ ] Compare queues, topics, Kafka consumer groups, RabbitMQ routing, and JMS abstractions accurately.
+- [ ] Design Java producers and consumers that handle uncertain delivery and duplicate processing.
+- [ ] Explain why broker persistence, acknowledgements, and offset commits do not prove business completion.
+- [ ] Evolve message contracts with tolerant readers and contract tests.
+- [ ] Design bounded retries, dead-letter destinations, replay workflows, and operational runbooks.
+- [ ] Reason about stream transformations, event time, processing time, windows, watermarks, and late events.
+
 ## Beginner Learning Sequence
 
 Use this sequence before moving into object-oriented programming or intermediate topics.
