@@ -756,4 +756,4 @@ Recommended learning order:
 8. Quiz
 9. Stage review and completion checks
 
-Next planned stage: Stage 27 — Messaging and Streaming with Java.
+Next planned stage: Stage 26 — Event-Driven Architecture Foundations.

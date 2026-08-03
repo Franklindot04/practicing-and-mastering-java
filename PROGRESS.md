@@ -504,3 +504,44 @@ Completion checks:
 - [ ] Explain transactional outbox, consumer inbox, dual-write failures, duplicate publication, and cleanup trade-offs.
 - [ ] Run the Java examples and order workflow simulator tests.
 - [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 27 messaging and streaming technology adds.
+
+## Stage 27 — Messaging and Streaming with Java
+
+Status: complete on `learnjava` after the Stage 27 documentation, examples, project, exercises, solutions, quiz, and shared learning-flow pull requests were merged.
+
+Deliverables:
+
+- [ ] docs/107-messaging-systems-and-kafka-foundations
+- [ ] docs/108-rabbitmq-jms-and-message-contracts
+- [ ] docs/109-streaming-retries-and-messaging-operations
+- [ ] examples/messaging-and-streaming/java-messaging-foundations
+- [ ] projects/messaging-and-streaming/order-event-pipeline
+- [ ] exercises/messaging-and-streaming
+- [ ] solutions/messaging-and-streaming
+- [ ] quizzes/messaging-and-streaming
+- [ ] shared Stage 27 learning flow and navigation
+
+Recommended learning order:
+
+1. Messaging systems and Kafka foundations
+2. RabbitMQ, JMS, and message contracts
+3. Streaming, retries, and messaging operations
+4. Java messaging examples
+5. Messaging and streaming order pipeline
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+Completion checks:
+
+- [ ] Explain queues, topics, producers, consumers, publishers, subscribers, competing consumers, and fan-out.
+- [ ] Compare Kafka topics, partitions, offsets, consumer groups, retention, compaction, replay, and lag.
+- [ ] Compare RabbitMQ exchanges, queues, bindings, routing keys, prefetch, acknowledgements, publisher confirms, and dead-letter routing.
+- [ ] Explain Jakarta Messaging/JMS abstractions and provider portability limits.
+- [ ] Design message contracts with envelopes, headers, content types, versions, correlation IDs, causation IDs, and schema evolution rules.
+- [ ] Build Java producers and consumers that handle uncertain delivery, duplicate delivery, acknowledgement timing, offset commits, and idempotency.
+- [ ] Design bounded retries, retry topics or queues, dead-letter destinations, parking-lot handling, replay workflows, and operational runbooks.
+- [ ] Reason about stream transformations, grouping, aggregation, event time, processing time, windows, watermarks, late events, and state recovery.
+- [ ] Run the Java messaging examples and order event pipeline tests without requiring brokers or Docker.
+- [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 28 advanced backend system design will synthesize.
