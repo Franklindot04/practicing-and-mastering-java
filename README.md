@@ -75,6 +75,8 @@ After observability and production diagnostics, use the [reliability engineering
 
 After reliability engineering, use the [Stage 25 distributed systems foundations learning sequence](LEARNING_PATH.md#stage-25-distributed-systems-foundations-learning-sequence) for Distributed Systems Foundations before starting event-driven architecture, brokers, Kafka, RabbitMQ, or streaming platforms.
 
+After Stage 29 testing and performance engineering, use the [Stage 30 final capstone and repository completion sequence](LEARNING_PATH.md#stage-30-final-capstone-and-repository-completion-sequence) to complete the final planned curriculum stage: Capstone Projects, Repository Polish, Learning Index, and Release Preparation.
+
 ## Folder Structure
 
 ```text
@@ -148,6 +150,33 @@ The repository grows in focused branches:
 - Stage 27 Messaging and Streaming with Java: messaging systems, queues, topics, Kafka topics, partitions, offsets, consumer groups, RabbitMQ exchanges, queues, routing keys, Jakarta Messaging concepts, message contracts, Java messaging examples, an order event pipeline, retries, dead letters, replay, stream windows, late events, observability, operations, exercises, solutions, and quizzes before Stage 28 advanced backend system design.
 - Stage 28 Advanced Backend System Design: requirements, constraints, capacity, service boundaries, communication, data ownership, consistency, caching, search, partitioning, multi-region recovery, security, reliability, observability, cost, ADRs, Java architecture examples, a scalable commerce reference architecture, exercises, solutions, and quizzes before Stage 29 testing strategy and quality engineering.
 - Stage 29 Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning: risk-based testing, deterministic tests, integration and contract evidence, quality gates, benchmarking, JMH, JVM runtime behavior, garbage collection, profiling, diagnostics, concurrency performance, Java examples, a quality and performance lab, exercises, solutions, and quizzes before Stage 30 capstone and repository polish.
+- Stage 30 Capstone Projects, Repository Polish, Learning Index, and Release Preparation: three capstone simulations, capstone review guides, capstone exercises and solutions, a final Java mastery assessment, a learning index, a portfolio guide, release notes, a completion report, and final shared navigation.
+
+## Stage 30 Final Review
+
+Stage 30 is the final planned curriculum stage. Its objective is to transform the Stage 1-29 learning repository into a coherent, portfolio-ready Java engineering resource with integrated capstones, review material, assessment, navigation, and release preparation.
+
+Recommended Stage 30 order:
+
+1. [Commerce Platform Capstone](projects/capstones/commerce-platform/README.md)
+2. [Distributed Task and Workflow Platform Capstone](projects/capstones/distributed-workflow-platform/README.md)
+3. [JVM Diagnostics and Reliability Workbench](projects/capstones/jvm-diagnostics-workbench/README.md)
+4. [Capstone Architecture and Review Guides](docs/116-capstone-architecture-and-review-guides/README.md)
+5. [Capstone System Design Exercises](exercises/capstone-system-design/README.md)
+6. [Capstone System Design Solutions](solutions/capstone-system-design/README.md)
+7. [Final Java Mastery Assessment](quizzes/final-java-mastery-assessment/README.md)
+8. [Learning Index](LEARNING_INDEX.md)
+9. [Portfolio Guide](PORTFOLIO_GUIDE.md)
+10. [Changelog](CHANGELOG.md), [Release Notes](RELEASE_NOTES.md), and [Repository Completion Report](REPOSITORY_COMPLETION_REPORT.md)
+11. Final repository review
+
+Repository completion criteria:
+
+- Stage 30 capstones are documented and tested as deterministic simulations.
+- Review, exercise, solution, and assessment materials are available.
+- Learning and portfolio navigation are available.
+- Release notes and measured completion reporting are available.
+- Release tag creation remains pending separate authorization.
 
 ## Disclaimer
 

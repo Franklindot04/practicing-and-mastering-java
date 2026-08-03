@@ -141,7 +141,44 @@ Move to Stage 30 capstone projects, repository polish, learning index, and relea
 - [ ] Diagnose CPU, allocation, locking, memory, GC, and concurrency bottlenecks from bounded evidence.
 - [ ] Document optimization trade-offs, uncertainty, rollback criteria, and regression protection.
 
-Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release. Status: not started.
+Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release Preparation. Status: final planned stage.
+
+## Stage 30 Final Capstone And Repository Completion Sequence
+
+Use this sequence after Stage 29 testing and performance engineering. Stage 30 completes the planned curriculum by connecting Java, backend engineering, reliability, distributed systems, messaging, system design, testing, performance, diagnostics, portfolio presentation, and release preparation.
+
+- [ ] Build and review the [Commerce Platform Capstone](projects/capstones/commerce-platform/README.md)
+- [ ] Build and review the [Distributed Task and Workflow Platform Capstone](projects/capstones/distributed-workflow-platform/README.md)
+- [ ] Run and review the [JVM Diagnostics and Reliability Workbench](projects/capstones/jvm-diagnostics-workbench/README.md)
+- [ ] Study the [Capstone Architecture and Review Guides](docs/116-capstone-architecture-and-review-guides/README.md)
+- [ ] Complete the [Capstone System Design Exercises](exercises/capstone-system-design/README.md)
+- [ ] Review the [Capstone System Design Solutions](solutions/capstone-system-design/README.md)
+- [ ] Complete the [Final Java Mastery Assessment](quizzes/final-java-mastery-assessment/README.md)
+- [ ] Use the [Learning Index](LEARNING_INDEX.md) to review repository-wide progression
+- [ ] Use the [Portfolio Guide](PORTFOLIO_GUIDE.md) to prepare honest project walkthroughs
+- [ ] Review the [Changelog](CHANGELOG.md), [Release Notes](RELEASE_NOTES.md), and [Repository Completion Report](REPOSITORY_COMPLETION_REPORT.md)
+- [ ] Confirm no release tag is created until explicitly authorized
+
+Recommended learning order:
+
+1. Commerce platform capstone
+2. Distributed workflow platform capstone
+3. JVM diagnostics workbench
+4. Capstone architecture and review guides
+5. Capstone exercises
+6. Capstone solutions
+7. Final Java mastery assessment
+8. Learning index
+9. Portfolio guide
+10. Release notes and completion report
+11. Final repository review
+
+Ready for final release preparation review when you can:
+
+- [ ] Explain each capstone as a deterministic simulation, not a deployed system.
+- [ ] Trace capstone behavior to tests, docs, and limitations.
+- [ ] Use release notes and completion reporting without claiming a tag or GitHub release exists.
+- [ ] Walk through the repository learning progression from beginner Java to advanced backend engineering.
 
 ## Beginner Learning Sequence
 
