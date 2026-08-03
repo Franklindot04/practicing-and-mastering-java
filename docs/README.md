@@ -136,3 +136,7 @@ You should be able to answer:
 110. `110-advanced-backend-system-design-requirements-and-architecture`
 111. `111-advanced-backend-system-design-data-consistency-caching-and-global-design`
 112. `112-advanced-backend-system-design-security-reliability-cost-and-decisions`
+
+113. `113-testing-strategy-quality-engineering`
+114. `114-performance-benchmarking-jvm-runtime`
+115. `115-profiling-diagnostics-performance-optimization`

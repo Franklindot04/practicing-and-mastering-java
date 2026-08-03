@@ -98,6 +98,51 @@ Move to testing strategy and quality engineering when you can:
 - [ ] Incorporate security, SLOs, observability, deployment, recovery, cost, ADRs, and fitness functions into the design.
 - [ ] Run the Stage 28 Java example and scalable commerce project tests without external infrastructure.
 
+
+## Stage 29 Testing And Performance Engineering Learning Sequence
+
+Use this sequence after Stage 28 advanced backend system design and before Stage 30 capstone projects, repository polish, learning index, and release.
+
+Stage 29 turns architecture assumptions into evidence. The objective is to design risk-based testing strategies, build deterministic and reliable tests, use quality gates thoughtfully, define performance requirements, measure latency and throughput, write valid JMH benchmarks, understand JVM runtime behavior, interpret profiling and diagnostics, and prevent quality and performance regressions.
+
+- [ ] Study testing strategy and quality engineering: [Testing Strategy And Quality Engineering](docs/113-testing-strategy-quality-engineering/README.md)
+- [ ] Study performance, benchmarking, and JVM runtime: [Performance Benchmarking And JVM Runtime](docs/114-performance-benchmarking-jvm-runtime/README.md)
+- [ ] Study profiling, diagnostics, and optimization: [Profiling Diagnostics And Performance Optimization](docs/115-profiling-diagnostics-performance-optimization/README.md)
+- [ ] Run and modify the Java testing and performance examples: [Java Quality And Performance Examples](examples/testing-performance/java-quality-and-performance/README.md)
+- [ ] Build and explain the Java quality and performance engineering lab: [Java Quality Performance Lab](projects/testing-performance/java-quality-performance-lab/README.md)
+- [ ] Complete the exercises: [Testing And Performance Exercises](exercises/testing-performance/README.md)
+- [ ] Review solutions after attempting the work: [Testing And Performance Solutions](solutions/testing-performance/README.md)
+- [ ] Check understanding with quizzes: [Testing And Performance Quiz](quizzes/testing-performance/README.md)
+- [ ] Explain why tests, coverage, benchmarks, profiler output, and GC evidence each reduce uncertainty without proving production readiness.
+
+Recommended learning order:
+
+1. Testing strategy and quality engineering
+2. Performance, benchmarking, and JVM runtime
+3. Profiling, diagnostics, and optimization
+4. Java testing and performance examples
+5. Java quality and performance engineering lab
+6. Exercises
+7. Solutions
+8. Quiz
+9. Stage review and completion checks
+
+## Ready For Stage 30 Checklist
+
+Move to Stage 30 capstone projects, repository polish, learning index, and release when you can:
+
+- [ ] Design a risk-based testing strategy and choose appropriate test levels.
+- [ ] Build deterministic Java tests with injected clocks, identifiers, seeded randomness, and isolated fixtures.
+- [ ] Distinguish mocks, stubs, fakes, spies, simulators, and real integrations.
+- [ ] Explain quality gates without claiming coverage proves quality.
+- [ ] Define performance requirements, workloads, budgets, and regression gates.
+- [ ] Write or review a valid JMH benchmark and identify common benchmark mistakes.
+- [ ] Explain JVM memory areas, JIT warm-up, garbage collection evidence, and profiler limitations.
+- [ ] Diagnose CPU, allocation, locking, memory, GC, and concurrency bottlenecks from bounded evidence.
+- [ ] Document optimization trade-offs, uncertainty, rollback criteria, and regression protection.
+
+Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release. Status: not started.
+
 ## Beginner Learning Sequence
 
 Use this sequence before moving into object-oriented programming or intermediate topics.

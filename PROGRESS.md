@@ -139,6 +139,14 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Metrics and service health
 - [ ] Tracing and request correlation
 - [ ] Alerting, SLOs, and incident diagnostics
+- [ ] Stage 29 testing strategy and quality engineering
+- [ ] Stage 29 performance benchmarking and JVM runtime
+- [ ] Stage 29 profiling diagnostics and performance optimization
+- [ ] Stage 29 Java quality and performance examples
+- [ ] Stage 29 Java quality and performance engineering lab
+- [ ] Stage 29 testing and performance exercises
+- [ ] Stage 29 testing and performance solutions
+- [ ] Stage 29 testing and performance quiz
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist
@@ -586,3 +594,32 @@ Completion checks:
 - [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 29 testing strategy and quality engineering will validate next.
 
 Next stage: Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning. Status: not started.
+
+## Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning
+
+Status: complete on `learnjava` after the Stage 29 documentation, examples, project, exercises, solutions, quiz, and shared learning flow are available.
+
+Objective: build evidence-driven confidence in Java systems through risk-based testing, deterministic test design, advanced quality techniques, performance requirements, JMH benchmarking, JVM runtime understanding, profiling, diagnostics, tuning discipline, and regression prevention.
+
+Stage 29 learning flow:
+
+- [ ] testing strategy and quality engineering documentation
+- [ ] performance, benchmarking, and JVM runtime documentation
+- [ ] profiling, diagnostics, and optimization documentation
+- [ ] Java quality and performance examples
+- [ ] Java quality and performance engineering lab
+- [ ] testing and performance exercises
+- [ ] testing and performance solutions
+- [ ] testing and performance quiz
+- [ ] shared Stage 29 learning flow and navigation
+
+Completion criteria:
+
+- [ ] Explain why passing tests do not prove production readiness.
+- [ ] Repair flaky tests with deterministic time, data, and synchronization.
+- [ ] Define quality gates that improve decisions without vanity metrics.
+- [ ] Separate benchmark and profiling commands from default tests.
+- [ ] Interpret JVM, GC, profiling, and concurrency evidence with uncertainty.
+- [ ] Document optimization decisions and regression protection.
+
+Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release. Status: not started.

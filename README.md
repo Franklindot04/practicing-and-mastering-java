@@ -63,6 +63,8 @@ After event-driven architecture foundations, use the [messaging and streaming wi
 
 After messaging and streaming with Java, use the [Stage 28 advanced backend system design learning sequence](LEARNING_PATH.md#stage-28-advanced-backend-system-design-learning-sequence) to translate requirements into secure, reliable, scalable, operable, and economically sensible Java backend architectures.
 
+After advanced backend system design, use the [Stage 29 testing and performance engineering learning sequence](LEARNING_PATH.md#stage-29-testing-and-performance-engineering-learning-sequence) to build testing confidence, quality gates, benchmarking judgment, profiling discipline, JVM runtime understanding, and regression prevention.
+
 After advanced backend system design, use the [testing strategy and quality engineering learning sequence](LEARNING_PATH.md#testing-strategy-and-quality-engineering-learning-sequence) to turn design assumptions into practical verification, observability, quality gates, exercises, quizzes, examples, and release-confidence thinking.
 
 After testing strategy and quality engineering, use the [performance, profiling, and JVM tuning learning sequence](LEARNING_PATH.md#performance-profiling-and-jvm-tuning-learning-sequence) to separate functional correctness evidence from performance evidence, measurement, profiling, benchmarking, capacity planning, and safe JVM tuning.
@@ -145,6 +147,7 @@ The repository grows in focused branches:
 - Stage 26 Event-Driven Architecture Foundations: events, commands, queries, notifications, producers, consumers, channels, asynchronous communication, event contracts, delivery semantics, duplicate delivery, idempotent consumers, ordering, partitioning, retries, dead letters, replay, sagas, orchestration, choreography, compensation, transactional outbox/inbox, Java examples, an order workflow simulator, exercises, solutions, quizzes, and operational readiness before Stage 27 messaging and streaming with Java.
 - Stage 27 Messaging and Streaming with Java: messaging systems, queues, topics, Kafka topics, partitions, offsets, consumer groups, RabbitMQ exchanges, queues, routing keys, Jakarta Messaging concepts, message contracts, Java messaging examples, an order event pipeline, retries, dead letters, replay, stream windows, late events, observability, operations, exercises, solutions, and quizzes before Stage 28 advanced backend system design.
 - Stage 28 Advanced Backend System Design: requirements, constraints, capacity, service boundaries, communication, data ownership, consistency, caching, search, partitioning, multi-region recovery, security, reliability, observability, cost, ADRs, Java architecture examples, a scalable commerce reference architecture, exercises, solutions, and quizzes before Stage 29 testing strategy and quality engineering.
+- Stage 29 Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning: risk-based testing, deterministic tests, integration and contract evidence, quality gates, benchmarking, JMH, JVM runtime behavior, garbage collection, profiling, diagnostics, concurrency performance, Java examples, a quality and performance lab, exercises, solutions, and quizzes before Stage 30 capstone and repository polish.
 
 ## Disclaimer
 
