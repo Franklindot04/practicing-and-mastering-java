@@ -1,0 +1,36 @@
+# Testing And Performance Exercises
+
+Stage 29 exercises for testing strategy, quality engineering, performance engineering, profiling, diagnostics, and JVM tuning. Attempt these before reading the matching solutions.
+
+## Exercises
+
+1. [Risk-Based Test Strategy](testing-and-performance-exercises.md#risk-based-test-strategy)
+2. [Test Level Selection](testing-and-performance-exercises.md#test-level-selection)
+3. [Over-Mocking Review](testing-and-performance-exercises.md#over-mocking-review)
+4. [Deterministic Time And IDs](testing-and-performance-exercises.md#deterministic-time-and-ids)
+5. [Flaky Test Repair](testing-and-performance-exercises.md#flaky-test-repair)
+6. [Integration Boundary Design](testing-and-performance-exercises.md#integration-boundary-design)
+7. [Contract Compatibility](testing-and-performance-exercises.md#contract-compatibility)
+8. [Property-Based Invariants](testing-and-performance-exercises.md#property-based-invariants)
+9. [Mutation Result Interpretation](testing-and-performance-exercises.md#mutation-result-interpretation)
+10. [Architecture Quality Rules](testing-and-performance-exercises.md#architecture-quality-rules)
+11. [Coverage And Gate Assessment](testing-and-performance-exercises.md#coverage-and-gate-assessment)
+12. [Performance Requirements](testing-and-performance-exercises.md#performance-requirements)
+13. [Workload Profiles](testing-and-performance-exercises.md#workload-profiles)
+14. [Benchmark Smell Hunt](testing-and-performance-exercises.md#benchmark-smell-hunt)
+15. [JMH Benchmark Design](testing-and-performance-exercises.md#jmh-benchmark-design)
+16. [Latency Percentiles](testing-and-performance-exercises.md#latency-percentiles)
+17. [CPU Bottleneck Diagnosis](testing-and-performance-exercises.md#cpu-bottleneck-diagnosis)
+18. [Allocation Pressure Diagnosis](testing-and-performance-exercises.md#allocation-pressure-diagnosis)
+19. [Thread Dump Inspection](testing-and-performance-exercises.md#thread-dump-inspection)
+20. [Retained Memory Evidence](testing-and-performance-exercises.md#retained-memory-evidence)
+21. [GC Evidence Analysis](testing-and-performance-exercises.md#gc-evidence-analysis)
+22. [Profiling Tool Choice](testing-and-performance-exercises.md#profiling-tool-choice)
+23. [Lock Contention Diagnosis](testing-and-performance-exercises.md#lock-contention-diagnosis)
+24. [Executor Sizing](testing-and-performance-exercises.md#executor-sizing)
+25. [Performance Budgets](testing-and-performance-exercises.md#performance-budgets)
+26. [Regression Prevention](testing-and-performance-exercises.md#regression-prevention)
+27. [Optimization Decision Record](testing-and-performance-exercises.md#optimization-decision-record)
+28. [Production Diagnostic Runbook](testing-and-performance-exercises.md#production-diagnostic-runbook)
+29. [Failure Injection Boundaries](testing-and-performance-exercises.md#failure-injection-boundaries)
+30. [Quality Strategy Review](testing-and-performance-exercises.md#quality-strategy-review)
