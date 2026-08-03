@@ -458,7 +458,7 @@ Completion checks:
 
 ## Stage 26 — Event-Driven Architecture Foundations
 
-Status: ready as the next learning stage after Stage 25 distributed systems foundations and before Stage 27 messaging and streaming with Java.
+Status: complete on `learnjava` after the Stage 26 documentation, examples, project, exercises, solutions, quiz, and shared learning-flow pull requests were merged.
 
 Deliverables:
 
