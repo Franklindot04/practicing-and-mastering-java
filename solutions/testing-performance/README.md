@@ -1,0 +1,36 @@
+# Testing And Performance Solutions
+
+Solutions corresponding exactly to the Stage 29 exercises in `exercises/testing-performance/testing-and-performance-exercises.md`.
+
+## Solutions
+
+01. [Risk-Based Test Strategy](testing-and-performance-solutions.md#risk-based-test-strategy)
+02. [Test Level Selection](testing-and-performance-solutions.md#test-level-selection)
+03. [Over-Mocking Review](testing-and-performance-solutions.md#over-mocking-review)
+04. [Deterministic Time And IDs](testing-and-performance-solutions.md#deterministic-time-and-ids)
+05. [Flaky Test Repair](testing-and-performance-solutions.md#flaky-test-repair)
+06. [Integration Boundary Design](testing-and-performance-solutions.md#integration-boundary-design)
+07. [Contract Compatibility](testing-and-performance-solutions.md#contract-compatibility)
+08. [Property-Based Invariants](testing-and-performance-solutions.md#property-based-invariants)
+09. [Mutation Result Interpretation](testing-and-performance-solutions.md#mutation-result-interpretation)
+10. [Architecture Quality Rules](testing-and-performance-solutions.md#architecture-quality-rules)
+11. [Coverage And Gate Assessment](testing-and-performance-solutions.md#coverage-and-gate-assessment)
+12. [Performance Requirements](testing-and-performance-solutions.md#performance-requirements)
+13. [Workload Profiles](testing-and-performance-solutions.md#workload-profiles)
+14. [Benchmark Smell Hunt](testing-and-performance-solutions.md#benchmark-smell-hunt)
+15. [JMH Benchmark Design](testing-and-performance-solutions.md#jmh-benchmark-design)
+16. [Latency Percentiles](testing-and-performance-solutions.md#latency-percentiles)
+17. [CPU Bottleneck Diagnosis](testing-and-performance-solutions.md#cpu-bottleneck-diagnosis)
+18. [Allocation Pressure Diagnosis](testing-and-performance-solutions.md#allocation-pressure-diagnosis)
+19. [Thread Dump Inspection](testing-and-performance-solutions.md#thread-dump-inspection)
+20. [Retained Memory Evidence](testing-and-performance-solutions.md#retained-memory-evidence)
+21. [GC Evidence Analysis](testing-and-performance-solutions.md#gc-evidence-analysis)
+22. [Profiling Tool Choice](testing-and-performance-solutions.md#profiling-tool-choice)
+23. [Lock Contention Diagnosis](testing-and-performance-solutions.md#lock-contention-diagnosis)
+24. [Executor Sizing](testing-and-performance-solutions.md#executor-sizing)
+25. [Performance Budgets](testing-and-performance-solutions.md#performance-budgets)
+26. [Regression Prevention](testing-and-performance-solutions.md#regression-prevention)
+27. [Optimization Decision Record](testing-and-performance-solutions.md#optimization-decision-record)
+28. [Production Diagnostic Runbook](testing-and-performance-solutions.md#production-diagnostic-runbook)
+29. [Failure Injection Boundaries](testing-and-performance-solutions.md#failure-injection-boundaries)
+30. [Quality Strategy Review](testing-and-performance-solutions.md#quality-strategy-review)
