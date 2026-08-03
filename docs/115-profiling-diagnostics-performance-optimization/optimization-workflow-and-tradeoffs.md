@@ -1,0 +1,19 @@
+# Optimization Workflow And Tradeoffs
+
+Use a disciplined loop:
+
+1. Define the requirement.
+2. Establish a reproducible workload.
+3. Measure a baseline.
+4. Identify the bottleneck.
+5. Form a hypothesis.
+6. Make one focused change.
+7. Remeasure.
+8. Verify correctness.
+9. Check system-wide impact.
+10. Document the decision.
+11. Add regression protection.
+
+Premature optimization often adds complexity before the problem is known. Local optimization can harm global behavior by increasing allocation, contention, latency tails, or maintenance cost. Every optimization trades something: memory versus CPU, throughput versus latency, cost versus performance, readability versus specialized code, and safety versus speed.
+
+A useful optimization record includes the workload, baseline, evidence, hypothesis, change, result, uncertainty, correctness checks, rollback criteria, and remaining risks. Optimization budgets protect teams from spending unlimited time on improvements that no longer matter.
