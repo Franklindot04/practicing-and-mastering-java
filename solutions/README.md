@@ -16,3 +16,4 @@ Solutions provide suggested reasoning after learners attempt the exercises.
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
 - `backend-system-design/`
+- `testing-performance/`

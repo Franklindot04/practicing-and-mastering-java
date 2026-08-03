@@ -16,3 +16,4 @@ Projects are larger practice areas that connect multiple concepts into a coheren
 - `event-driven-architecture/`
 - `messaging-and-streaming/`
 - `backend-system-design/`
+- `testing-performance/`
