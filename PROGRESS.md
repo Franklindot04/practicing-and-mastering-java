@@ -548,7 +548,7 @@ Completion checks:
 
 ## Stage 28 — Advanced Backend System Design
 
-Status: complete after the Stage 28 documentation, examples, project, exercises, solutions, quiz, and shared learning-flow pull requests are merged.
+Status: complete on `learnjava` after the Stage 28 documentation, examples, project, exercises, solutions, quiz, and shared learning flow were merged.
 
 Deliverables:
 

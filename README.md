@@ -61,7 +61,7 @@ After Stage 25 distributed systems foundations, use the [Stage 26 event-driven a
 
 After event-driven architecture foundations, use the [messaging and streaming with Java learning sequence](LEARNING_PATH.md#messaging-and-streaming-with-java-learning-sequence) for queues, topics, delivery guarantees, Kafka, RabbitMQ, Java messaging boundaries, testing, observability, operations, exercises, quizzes, examples, and readiness planning before advanced backend system design.
 
-After messaging and streaming with Java, use the [advanced backend system design learning sequence](LEARNING_PATH.md#advanced-backend-system-design-learning-sequence) to translate requirements into secure, reliable, scalable, operable, and economically sensible Java backend architectures.
+After messaging and streaming with Java, use the [Stage 28 advanced backend system design learning sequence](LEARNING_PATH.md#stage-28-advanced-backend-system-design-learning-sequence) to translate requirements into secure, reliable, scalable, operable, and economically sensible Java backend architectures.
 
 After advanced backend system design, use the [testing strategy and quality engineering learning sequence](LEARNING_PATH.md#testing-strategy-and-quality-engineering-learning-sequence) to turn design assumptions into practical verification, observability, quality gates, exercises, quizzes, examples, and release-confidence thinking.
 
