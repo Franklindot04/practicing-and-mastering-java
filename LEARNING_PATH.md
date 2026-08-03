@@ -57,7 +57,7 @@ Move to advanced backend system design when you can:
 - [ ] Design bounded retries, dead-letter destinations, replay workflows, and operational runbooks.
 - [ ] Reason about stream transformations, event time, processing time, windows, watermarks, and late events.
 
-## Advanced Backend System Design Learning Sequence
+## Stage 28 Advanced Backend System Design Learning Sequence
 
 Use this sequence after Stage 27 messaging and streaming with Java and before Stage 29 testing strategy and quality engineering.
 
