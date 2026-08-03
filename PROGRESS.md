@@ -591,9 +591,9 @@ Completion checks:
 - [ ] Evaluate multi-region designs with RPO, RTO, failover, failback, split-brain, data-residency, and dependency-locality assumptions.
 - [ ] Incorporate security, trust boundaries, tenant isolation, SLOs, observability, deployment, incident response, cost, ADRs, and fitness functions from the start.
 - [ ] Run the Java backend system design examples and scalable commerce reference architecture tests without requiring external infrastructure.
-- [ ] Complete exercises, review solutions, pass the quiz, and explain what Stage 29 testing strategy and quality engineering will validate next.
+- [ ] Complete exercises, review solutions, pass the quiz, and explain how Stage 29 testing and performance engineering validates design assumptions.
 
-Next stage: Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning. Status: not started.
+Next stage completed: Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning.
 
 ## Stage 29 — Testing Strategy, Quality Engineering, Performance, Profiling, and JVM Tuning
 
