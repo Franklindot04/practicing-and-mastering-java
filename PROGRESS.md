@@ -632,4 +632,6 @@ Completion criteria:
 - [ ] Interpret JVM, GC, profiling, and concurrency evidence with uncertainty.
 - [ ] Document optimization decisions and regression protection.
 
-Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release. Status: not started.
+Final planned stage completed: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release Preparation.
+
+Status: complete on `learnjava` after the capstones, review guides, exercises, solutions, final assessment, learning index, portfolio guide, release notes, completion report, and shared navigation were merged.

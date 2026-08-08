@@ -141,7 +141,7 @@ Move to Stage 30 capstone projects, repository polish, learning index, and relea
 - [ ] Diagnose CPU, allocation, locking, memory, GC, and concurrency bottlenecks from bounded evidence.
 - [ ] Document optimization trade-offs, uncertainty, rollback criteria, and regression protection.
 
-Next stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release Preparation. Status: final planned stage.
+Final planned stage: Stage 30 — Capstone Projects, Repository Polish, Learning Index, and Release Preparation.
 
 ## Stage 30 Final Capstone And Repository Completion Sequence
 
@@ -848,7 +848,7 @@ Completion criteria: explain failure classes, implement deterministic retry and 
 
 Practical validation tasks: run both Maven project test suites, trace a failure scenario through diagnostics, review a retry budget, rehearse a recovery decision, and explain which failures should be retried, rejected, degraded, or recovered.
 
-Next stage: Stage 25 — Distributed Systems Foundations.
+Continue with Stage 25 — Distributed Systems Foundations after completing Stage 24.
 
 ## Stage 25 Distributed Systems Foundations Learning Sequence
 
@@ -879,4 +879,4 @@ Recommended learning order:
 8. Quiz
 9. Stage review and completion checks
 
-Next planned stage: Stage 26 — Event-Driven Architecture Foundations.
+Continue with Stage 26 — Event-Driven Architecture Foundations after completing Stage 25.

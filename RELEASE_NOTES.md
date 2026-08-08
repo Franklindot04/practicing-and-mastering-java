@@ -2,17 +2,17 @@
 
 Release version: pending final selection.
 
-These notes prepare the repository for a later final release action. No tag or GitHub release has been created.
+These notes prepare the merged repository for a later final release action. No tag or GitHub release has been created.
 
 ## Release Overview
 
 The repository is organized as a staged Java mastery curriculum moving from beginner Java to advanced backend engineering, operations, distributed systems, system design, testing, performance, and final capstone review.
 
-Stage 30 prepares final capstones, review material, exercises, solutions, assessment, learning index, portfolio guide, changelog updates, and a completion report.
+Stage 30 includes final capstones, review material, exercises, solutions, assessment, learning index, portfolio guide, changelog updates, and a completion report.
 
 ## Intended Final Tree Snapshot
 
-Measured from a temporary local combined Stage 30 audit tree:
+Measured from the merged Stage 30 `learnjava` tree:
 
 - Completed planned stages: 30
 - Numbered documentation directories: 117
@@ -58,7 +58,7 @@ cd projects/capstones/distributed-workflow-platform && mvn test
 cd projects/capstones/jvm-diagnostics-workbench && mvn test
 ```
 
-Stage 30 capstone branches use default tests that require no database, broker, Docker, cloud account, or network.
+Stage 30 capstone modules use default tests that require no database, broker, Docker, cloud account, or network.
 
 ## Major Projects
 
@@ -74,16 +74,15 @@ These are deterministic learning simulations. They should not be described as de
 
 ## Repository Navigation
 
-Final navigation is prepared through Stage 30 integration work and should link the learning index, portfolio guide, capstones, release notes, changelog, and completion report after the relevant branches are merged.
+Final navigation links the learning index, portfolio guide, capstones, release notes, changelog, and completion report.
 
 ## Known Limitations
 
 - No release tag has been created.
 - No GitHub release has been created.
-- Stage 30 branches are intended to be merged before final release publication.
 - Capstones simulate infrastructure boundaries locally.
 - Local tests do not prove production capacity, security posture, or operational maturity.
-- Intended-final-tree measurements can change if Stage 30 branch tips change before merge.
+- Repository measurements should be rechecked before any separate tag or release action.
 
 ## Optional Benchmark And Profiling Instructions
 
@@ -98,4 +97,4 @@ Future work should be treated as maintenance unless a new roadmap is explicitly 
 - Proposed release version: pending final selection.
 - Tag created: no.
 - GitHub release created: no.
-- Release publication requires explicit authorization after Stage 30 merge and audit completion.
+- Release publication requires explicit authorization after post-merge audit and final version confirmation.
