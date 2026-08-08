@@ -10,6 +10,21 @@ The repository is organized as a staged Java mastery curriculum moving from begi
 
 Stage 30 prepares final capstones, review material, exercises, solutions, assessment, learning index, portfolio guide, changelog updates, and a completion report.
 
+## Intended Final Tree Snapshot
+
+Measured from a temporary local combined Stage 30 audit tree:
+
+- Completed planned stages: 30
+- Numbered documentation directories: 117
+- Markdown documents: 1097
+- Maven modules: 31
+- Project Maven modules: 19
+- Capstone Maven modules: 3
+- Quiz-style numbered prompts: 1269
+- Final assessment questions with answer coverage: 64 of 64
+- Relative Markdown links: 1689 checked, 0 broken file links
+- Markdown anchor links: 85 checked, 0 broken anchors
+
 ## Curriculum Scope
 
 - Java fundamentals, OOP, collections, generics, exceptions, files, lambdas, streams, and date/time.
@@ -68,6 +83,7 @@ Final navigation is prepared through Stage 30 integration work and should link t
 - Stage 30 branches are intended to be merged before final release publication.
 - Capstones simulate infrastructure boundaries locally.
 - Local tests do not prove production capacity, security posture, or operational maturity.
+- Intended-final-tree measurements can change if Stage 30 branch tips change before merge.
 
 ## Optional Benchmark And Profiling Instructions
 
