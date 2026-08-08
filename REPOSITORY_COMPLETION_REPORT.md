@@ -41,7 +41,7 @@ Exercise and solution prompt totals are methodology-dependent because historical
 | Broken relative file links | 0 | Exact measured value | Based on local combined-tree path existence. |
 | Markdown anchor links checked | 85 | Exact measured value | Checked for Markdown targets with anchors. |
 | Broken Markdown anchor links | 0 | Exact measured value | Based on generated heading slugs. |
-| Markdown anchors defined | 5531 | Exact measured value | Generated from Markdown headings. |
+| Markdown anchors defined | 5532 | Exact measured value | Generated from Markdown headings. |
 | Capstone Markdown documents | 51 | Exact measured value | Counted under `projects/capstones/`. |
 | Runbook Markdown files | 11 | Exact measured value | Counted by runbook path/name matches. |
 | ADR/decision Markdown files | 7 | Methodology-dependent estimate | Counted by ADR directories and decision file names. |
