@@ -18,3 +18,7 @@ Examples help learners run small Java programs and Maven projects that connect t
 - `messaging-and-streaming/`
 - `backend-system-design/`
 - `testing-performance/`
+
+## Stage 30
+
+Stage 30 does not add a new examples area. It uses the existing examples as supporting evidence for the final capstones, assessment, and portfolio walkthroughs.

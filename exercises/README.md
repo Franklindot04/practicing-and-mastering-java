@@ -18,3 +18,10 @@ Exercises help learners practice concepts before checking solutions.
 - `messaging-and-streaming/`
 - `backend-system-design/`
 - `testing-performance/`
+- `capstone-system-design/`
+
+## Stage 30
+
+- [Capstone System Design Exercises](capstone-system-design/README.md)
+
+Use these after the three capstones and the capstone review guides.

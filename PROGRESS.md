@@ -147,6 +147,16 @@ Use this file to track learning honestly. Mark topics only when you can explain 
 - [ ] Stage 29 testing and performance exercises
 - [ ] Stage 29 testing and performance solutions
 - [ ] Stage 29 testing and performance quiz
+- [ ] Stage 30 commerce platform capstone
+- [ ] Stage 30 distributed workflow platform capstone
+- [ ] Stage 30 JVM diagnostics workbench
+- [ ] Stage 30 capstone architecture and review guides
+- [ ] Stage 30 capstone system design exercises
+- [ ] Stage 30 capstone system design solutions
+- [ ] Stage 30 final Java mastery assessment
+- [ ] Stage 30 learning index and portfolio guide
+- [ ] Stage 30 release notes and completion report
+- [ ] Stage 30 final repository review
 - [ ] Interview preparation
 
 ## Intermediate Path Checklist

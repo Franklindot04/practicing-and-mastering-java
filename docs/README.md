@@ -140,3 +140,8 @@ You should be able to answer:
 113. `113-testing-strategy-quality-engineering`
 114. `114-performance-benchmarking-jvm-runtime`
 115. `115-profiling-diagnostics-performance-optimization`
+116. `116-capstone-architecture-and-review-guides`
+
+## Final Stage
+
+Stage 30 adds [Capstone Architecture and Review Guides](116-capstone-architecture-and-review-guides/README.md) for final repository review, portfolio walkthroughs, release-readiness judgment, and honest simulation language.
