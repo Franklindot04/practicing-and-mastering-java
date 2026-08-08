@@ -1,6 +1,6 @@
 # Repository Completion Report
 
-Report date: 2026-08-08
+Report date: 2026-08-09
 
 Release version: pending final selection.
 
@@ -8,7 +8,7 @@ No release tag or GitHub release has been created.
 
 ## Methodology
 
-Counts were measured from a temporary local combined Stage 30 audit worktree. The worktree started from `origin/learnjava` and locally combined the ten Stage 30 branch tips in intended merge order, with final shared integration applied last. The temporary audit worktree was not pushed and was used only for measurement and validation.
+Counts were measured from the merged Stage 30 `learnjava` tree after synchronizing with `origin/learnjava`.
 
 Markdown files were counted by repository path. Maven modules were counted by `pom.xml` files. Relative links were counted from Markdown links that do not start with `http`, `https`, `mailto`, or `#`, and checked relative to each Markdown file. Anchor links were checked against generated GitHub-style heading slugs for Markdown targets. Quiz prompts were counted as numbered Markdown prompts in the `quizzes` tree. Java test classes were counted by `*Test.java` files.
 
@@ -61,22 +61,22 @@ Exercise and solution prompt totals are methodology-dependent because historical
 
 ## Architecture Topic Coverage
 
-The combined audit checked 18 architecture topic markers and found coverage for all 18: architecture, boundary, cache, capacity, consistency, contract, dead-letter handling, deployment, idempotency, observability, outbox, performance, reconciliation, reliability, retry, saga, security, and workflow.
+The merged-tree audit checked 18 architecture topic markers and found coverage for all 18: architecture, boundary, cache, capacity, consistency, contract, dead-letter handling, deployment, idempotency, observability, outbox, performance, reconciliation, reliability, retry, saga, security, and workflow.
 
 ## Operational Topic Coverage
 
-The combined audit checked 17 operational topic markers and found coverage for all 17: alerting, cleanup, GC logs, health checks, heap dumps, incident response, load shedding, logs, metrics, profiling, quarantine, recovery, rollback, runbooks, SLOs, thread dumps, and tracing.
+The merged-tree audit checked 17 operational topic markers and found coverage for all 17: alerting, cleanup, GC logs, health checks, heap dumps, incident response, load shedding, logs, metrics, profiling, quarantine, recovery, rollback, runbooks, SLOs, thread dumps, and tracing.
 
 ## Completion Criteria
 
 - Stage 1-29 content is preserved.
-- Stage 30 is prepared through focused pull requests and measured through a temporary local combined audit tree.
-- Final release publication remains pending until all Stage 30 branches are merged and audited.
+- Stage 30 is merged into `learnjava` and measured from the synchronized default branch.
+- Final release publication remains pending until post-merge audit is accepted and a final version is confirmed.
 - Simulations are presented honestly.
 - Release notes and completion reporting avoid unsupported production or deployment claims.
 
 ## Limitations
 
-Counts are intended-final-tree measurements based on the current Stage 30 branch tips at audit time. They can change if branches receive further commits before merge. Test totals are practical local measurements, not a guarantee of production behavior, capacity, or operational readiness.
+Counts are merged-tree measurements from the synchronized `learnjava` branch at audit time. They can change if future maintenance commits are added before a release/tag action. Test totals are practical local measurements, not a guarantee of production behavior, capacity, or operational readiness.
 
 Identity check passed.
